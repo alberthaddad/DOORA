@@ -1,26 +1,167 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-open-sauce);
+  --font-title: var(--font-bernoru);
+  --font-accent: var(--font-neue-machina);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+
+  /* Core Brand Colors */
+  --background: oklch(0.98 0.005 45);        /* Warm cream #fcf7f6 */
+  --foreground: oklch(0.28 0.06 155);        /* Deep forest green #09311b */
+  --primary: oklch(0.65 0.15 25);            /* Warm terracotta #dc655f */
+  --primary-foreground: oklch(0.98 0.005 45); /* Cream on terracotta */
+  
+  /* Secondary & Supporting Colors */
+  --secondary: oklch(0.72 0.08 145);         /* Sage green #85b286 */
+  --secondary-foreground: oklch(0.28 0.06 155); /* Forest green text */
+  --accent: oklch(0.85 0.02 85);             /* Warm neutral #d4cdbf */
+  --accent-foreground: oklch(0.28 0.06 155); /* Forest green text */
+  
+  /* UI Element Colors */
+  --card: oklch(0.99 0.003 45);              /* Slightly off-white for cards */
+  --card-foreground: oklch(0.28 0.06 155);   /* Forest green text */
+  --popover: oklch(0.99 0.003 45);           /* Card color for popovers */
+  --popover-foreground: oklch(0.28 0.06 155);
+  
+  /* Interactive States */
+  --muted: oklch(0.85 0.02 85);              /* Warm neutral for muted elements */
+  --muted-foreground: oklch(0.45 0.04 155);  /* Lighter forest green for muted text */
+  --border: oklch(0.85 0.02 85);             /* Subtle warm borders */
+  --input: oklch(0.96 0.005 45);             /* Slightly darker than background */
+  --ring: oklch(0.65 0.15 25);               /* Terracotta focus rings */
+  
+  /* Destructive Actions */
+  --destructive: oklch(0.62 0.22 15);        /* Warm red for destructive actions */
+  --destructive-foreground: oklch(0.98 0.005 45);
+  
+  /* Chart Colors - Harmonious with brand */
+  --chart-1: oklch(0.65 0.15 25);            /* Primary terracotta */
+  --chart-2: oklch(0.72 0.08 145);           /* Sage green */
+  --chart-3: oklch(0.55 0.12 35);            /* Deeper terracotta */
+  --chart-4: oklch(0.62 0.06 135);           /* Deeper sage */
+  --chart-5: oklch(0.75 0.04 85);            /* Light warm neutral */
+  
+  /* Sidebar Colors */
+  --sidebar: oklch(0.96 0.005 45);           /* Slightly darker than background */
+  --sidebar-foreground: oklch(0.28 0.06 155);
+  --sidebar-primary: oklch(0.65 0.15 25);    /* Terracotta */
+  --sidebar-primary-foreground: oklch(0.98 0.005 45);
+  --sidebar-accent: oklch(0.85 0.02 85);     /* Warm neutral */
+  --sidebar-accent-foreground: oklch(0.28 0.06 155);
+  --sidebar-border: oklch(0.85 0.02 85);
+  --sidebar-ring: oklch(0.65 0.15 25);
+}
+
+/* Dark Mode Colors */
+.dark {
+  /* Core Brand Colors - Dark Mode */
+  --background: oklch(0.12 0.02 155);        /* Deep forest background #020803 */
+  --foreground: oklch(0.95 0.01 45);         /* Warm cream text #f5ede9 */
+  --primary: oklch(0.68 0.16 25);            /* Brighter terracotta #e06b5f */
+  --primary-foreground: oklch(0.12 0.02 155); /* Dark forest on terracotta */
+  
+  /* Secondary & Supporting Colors */
+  --secondary: oklch(0.45 0.08 145);         /* Muted sage green #4a6b4c */
+  --secondary-foreground: oklch(0.95 0.01 45); /* Cream text */
+  --accent: oklch(0.35 0.03 85);             /* Dark warm neutral #463f39 */
+  --accent-foreground: oklch(0.95 0.01 45);  /* Cream text */
+  
+  /* UI Element Colors */
+  --card: oklch(0.18 0.015 155);             /* Slightly lighter than background #0c140f */
+  --card-foreground: oklch(0.95 0.01 45);    /* Cream text */
+  --popover: oklch(0.18 0.015 155);          /* Same as card */
+  --popover-foreground: oklch(0.95 0.01 45);
+  
+  /* Interactive States */
+  --muted: oklch(0.35 0.03 85);              /* Dark warm neutral for muted elements */
+  --muted-foreground: oklch(0.75 0.02 45);   /* Lighter cream for muted text */
+  --border: oklch(0.25 0.02 155);            /* Subtle dark borders */
+  --input: oklch(0.22 0.02 155);             /* Slightly lighter for inputs */
+  --ring: oklch(0.68 0.16 25);               /* Terracotta focus rings */
+  
+  /* Destructive Actions */
+  --destructive: oklch(0.65 0.25 15);        /* Bright warm red for destructive actions */
+  --destructive-foreground: oklch(0.12 0.02 155);
+  
+  /* Chart Colors - Dark Mode Harmonious */
+  --chart-1: oklch(0.68 0.16 25);            /* Bright terracotta */
+  --chart-2: oklch(0.65 0.12 145);           /* Brighter sage green */
+  --chart-3: oklch(0.58 0.14 35);            /* Medium terracotta */
+  --chart-4: oklch(0.55 0.08 135);           /* Medium sage */
+  --chart-5: oklch(0.45 0.04 85);            /* Medium warm neutral */
+  
+  /* Sidebar Colors */
+  --sidebar: oklch(0.15 0.015 155);          /* Slightly lighter than background */
+  --sidebar-foreground: oklch(0.95 0.01 45);
+  --sidebar-primary: oklch(0.68 0.16 25);    /* Bright terracotta */
+  --sidebar-primary-foreground: oklch(0.12 0.02 155);
+  --sidebar-accent: oklch(0.35 0.03 85);     /* Dark warm neutral */
+  --sidebar-accent-foreground: oklch(0.95 0.01 45);
+  --sidebar-border: oklch(0.25 0.02 155);
+  --sidebar-ring: oklch(0.68 0.16 25);
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom font utility classes */
+@layer utilities {
+  .font-title {
+    font-family: var(--font-bernoru), ui-sans-serif, system-ui, sans-serif;
+  }
+  .font-accent {
+    font-family: var(--font-neue-machina), ui-sans-serif, system-ui, sans-serif;
+  }
+  .font-body {
+    font-family: var(--font-open-sauce), ui-sans-serif, system-ui, sans-serif;
+  }
 }
