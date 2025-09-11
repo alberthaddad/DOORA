@@ -90,7 +90,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Doora - From Closet to Closet",
+    title: "Dora - From Closet to Closet",
     description: "Making secondhand feel premium and NOT second best! Shop sustainable fashion in the Middle East.",
     creator: "@doora",
   },

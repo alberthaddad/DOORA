@@ -3,6 +3,39 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth theme transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ensure consistent transitions for pseudo elements */
+*::before,
+*::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Specific transitions for common UI elements */
+button,
+input,
+textarea,
+select {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+/* Smooth transitions for cards and containers */
+.card,
+[class*="card"],
+.bg-muted,
+.bg-background,
+.bg-primary {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -48,9 +81,9 @@
   --radius: 0.625rem;
 
   /* Core Brand Colors */
-  --background: oklch(0.98 0.005 45);        /* Warm cream #fcf7f6 */
+  --background: oklch(0.9978 0.001061 17.1758);        /* Warm cream #fcf7f6 */
   --foreground: oklch(0.28 0.06 155);        /* Deep forest green #09311b */
-  --primary: oklch(0.65 0.15 25);            /* Warm terracotta #dc655f */
+  --primary: oklch(0.439 0.1032 35.98);            /* Warm terracotta #dc655f */
   --primary-foreground: oklch(0.98 0.005 45); /* Cream on terracotta */
   
   /* Secondary & Supporting Colors */
@@ -97,9 +130,9 @@
 /* Dark Mode Colors */
 .dark {
   /* Core Brand Colors - Dark Mode */
-  --background: oklch(0.12 0.02 155);        /* Deep forest background #020803 */
+  --background: oklch(0.2178 0 0);        /* Deep forest background #020803 */
   --foreground: oklch(0.95 0.01 45);         /* Warm cream text #f5ede9 */
-  --primary: oklch(0.68 0.16 25);            /* Brighter terracotta #e06b5f */
+  --primary: oklch(0.439 0.1032 35.98);            /* Brighter terracotta #e06b5f */
   --primary-foreground: oklch(0.12 0.02 155); /* Dark forest on terracotta */
   
   /* Secondary & Supporting Colors */

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X, Search, Heart } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,35 +15,30 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="text-2xl font-bold text-primary tracking-wider">
+            <div className="text-2xl font-bold text-primary tracking-wider font-title">
               DOORA
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link 
-              href="/store" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Browse
-            </Link>
-            <Link 
-              href="/about" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
+            <a 
+              href="#about" 
+              className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
             >
               About
-            </Link>
-            <Link 
-              href="/contact" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
+            </a>
+            <a 
+              href="#contact" 
+              className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
             >
               Contact
-            </Link>
+            </a>
           </nav>
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <Button variant="ghost" size="sm" className="p-2">
               <Search className="h-5 w-5" />
             </Button>
@@ -80,28 +76,22 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-border">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link
-                href="/store"
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Browse
-              </Link>
-              <Link
-                href="/about"
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium"
+              <a
+                href="#about"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
-              </Link>
-              <Link
-                href="/contact"
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium"
+              </a>
+              <a
+                href="#contact"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
-              </Link>
+              </a>
               <div className="flex items-center space-x-2 px-3 py-2">
+                <ThemeToggle />
                 <Button variant="ghost" size="sm" className="p-2">
                   <Search className="h-5 w-5" />
                 </Button>
