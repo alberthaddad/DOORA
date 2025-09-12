@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,26 +9,95 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+<<<<<<< HEAD
+import { ArrowRight, Recycle, Shield, Users, Leaf, Heart, Star, Globe, Target, Mail, Phone, MapPin, Clock, MessageSquare, Briefcase } from "lucide-react";
+import { useEffect, useRef } from "react";
+import Iphone15Pro from "@/components/magicui/iphone-15-pro";
+import CircularText from "@/components/ui/CircularText";
+import TextType from "@/components/ui/TextType";
+=======
 import { ArrowRight, Recycle, Shield, Users, Leaf, Heart, Star, Target, Mail, Phone, MapPin, Clock, MessageSquare, Briefcase } from "lucide-react";
+>>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
 
 
 export default function Home() {
+  const headlineRef = useRef<HTMLDivElement>(null);
+  const solutionRef = useRef<HTMLParagraphElement>(null);
+  const descriptionRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (headlineRef.current) {
+      observer.observe(headlineRef.current);
+    }
+    if (solutionRef.current) {
+      observer.observe(solutionRef.current);
+    }
+    if (descriptionRef.current) {
+      observer.observe(descriptionRef.current);
+    }
+
+    return () => {
+      if (headlineRef.current) {
+        observer.unobserve(headlineRef.current);
+      }
+      if (solutionRef.current) {
+        observer.unobserve(solutionRef.current);
+      }
+      if (descriptionRef.current) {
+        observer.unobserve(descriptionRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6 py-2 px-4 rounded-full border-primary/20 text-primary/90 hover:text-primary bg-primary/10 hover:bg-primary/20">
-            📍 Now launching in Lebanon
-          </Badge>
+      <section className="pt-20 pb-32 px-4 min-h-screen flex items-center">
+        <div className="max-w-6xl mx-auto text-center w-full">
           
-          <div className="font-title text-6xl md:text-8xl font-black text-primary mb-2 tracking-wider">
-            DOORA
+          <div className="mb-8 mt-8">
+            <img 
+              src="/images/doora_logo_light.png" 
+              alt="DOORA" 
+              className="max-h-20 md:max-h-32 w-auto mx-auto dark:hidden"
+              style={{maxHeight: '250px'}}
+            />
+            <img 
+              src="/images/doora_logo_dark.png" 
+              alt="DOORA" 
+              className="max-h-20 md:max-h-32 w-auto mx-auto hidden dark:block"
+              style={{maxHeight: '250px'}}
+            />
           </div>
-          <div className="font-sans text-sm md:text-base font-bold text-primary mb-6 tracking-wide">
+          
+          <div className="font-accent text-sm md:text-base text-primary dark:text-primary mb-12 tracking-wide uppercase">
             FROM CLOSET TO CLOSET
           </div>
           
+<<<<<<< HEAD
+          {/* Circular Text */}
+          <div className="mb-12">
+            <CircularText
+              text="CLOSET → CLOSET → "
+              onHover="speedUp"
+              spinDuration={20}
+              className="mx-auto"
+            />
+=======
           <h1 className="text-4xl md:text-7xl font-bold mb-8 font-accent leading-tight">
             <span className="text-primary">Fast Fashion</span>
             <br />
@@ -50,123 +121,111 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
+>>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">Sustainable</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">24/7</div>
-              <div className="text-sm text-muted-foreground">Support</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">Safe</div>
-              <div className="text-sm text-muted-foreground">Payments</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">Free</div>
-              <div className="text-sm text-muted-foreground">To Join</div>
-            </div>
-          </div>
-
+          
           {/* Coming Soon Section */}
-          <div className="mt-16 pt-16 border-t border-border/20">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4 font-accent">
-                WE ARE LAUNCHING SOON
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Be the first to know when Doora goes live. Join our exclusive waitlist and get early access to the circular fashion revolution.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+          <div className="mb-20">
+            <h2 className="text-xl md:text-2xl font-black text-primary dark:text-primary mb-4 font-title uppercase">
+              WE ARE LAUNCHING SOON
+            </h2>
+            
+            <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto mb-3">
+              <div className="flex-1 relative">
                 <input 
                   type="email" 
-                  placeholder="Enter your email address" 
-                  className="flex-1 px-6 py-4 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-base"
+                  className="w-full px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground dark:text-foreground text-sm"
                 />
-                <Button className="bg-primary hover:bg-primary/90 px-8 py-4 rounded-full text-base font-semibold whitespace-nowrap">
-                  Notify Me
-                </Button>
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-sm placeholder-text">
+                  <TextType 
+                    text={["Enter your email", "Get notified", "Join the waitlist"]}
+                    typingSpeed={150}
+                    pauseDuration={3000}
+                    showCursor={true}
+                    cursorCharacter="|"
+                    loop={true}
+                  />
+                </div>
               </div>
-              
-              <p className="text-sm text-muted-foreground mt-4">
-                Join 5,000+ people already on our waitlist. No spam, just updates.
-              </p>
+              <Button className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-semibold whitespace-nowrap">
+                Notify Me
+              </Button>
+            </div>
+            
+            <p className="text-xs text-muted-foreground dark:text-muted-foreground ">
+              No spam, just updates.
+            </p>
+          </div>
+          
+          <div className="pt-16 mb-8">
+            <h1 
+              ref={headlineRef}
+              className="text-3xl md:text-4xl font-black mb-6 font-title leading-tight text-primary dark:text-primary uppercase tracking-normal animate-fade-in-up"
+            >
+              Fast Fashion Isn't
+              <br />
+              Your Only Option
+            </h1>
+            
+            <p 
+              ref={solutionRef}
+              className="text-xl md:text-2xl font-semibold text-primary dark:text-primary mb-8 animate-fade-in-up"
+            >
+              Second hand is the solution.
+            </p>
+          </div>
+
+          <h2 
+            ref={descriptionRef}
+            className="text-lg md:text-xl text-muted-foreground dark:text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up"
+          >
+            Whether you're clearing out your closet or browsing for unique finds, our fashion resale platform brings buyers and sellers togther in one simple, secure space.
+          </h2>
+          
+          {/* iPhone 15 Component */}
+          <div className="flex justify-center mt-12 mb-8">
+            <div className="relative">
+              <Iphone15Pro 
+                className="w-80 h-auto"
+                src="/images/Homepage.png"
+              />
             </div>
           </div>
+
         </div>
       </section>
 
       <div className="max-w-6xl mx-auto px-4">
-        {/* Featured Categories */}
-        <section className="py-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4 font-accent">
-              Shop by Category
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Find unique pieces across all fashion categories
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">👗</span>
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Women&apos;s Fashion</h3>
-                <p className="text-sm text-muted-foreground">Dresses, tops, bottoms, and more</p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">👔</span>
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Men&apos;s Fashion</h3>
-                <p className="text-sm text-muted-foreground">Shirts, pants, jackets, and accessories</p>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">👜</span>
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Accessories</h3>
-                <p className="text-sm text-muted-foreground">Bags, jewelry, shoes, and more</p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        <Separator />
 
         {/* Why Choose Doora */}
-        <section className="py-20">
+        <section className="py-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-6xl font-bold mb-6 font-accent leading-tight">
-              <span className="text-primary">Meet Doora.</span>
-            </h2>
-            <h3 className="text-xl md:text-3xl text-muted-foreground max-w-4xl mx-auto mb-6 leading-relaxed">
-              Your sustainable fashion companion.
-            </h3>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Designed for both individuals and small businesses, Doora offer trusted payments, eco-conscious delivery options, advanced filtering tools and a transparent review system, making it easier than ever to shop consciously.
-            </p>
+            {/* Feature Badges */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary dark:text-primary">Green</div>
+                <div className="text-sm text-muted-foreground dark:text-muted-foreground">Delivery</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary dark:text-primary">Free</div>
+                <div className="text-sm text-muted-foreground dark:text-muted-foreground">To Sell</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary dark:text-primary">Safe</div>
+                <div className="text-sm text-muted-foreground dark:text-muted-foreground">Payments</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary dark:text-primary">Real</div>
+                <div className="text-sm text-muted-foreground dark:text-muted-foreground">Reviews</div>
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Recycle className="h-6 w-6 text-primary" />
+                  <Recycle className="h-6 w-6 text-primary dark:text-primary" />
                 </div>
                 <CardTitle>Circular Fashion</CardTitle>
                 <CardDescription>
@@ -236,36 +295,6 @@ export default function Home() {
             </Card>
           </div>
 
-          {/* Testimonial Section - Inspired by Sellou */}
-          <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 md:p-12 text-center mt-16">
-            <div className="max-w-3xl mx-auto">
-              <p className="text-xl md:text-2xl font-medium text-foreground mb-6 leading-relaxed">
-                &ldquo;Finally, an alternative to fast fashion! Doora helps me find unique pieces while shopping sustainably and guilt-free.&rdquo;
-              </p>
-              <p className="text-lg text-muted-foreground mb-6">Layla K. • Fashion Enthusiast</p>
-              
-              <div className="flex justify-center items-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-6 text-base font-medium">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  4.9/5 Rating
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
-                  1.2K+ Reviews
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  Verified Buyers
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         <Separator />
@@ -274,7 +303,7 @@ export default function Home() {
         <section className="py-20">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-6xl font-bold mb-6 font-accent leading-tight">
-              <span className="text-foreground">One tap. Unlimited</span>
+              <span className="text-foreground dark:text-foreground">One tap. Unlimited</span>
               <br />
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">fashion potential.</span>
             </h2>
@@ -289,8 +318,8 @@ export default function Home() {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">
                 1
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Discover & Connect</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold text-foreground dark:text-foreground mb-4">Discover & Connect</h3>
+              <p className="text-muted-foreground dark:text-muted-foreground">
                 Connect with unique fashion pieces from verified sellers across the region
               </p>
             </div>
@@ -299,8 +328,8 @@ export default function Home() {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">
                 2
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Chat & Buy</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold text-foreground dark:text-foreground mb-4">Chat & Buy</h3>
+              <p className="text-muted-foreground dark:text-muted-foreground">
                 Message sellers, negotiate prices, and complete secure transactions with our built-in tools
               </p>
             </div>
@@ -309,8 +338,8 @@ export default function Home() {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">
                 3
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Receive & Enjoy</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl font-semibold text-foreground dark:text-foreground mb-4">Receive & Enjoy</h3>
+              <p className="text-muted-foreground dark:text-muted-foreground">
                 Get your items delivered safely and enjoy your new-to-you fashion finds
               </p>
             </div>
@@ -334,7 +363,7 @@ export default function Home() {
           {/* Our Story Section */}
           <div className="mb-16">
             <div className="text-center mb-12">
-              <h3 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl md:text-4xl font-bold text-foreground dark:text-foreground mb-4">
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Our Story</span>
               </h3>
             </div>
@@ -346,14 +375,24 @@ export default function Home() {
               <p>
                 But inside these glossy offices, I quickly realized that sustainability was never more than a marketing line. Every strategy was designed to fuel overconsumption, pushing customers to buy more, faster, with little thought for the impact it has.
               </p>
+<<<<<<< HEAD
+              <p className="font-semibold text-foreground dark:text-foreground">
+                I didn't want to be a part of that anymore.
+=======
               <p className="font-semibold text-foreground">
                 I didn&apos;t want to be a part of that anymore.
+>>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
               </p>
               <p>
                 At the same time, I saw the need and the massive opportunity to build something different for the Middle East. A platform that gives everyone a chance to have fun with fashion, no matter their budget.
               </p>
+<<<<<<< HEAD
+              <p className="font-semibold text-foreground dark:text-foreground">
+                That's why DOORA exists today.
+=======
               <p className="font-semibold text-foreground">
                 That&apos;s why DOORA exists today.
+>>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
               </p>
               <p>
                 I know sustainability isn&apos;t everyone&apos;s top priority, but at DOORA, it&apos;s at the heart of everything we do.
@@ -371,7 +410,7 @@ export default function Home() {
           {/* Our Values Section */}
           <div className="mb-16">
             <div className="text-center mb-12">
-              <h3 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl md:text-4xl font-bold text-foreground dark:text-foreground mb-4">
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Our Values</span>
               </h3>
             </div>
@@ -418,8 +457,13 @@ export default function Home() {
 
           {/* UN SDGs Section */}
           <div className="text-center">
+<<<<<<< HEAD
+            <h3 className="text-xl md:text-2xl font-bold text-foreground dark:text-foreground mb-6">
+              WE ALIGN WITH 6 OF THE UN'S SUSTAINABLE DEVELOPMENT GOALS
+=======
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
               WE ALIGN WITH 6 OF THE UN&apos;S SUSTAINABLE DEVELOPMENT GOALS
+>>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
             </h3>
             <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
               <Badge variant="outline" className="text-sm">No Poverty</Badge>
@@ -434,62 +478,9 @@ export default function Home() {
 
         <Separator />
 
-        {/* CTA Section */}
-        <section className="py-20 text-center bg-muted/30 rounded-2xl">
-          <div className="max-w-2xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-foreground mb-4 font-accent">
-              Ready to Join the Movement?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Be part of the circular fashion revolution. Join our community and be the first to know when we launch.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/register">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
-                  Join the Waitlist
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/about">
-                <Button size="lg" variant="outline" className="text-lg px-8">
-                  Learn More
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
 
         <Separator />
 
-        {/* Newsletter Section - The Doora Scoop */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-6xl font-bold mb-6 font-accent leading-tight">
-              <span className="text-foreground">The Doora</span>
-              <br />
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Scoop.</span>
-            </h2>
-            <h3 className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Sign up today to receive a blend of inspiration, insider stories, seller tips and 
-              sustainable discoveries directly to your inbox.
-            </h3>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto mb-6">
-              <input 
-                type="email" 
-                placeholder="name@email.com" 
-                className="flex-1 px-6 py-4 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-lg"
-              />
-              <Button className="bg-primary hover:bg-primary/90 px-8 py-4 rounded-full text-lg font-semibold">
-                Subscribe
-              </Button>
-            </div>
-            
-            <p className="text-base text-muted-foreground">
-              Join 5,000+ fashion lovers already in the know. Unsubscribe anytime.
-            </p>
-          </div>
-        </section>
 
         <Separator />
 
@@ -602,26 +593,26 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <Mail className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-medium text-foreground">Email</p>
-                      <p className="text-sm text-muted-foreground">hello@doora.com</p>
-                      <p className="text-sm text-muted-foreground">support@doora.com</p>
+                      <p className="font-medium text-foreground dark:text-foreground">Email</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground">hello@doora.com</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground">support@doora.com</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
                     <Phone className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-medium text-foreground">Phone</p>
-                      <p className="text-sm text-muted-foreground">+961 XX XXX XXX</p>
-                      <p className="text-xs text-muted-foreground">Available 9 AM - 6 PM (GMT+2)</p>
+                      <p className="font-medium text-foreground dark:text-foreground">Phone</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground">+961 XX XXX XXX</p>
+                      <p className="text-xs text-muted-foreground dark:text-muted-foreground">Available 9 AM - 6 PM (GMT+2)</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-medium text-foreground">Address</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="font-medium text-foreground dark:text-foreground">Address</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground">
                         Beirut, Lebanon<br />
                         (Exact address coming soon)
                       </p>
@@ -631,8 +622,8 @@ export default function Home() {
                   <div className="flex items-start gap-3">
                     <Clock className="h-5 w-5 text-primary mt-0.5" />
                     <div>
-                      <p className="font-medium text-foreground">Business Hours</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="font-medium text-foreground dark:text-foreground">Business Hours</p>
+                      <p className="text-sm text-muted-foreground dark:text-muted-foreground">
                         Monday - Friday: 9:00 AM - 6:00 PM<br />
                         Saturday: 10:00 AM - 4:00 PM<br />
                         Sunday: Closed
@@ -642,34 +633,6 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              {/* Quick Links */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Quick Links</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <MessageSquare className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Live Chat Support (Coming Soon)
-                    </span>
-                  </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <Users className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Community Forum (Coming Soon)
-                    </span>
-                  </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <Briefcase className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Business Partnerships
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>

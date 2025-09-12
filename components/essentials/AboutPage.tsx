@@ -11,8 +11,17 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="text-6xl font-bold text-primary mb-6 tracking-wider">
-            DOORA
+          <div className="mb-6">
+            <img 
+              src="/images/doora_logo_light.png" 
+              alt="DOORA" 
+              className="h-192 mx-auto dark:hidden"
+            />
+            <img 
+              src="/images/doora_logo_dark.png" 
+              alt="DOORA" 
+              className="h-192 mx-auto hidden dark:block"
+            />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             From Closet to Closet

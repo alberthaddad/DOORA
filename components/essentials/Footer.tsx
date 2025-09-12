@@ -6,11 +6,20 @@ export default function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <div className="text-2xl font-bold text-primary tracking-wider">
-              DOORA
+            <div>
+              <img 
+                src="/images/doora_logo_light.png" 
+                alt="DOORA" 
+                className="h-72 dark:hidden"
+              />
+              <img 
+                src="/images/doora_logo_dark.png" 
+                alt="DOORA" 
+                className="h-72 hidden dark:block"
+              />
             </div>
             <p className="text-muted-foreground text-sm max-w-xs">
               From closet to closet. Making secondhand feel premium and NOT second best!
@@ -21,36 +30,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Shop Links */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Shop</h3>
-            <div className="space-y-2 text-sm">
-              <Link 
-                href="/store" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Browse Items
-              </Link>
-              <Link 
-                href="/store?category=women" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Women
-              </Link>
-              <Link 
-                href="/store?category=men" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Men
-              </Link>
-              <Link 
-                href="/store?category=accessories" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Accessories
-              </Link>
-            </div>
-          </div>
 
           {/* Company Links */}
           <div className="space-y-4">
@@ -69,12 +48,6 @@ export default function Footer() {
                 Contact
               </Link>
               <Link 
-                href="/careers" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Careers
-              </Link>
-              <Link 
                 href="/sustainability" 
                 className="block text-muted-foreground hover:text-primary transition-colors"
               >
@@ -83,36 +56,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Support Links */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Support</h3>
-            <div className="space-y-2 text-sm">
-              <Link 
-                href="/help" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Help Center
-              </Link>
-              <Link 
-                href="/shipping" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Shipping Info
-              </Link>
-              <Link 
-                href="/returns" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Returns
-              </Link>
-              <Link 
-                href="/size-guide" 
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                Size Guide
-              </Link>
-            </div>
-          </div>
         </div>
 
         <Separator className="my-8" />
@@ -140,20 +83,6 @@ export default function Footer() {
           {/* Theme Toggle & App Download Links */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <div className="flex space-x-4">
-              <div className="flex items-center space-x-2 px-3 py-2 bg-background border border-border rounded-lg hover:bg-muted/50 transition-colors cursor-pointer">
-                <div className="text-xs">
-                  <div className="text-muted-foreground">Download on the</div>
-                  <div className="font-semibold text-foreground">App Store</div>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2 px-3 py-2 bg-background border border-border rounded-lg hover:bg-muted/50 transition-colors cursor-pointer">
-                <div className="text-xs">
-                  <div className="text-muted-foreground">Get it on</div>
-                  <div className="font-semibold text-foreground">Google Play</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

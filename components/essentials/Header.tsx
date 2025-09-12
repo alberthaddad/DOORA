@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Menu, X, Search, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
@@ -15,9 +15,16 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="text-2xl font-bold text-primary tracking-wider font-title">
-              DOORA
-            </div>
+            <img 
+              src="/images/doora_logo_light.png" 
+              alt="DOORA" 
+              className="h-4 dark:hidden"
+            />
+            <img 
+              src="/images/doora_logo_dark.png" 
+              alt="DOORA" 
+              className="h-4 hidden dark:block"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -39,22 +46,6 @@ export default function Header() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <Button variant="ghost" size="sm" className="p-2">
-              <Search className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="sm" className="p-2">
-              <Heart className="h-5 w-5" />
-            </Button>
-            <Link href="/login">
-              <Button variant="outline" size="sm">
-                Login
-              </Button>
-            </Link>
-            <Link href="/register">
-              <Button size="sm" className="bg-primary hover:bg-primary/90">
-                Sign Up
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -92,24 +83,6 @@ export default function Header() {
               </a>
               <div className="flex items-center space-x-2 px-3 py-2">
                 <ThemeToggle />
-                <Button variant="ghost" size="sm" className="p-2">
-                  <Search className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="sm" className="p-2">
-                  <Heart className="h-5 w-5" />
-                </Button>
-              </div>
-              <div className="px-3 py-2 space-y-2">
-                <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button variant="outline" size="sm" className="w-full">
-                    Login
-                  </Button>
-                </Link>
-                <Link href="/register" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
-                    Sign Up
-                  </Button>
-                </Link>
               </div>
             </div>
           </div>

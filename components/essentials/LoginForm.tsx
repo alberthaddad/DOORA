@@ -30,9 +30,16 @@ export default function LoginForm() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <div className="flex justify-center mb-4">
-            <div className="text-3xl font-bold text-primary tracking-wider">
-              DOORA
-            </div>
+            <img 
+              src="/images/doora_logo_light.png" 
+              alt="DOORA" 
+              className="h-96 dark:hidden"
+            />
+            <img 
+              src="/images/doora_logo_dark.png" 
+              alt="DOORA" 
+              className="h-96 hidden dark:block"
+            />
           </div>
           <CardTitle className="text-2xl text-center">Welcome back</CardTitle>
           <CardDescription className="text-center">

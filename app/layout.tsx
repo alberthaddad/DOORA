@@ -8,8 +8,13 @@ import Footer from "@/components/essentials/Footer";
 const bernoru = localFont({
   src: [
     {
-      path: "../fonts/bernoru/bernoru-blackultraexpanded.otf",
+      path: "../fonts/bernoru/Archivo-Black.ttf",
       weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../fonts/bernoru/bernoru-blackultraexpanded.otf",
+      weight: "950",
       style: "normal",
     },
   ],
