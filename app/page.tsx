@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowRight, Recycle, Shield, Users, Leaf, Heart, Star, Globe, Target, Mail, Phone, MapPin, Clock, MessageSquare, Briefcase } from "lucide-react";
+import { ArrowRight, Recycle, Shield, Users, Leaf, Heart, Star, Target, Mail, Phone, MapPin, Clock, MessageSquare, Briefcase } from "lucide-react";
 
 
 export default function Home() {
@@ -30,13 +30,13 @@ export default function Home() {
           <h1 className="text-4xl md:text-7xl font-bold mb-8 font-accent leading-tight">
             <span className="text-primary">Fast Fashion</span>
             <br />
-            <span className="text-foreground">Isn't Your</span>
+            <span className="text-foreground">Isn&apos;t Your</span>
             <br />
             <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Only Option.</span>
           </h1>
 
           <h2 className="text-xl md:text-3xl text-muted-foreground max-w-4xl mx-auto mb-4 leading-relaxed">
-            We're here to help you clear your closet, fill your wallet, and shop for unique pieces that feel like you. (Without the guilt)
+            We&apos;re here to help you clear your closet, fill your wallet, and shop for unique pieces that feel like you. (Without the guilt)
           </h2>
           
           <h2 className="text-xl md:text-3xl font-semibold max-w-4xl mx-auto mb-8 leading-relaxed">
@@ -326,7 +326,7 @@ export default function Home() {
               <span className="text-primary">About Doora</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Inspired by the Arabic word for "circle", Doora reflects our core mission 
+              Inspired by the Arabic word for &quot;circle&quot;, Doora reflects our core mission 
               to drive circular fashion and transform the way we buy and sell in the Middle East.
             </p>
           </div>
@@ -347,19 +347,19 @@ export default function Home() {
                 But inside these glossy offices, I quickly realized that sustainability was never more than a marketing line. Every strategy was designed to fuel overconsumption, pushing customers to buy more, faster, with little thought for the impact it has.
               </p>
               <p className="font-semibold text-foreground">
-                I didn't want to be a part of that anymore.
+                I didn&apos;t want to be a part of that anymore.
               </p>
               <p>
                 At the same time, I saw the need and the massive opportunity to build something different for the Middle East. A platform that gives everyone a chance to have fun with fashion, no matter their budget.
               </p>
               <p className="font-semibold text-foreground">
-                That's why DOORA exists today.
+                That&apos;s why DOORA exists today.
               </p>
               <p>
-                I know sustainability isn't everyone's top priority, but at DOORA, it's at the heart of everything we do.
+                I know sustainability isn&apos;t everyone&apos;s top priority, but at DOORA, it&apos;s at the heart of everything we do.
               </p>
               <p>
-                If building this platform means people across the region can earn extra income, declutter their closets, and contribute to a more conscious way of consuming fashion, then that's exactly what I'm here to do.
+                If building this platform means people across the region can earn extra income, declutter their closets, and contribute to a more conscious way of consuming fashion, then that&apos;s exactly what I&apos;m here to do.
               </p>
               <div className="text-center mt-8">
                 <p className="text-xl font-semibold text-primary italic">– Andrea Tegho –</p>
@@ -390,7 +390,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground leading-relaxed">
-                    DOORA is for everyone: all styles, all sizes, and most importantly, all budgets. Whether you're a thrifter, a vintage lover, or a luxury shopper, you will definitely find what you're looking for. Our user friendly app and web platform simplify buying and selling, even for those less tech-savvy.
+                    DOORA is for everyone: all styles, all sizes, and most importantly, all budgets. Whether you&apos;re a thrifter, a vintage lover, or a luxury shopper, you will definitely find what you&apos;re looking for. Our user friendly app and web platform simplify buying and selling, even for those less tech-savvy.
                   </p>
                 </CardContent>
               </Card>
@@ -419,7 +419,7 @@ export default function Home() {
           {/* UN SDGs Section */}
           <div className="text-center">
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
-              WE ALIGN WITH 6 OF THE UN'S SUSTAINABLE DEVELOPMENT GOALS
+              WE ALIGN WITH 6 OF THE UN&apos;S SUSTAINABLE DEVELOPMENT GOALS
             </h3>
             <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
               <Badge variant="outline" className="text-sm">No Poverty</Badge>
@@ -500,7 +500,7 @@ export default function Home() {
               <span className="text-primary">Get in Touch</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Have questions about Doora? Want to partner with us? We'd love to hear from you. 
+              Have questions about Doora? Want to partner with us? We&apos;d love to hear from you. 
               Our team is here to help you make the most of circular fashion.
             </p>
           </div>
@@ -512,7 +512,7 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle>Send us a Message</CardTitle>
                   <CardDescription>
-                    Fill out the form below and we'll get back to you as soon as possible.
+                    Fill out the form below and we&apos;ll get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
