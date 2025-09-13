@@ -99,9 +99,9 @@ export default function Home() {
           {/* Coming Soon Section */}
           <div className="mb-20">
             <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-primary mb-4 font-title uppercase">
-              WE ARE LAUNCHING SOON
-            </h2>
-            
+                WE ARE LAUNCHING SOON
+              </h2>
+              
             <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md lg:max-w-lg mx-auto mb-3">
               <div className="flex-1 relative">
                 <input 
@@ -124,15 +124,15 @@ export default function Home() {
                 )}
               </div>
               <Button className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-semibold whitespace-nowrap">
-                Notify Me
-              </Button>
-            </div>
-            
+                  Notify Me
+                </Button>
+              </div>
+              
             <p className="text-xs text-muted-foreground ">
               No spam, just updates.
             </p>
           </div>
-          
+
           <div className="pt-16 mb-8">
             <h1 
               ref={headlineRef}
@@ -166,9 +166,9 @@ export default function Home() {
                 src="/images/Homepage.png"
               />
             </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 lg:px-8">
 
@@ -177,7 +177,7 @@ export default function Home() {
           <div className="text-center mb-8">
              <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
                Easy Listings
-             </h2>
+            </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Clear out your closet in 3 simple steps
             </p>
@@ -190,7 +190,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Take a Picture</h3>
               <p className="text-muted-foreground">
-                (Make sure it's a good one)
+                (Make sure it&apos;s a good one)
               </p>
             </div>
 
@@ -213,7 +213,7 @@ export default function Home() {
                  Package your item
                  <br />
                  and someone will pick it up
-               </p>
+              </p>
             </div>
           </div>
         </section>
@@ -225,14 +225,14 @@ export default function Home() {
               Premium Shopping Experience
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Let's face it, the second hand shopping experience is not a pleasant one, it's either digging through a pile of clothes or trying to find the right instagram page.
+              Let&apos;s face it, the second hand shopping experience is not a pleasant one, it&apos;s either digging through a pile of clothes or trying to find the right instagram page.
             <br />
-            We're changing that.
+            We&apos;re changing that.
             <br />
             Ethical fashion has never been easier:
             </p>
           </div>
-          
+
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
             {/* Row 1 - Mobile: Cards 1 & 2, Desktop: Cards 1, 2, 3 */}
             <Marquee pauseOnHover className="[--duration:20s]">
@@ -288,7 +288,7 @@ export default function Home() {
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Track Your Orders</CardTitle>
                     </CardHeader>
-                  </Card>
+              </Card>
                 </div>
               ))}
             </div>
