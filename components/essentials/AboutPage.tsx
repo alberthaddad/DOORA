@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,14 +13,18 @@ export default function AboutPage() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6">
-            <img 
+            <Image 
               src="/images/doora_logo_light.png" 
               alt="DOORA" 
+              width={192}
+              height={192}
               className="h-192 mx-auto dark:hidden"
             />
-            <img 
+            <Image 
               src="/images/doora_logo_dark.png" 
               alt="DOORA" 
+              width={192}
+              height={192}
               className="h-192 mx-auto hidden dark:block"
             />
           </div>

@@ -1,29 +1,36 @@
 "use client";
 
 import { useEffect } from 'react';
-import { motion, useAnimation, useMotionValue } from 'motion/react';
+import { motion, useAnimation, useMotionValue } from 'framer-motion';
 
 import './CircularText.css';
 
-const getRotationTransition = (duration, from, loop = true) => ({
+const getRotationTransition = (duration: number, from: number, loop = true) => ({
   from,
   to: from + 360,
-  ease: 'linear',
+  ease: 'linear' as const,
   duration,
-  type: 'tween',
+  type: 'tween' as const,
   repeat: loop ? Infinity : 0
 });
 
-const getTransition = (duration, from) => ({
+const getTransition = (duration: number, from: number) => ({
   rotate: getRotationTransition(duration, from),
   scale: {
-    type: 'spring',
+    type: 'spring' as const,
     damping: 20,
     stiffness: 300
   }
 });
 
-const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className = '' }) => {
+interface CircularTextProps {
+  text: string;
+  spinDuration?: number;
+  onHover?: 'slowDown' | 'speedUp' | 'pause' | 'goBonkers' | null;
+  className?: string;
+}
+
+const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className = '' }: CircularTextProps) => {
   const letters = Array.from(text);
   const controls = useAnimation();
   const rotation = useMotionValue(0);
@@ -54,8 +61,8 @@ const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className 
         break;
       case 'pause':
         transitionConfig = {
-          rotate: { type: 'spring', damping: 20, stiffness: 300 },
-          scale: { type: 'spring', damping: 20, stiffness: 300 }
+          rotate: { type: 'spring' as const, damping: 20, stiffness: 300 },
+          scale: { type: 'spring' as const, damping: 20, stiffness: 300 }
         };
         scaleVal = 1;
         break;

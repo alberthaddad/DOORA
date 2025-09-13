@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -15,14 +16,18 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img 
+            <Image 
               src="/images/doora_logo_light.png" 
               alt="DOORA" 
+              width={16}
+              height={16}
               className="h-4 dark:hidden"
             />
-            <img 
+            <Image 
               src="/images/doora_logo_dark.png" 
               alt="DOORA" 
+              width={16}
+              height={16}
               className="h-4 hidden dark:block"
             />
           </Link>

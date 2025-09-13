@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,14 +31,18 @@ export default function LoginForm() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <div className="flex justify-center mb-4">
-            <img 
+            <Image 
               src="/images/doora_logo_light.png" 
               alt="DOORA" 
+              width={96}
+              height={96}
               className="h-96 dark:hidden"
             />
-            <img 
+            <Image 
               src="/images/doora_logo_dark.png" 
               alt="DOORA" 
+              width={96}
+              height={96}
               className="h-96 hidden dark:block"
             />
           </div>

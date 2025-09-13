@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -9,15 +10,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-<<<<<<< HEAD
-import { ArrowRight, Recycle, Shield, Users, Leaf, Heart, Star, Globe, Target, Mail, Phone, MapPin, Clock, MessageSquare, Briefcase } from "lucide-react";
 import { useEffect, useRef } from "react";
 import Iphone15Pro from "@/components/magicui/iphone-15-pro";
 import CircularText from "@/components/ui/CircularText";
 import TextType from "@/components/ui/TextType";
-=======
-import { ArrowRight, Recycle, Shield, Users, Leaf, Heart, Star, Target, Mail, Phone, MapPin, Clock, MessageSquare, Briefcase } from "lucide-react";
->>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
+import { ArrowRight, Recycle, Shield, Users, Leaf, Heart, Star, Target, Mail, Phone, MapPin, Clock } from "lucide-react";
 
 
 export default function Home() {
@@ -40,25 +37,29 @@ export default function Home() {
       }
     );
 
-    if (headlineRef.current) {
-      observer.observe(headlineRef.current);
+    const headlineElement = headlineRef.current;
+    const solutionElement = solutionRef.current;
+    const descriptionElement = descriptionRef.current;
+
+    if (headlineElement) {
+      observer.observe(headlineElement);
     }
-    if (solutionRef.current) {
-      observer.observe(solutionRef.current);
+    if (solutionElement) {
+      observer.observe(solutionElement);
     }
-    if (descriptionRef.current) {
-      observer.observe(descriptionRef.current);
+    if (descriptionElement) {
+      observer.observe(descriptionElement);
     }
 
     return () => {
-      if (headlineRef.current) {
-        observer.unobserve(headlineRef.current);
+      if (headlineElement) {
+        observer.unobserve(headlineElement);
       }
-      if (solutionRef.current) {
-        observer.unobserve(solutionRef.current);
+      if (solutionElement) {
+        observer.unobserve(solutionElement);
       }
-      if (descriptionRef.current) {
-        observer.unobserve(descriptionRef.current);
+      if (descriptionElement) {
+        observer.unobserve(descriptionElement);
       }
     };
   }, []);
@@ -68,17 +69,20 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-20 pb-32 px-4 min-h-screen flex items-center">
         <div className="max-w-6xl mx-auto text-center w-full">
-          
           <div className="mb-8 mt-8">
-            <img 
+            <Image 
               src="/images/doora_logo_light.png" 
               alt="DOORA" 
+              width={250}
+              height={250}
               className="max-h-20 md:max-h-32 w-auto mx-auto dark:hidden"
               style={{maxHeight: '250px'}}
             />
-            <img 
+            <Image 
               src="/images/doora_logo_dark.png" 
               alt="DOORA" 
+              width={250}
+              height={250}
               className="max-h-20 md:max-h-32 w-auto mx-auto hidden dark:block"
               style={{maxHeight: '250px'}}
             />
@@ -87,8 +91,6 @@ export default function Home() {
           <div className="font-accent text-sm md:text-base text-primary dark:text-primary mb-12 tracking-wide uppercase">
             FROM CLOSET TO CLOSET
           </div>
-          
-<<<<<<< HEAD
           {/* Circular Text */}
           <div className="mb-12">
             <CircularText
@@ -97,7 +99,6 @@ export default function Home() {
               spinDuration={20}
               className="mx-auto"
             />
-=======
           <h1 className="text-4xl md:text-7xl font-bold mb-8 font-accent leading-tight">
             <span className="text-primary">Fast Fashion</span>
             <br />
@@ -121,7 +122,6 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
->>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
           </div>
           
           {/* Coming Soon Section */}
@@ -162,7 +162,7 @@ export default function Home() {
               ref={headlineRef}
               className="text-3xl md:text-4xl font-black mb-6 font-title leading-tight text-primary dark:text-primary uppercase tracking-normal animate-fade-in-up"
             >
-              Fast Fashion Isn't
+              Fast Fashion Isn&apos;t
               <br />
               Your Only Option
             </h1>
@@ -179,7 +179,7 @@ export default function Home() {
             ref={descriptionRef}
             className="text-lg md:text-xl text-muted-foreground dark:text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up"
           >
-            Whether you're clearing out your closet or browsing for unique finds, our fashion resale platform brings buyers and sellers togther in one simple, secure space.
+            Whether you&apos;re clearing out your closet or browsing for unique finds, our fashion resale platform brings buyers and sellers togther in one simple, secure space.
           </h2>
           
           {/* iPhone 15 Component */}
@@ -191,7 +191,7 @@ export default function Home() {
               />
             </div>
           </div>
-
+          </div>
         </div>
       </section>
 
@@ -375,24 +375,14 @@ export default function Home() {
               <p>
                 But inside these glossy offices, I quickly realized that sustainability was never more than a marketing line. Every strategy was designed to fuel overconsumption, pushing customers to buy more, faster, with little thought for the impact it has.
               </p>
-<<<<<<< HEAD
               <p className="font-semibold text-foreground dark:text-foreground">
-                I didn't want to be a part of that anymore.
-=======
-              <p className="font-semibold text-foreground">
                 I didn&apos;t want to be a part of that anymore.
->>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
               </p>
               <p>
                 At the same time, I saw the need and the massive opportunity to build something different for the Middle East. A platform that gives everyone a chance to have fun with fashion, no matter their budget.
               </p>
-<<<<<<< HEAD
-              <p className="font-semibold text-foreground dark:text-foreground">
-                That's why DOORA exists today.
-=======
               <p className="font-semibold text-foreground">
                 That&apos;s why DOORA exists today.
->>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
               </p>
               <p>
                 I know sustainability isn&apos;t everyone&apos;s top priority, but at DOORA, it&apos;s at the heart of everything we do.
@@ -457,13 +447,8 @@ export default function Home() {
 
           {/* UN SDGs Section */}
           <div className="text-center">
-<<<<<<< HEAD
             <h3 className="text-xl md:text-2xl font-bold text-foreground dark:text-foreground mb-6">
-              WE ALIGN WITH 6 OF THE UN'S SUSTAINABLE DEVELOPMENT GOALS
-=======
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
               WE ALIGN WITH 6 OF THE UN&apos;S SUSTAINABLE DEVELOPMENT GOALS
->>>>>>> 4d474027643f0cc736cf530b5c1b6538f8ab194c
             </h3>
             <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
               <Badge variant="outline" className="text-sm">No Poverty</Badge>

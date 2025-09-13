@@ -6,7 +6,7 @@ import './TextType.css';
 
 interface TextTypeProps {
   text: string | string[];
-  as?: any;
+  as?: React.ElementType;
   typingSpeed?: number;
   initialDelay?: number;
   pauseDuration?: number;
@@ -23,7 +23,7 @@ interface TextTypeProps {
   onSentenceComplete?: (text: string, index: number) => void;
   startOnVisible?: boolean;
   reverseMode?: boolean;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 const TextType = ({

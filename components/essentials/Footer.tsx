@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import ThemeToggle from "./ThemeToggle";
@@ -10,14 +11,18 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <div>
-              <img 
+              <Image 
                 src="/images/doora_logo_light.png" 
                 alt="DOORA" 
+                width={72}
+                height={72}
                 className="h-72 dark:hidden"
               />
-              <img 
+              <Image 
                 src="/images/doora_logo_dark.png" 
                 alt="DOORA" 
+                width={72}
+                height={72}
                 className="h-72 hidden dark:block"
               />
             </div>

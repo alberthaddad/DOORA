@@ -11,7 +11,6 @@ interface ScrollStackProps {
   children: React.ReactNode;
   className?: string;
   itemDistance?: number;
-  useWindowScroll?: boolean;
 }
 
 export const ScrollStackItem = ({ children, itemClassName = '' }: ScrollStackItemProps) => (
@@ -23,8 +22,7 @@ export const ScrollStackItem = ({ children, itemClassName = '' }: ScrollStackIte
 const ScrollStack = ({
   children,
   className = '',
-  itemDistance = 200,
-  useWindowScroll = true
+  itemDistance = 200
 }: ScrollStackProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -66,7 +64,7 @@ const ScrollStack = ({
     };
 
     // Set up cards
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
       card.style.marginBottom = `${itemDistance}px`;
       card.style.willChange = 'transform';
       card.style.backfaceVisibility = 'hidden';
@@ -98,4 +96,4 @@ const ScrollStack = ({
 };
 
 export default ScrollStack;
-export { ScrollStack, ScrollStackItem };
+export { ScrollStack };
