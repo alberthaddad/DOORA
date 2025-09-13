@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import ThemeToggle from "./ThemeToggle";
 
 export default function Footer() {
   return (
@@ -14,25 +13,11 @@ export default function Footer() {
               <Image 
                 src="/images/doora_logo_light.png" 
                 alt="DOORA" 
-                width={72}
-                height={72}
-                className="h-72 dark:hidden"
-              />
-              <Image 
-                src="/images/doora_logo_dark.png" 
-                alt="DOORA" 
-                width={72}
-                height={72}
-                className="h-72 hidden dark:block"
+                width={192}
+                height={192}
+                className="h-6 w-auto"
               />
             </div>
-            <p className="text-muted-foreground text-sm max-w-xs">
-              From closet to closet. Making secondhand feel premium and NOT second best!
-            </p>
-            <p className="text-muted-foreground text-xs">
-              📍 Currently launching in Lebanon<br />
-              Expanding across the region soon
-            </p>
           </div>
 
 
@@ -85,10 +70,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Theme Toggle & App Download Links */}
-          <div className="flex items-center space-x-4">
-            <ThemeToggle />
-          </div>
         </div>
       </div>
     </footer>

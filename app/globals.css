@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
 
 /* Smooth scrolling for anchor links */
 html {
@@ -145,54 +144,6 @@ select {
   --sidebar-ring: oklch(0.65 0.15 25);
 }
 
-/* Dark Mode Colors */
-.dark {
-  /* Core Brand Colors - Dark Mode */
-  --background: oklch(0.2178 0 0);        /* Deep forest background #020803 */
-  --foreground: oklch(0.95 0.01 45);         /* Warm cream text #f5ede9 */
-  --primary: oklch(0.439 0.1032 35.98);            /* Brighter terracotta #e06b5f */
-  --primary-foreground: oklch(0.12 0.02 155); /* Dark forest on terracotta */
-
-  /* Secondary & Supporting Colors */
-  --secondary: oklch(0.45 0.08 145);         /* Muted sage green #4a6b4c */
-  --secondary-foreground: oklch(0.95 0.01 45); /* Cream text */
-  --accent: oklch(0.35 0.03 85);             /* Dark warm neutral #463f39 */
-  --accent-foreground: oklch(0.95 0.01 45);  /* Cream text */
-
-  /* UI Element Colors */
-  --card: oklch(0.18 0.015 155);             /* Slightly lighter than background #0c140f */
-  --card-foreground: oklch(0.95 0.01 45);    /* Cream text */
-  --popover: oklch(0.18 0.015 155);          /* Same as card */
-  --popover-foreground: oklch(0.95 0.01 45);
-
-  /* Interactive States */
-  --muted: oklch(0.35 0.03 85);              /* Dark warm neutral for muted elements */
-  --muted-foreground: oklch(0.75 0.02 45);   /* Lighter cream for muted text */
-  --border: oklch(0.25 0.02 155);            /* Subtle dark borders */
-  --input: oklch(0.22 0.02 155);             /* Slightly lighter for inputs */
-  --ring: oklch(0.68 0.16 25);               /* Terracotta focus rings */
-
-  /* Destructive Actions */
-  --destructive: oklch(0.65 0.25 15);        /* Bright warm red for destructive actions */
-  --destructive-foreground: oklch(0.12 0.02 155);
-
-  /* Chart Colors - Dark Mode Harmonious */
-  --chart-1: oklch(0.68 0.16 25);            /* Bright terracotta */
-  --chart-2: oklch(0.65 0.12 145);           /* Brighter sage green */
-  --chart-3: oklch(0.58 0.14 35);            /* Medium terracotta */
-  --chart-4: oklch(0.55 0.08 135);           /* Medium sage */
-  --chart-5: oklch(0.45 0.04 85);            /* Medium warm neutral */
-
-  /* Sidebar Colors */
-  --sidebar: oklch(0.15 0.015 155);          /* Slightly lighter than background */
-  --sidebar-foreground: oklch(0.95 0.01 45);
-  --sidebar-primary: oklch(0.68 0.16 25);    /* Bright terracotta */
-  --sidebar-primary-foreground: oklch(0.12 0.02 155);
-  --sidebar-accent: oklch(0.35 0.03 85);     /* Dark warm neutral */
-  --sidebar-accent-foreground: oklch(0.95 0.01 45);
-  --sidebar-border: oklch(0.25 0.02 155);
-  --sidebar-ring: oklch(0.68 0.16 25);
-}
 
 @layer base {
   * {
@@ -242,9 +193,6 @@ select {
   color: rgb(156 163 175);
 }
 
-.dark .placeholder-text {
-  color: rgb(107 114 128);
-}
 
 @keyframes marquee {
   from {

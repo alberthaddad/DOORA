@@ -21,7 +21,7 @@ export default function AppContent({ children }: AppContentProps) {
     // Make content visible right when loading screen starts fading
     const visibleTimer = setTimeout(() => {
       setIsVisible(true);
-    }, 2000); // Same time as loading screen fade starts
+    }, 2100); // Slight delay after loading screen fade starts
 
     return () => {
       clearTimeout(showTimer);

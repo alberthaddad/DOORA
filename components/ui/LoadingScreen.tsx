@@ -13,10 +13,10 @@ export default function LoadingScreen() {
       setIsVisible(false);
     }, 2000);
 
-    // Remove completely after fade out
+    // Remove completely after fade out - ensure it's fully gone
     const removeTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 2600); // Slightly longer to ensure complete fade
 
     return () => {
       clearTimeout(fadeTimer);
@@ -28,10 +28,13 @@ export default function LoadingScreen() {
 
   return (
     <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-500 ease-out ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-500 ease-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
-      style={{ backgroundColor: 'oklch(0.439 0.1032 35.98)' }}
+      style={{ 
+        backgroundColor: 'oklch(0.439 0.1032 35.98)',
+        pointerEvents: isVisible ? 'auto' : 'none'
+      }}
     >
       <div 
         className="animate-pulse"
