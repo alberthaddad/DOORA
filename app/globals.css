@@ -75,6 +75,24 @@ select {
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 :root {
@@ -85,37 +103,37 @@ select {
   --foreground: oklch(0.28 0.06 155);        /* Deep forest green #09311b */
   --primary: oklch(0.439 0.1032 35.98);            /* Warm terracotta #dc655f */
   --primary-foreground: oklch(0.98 0.005 45); /* Cream on terracotta */
-  
+
   /* Secondary & Supporting Colors */
   --secondary: oklch(0.72 0.08 145);         /* Sage green #85b286 */
   --secondary-foreground: oklch(0.28 0.06 155); /* Forest green text */
   --accent: oklch(0.85 0.02 85);             /* Warm neutral #d4cdbf */
   --accent-foreground: oklch(0.28 0.06 155); /* Forest green text */
-  
+
   /* UI Element Colors */
   --card: oklch(0.99 0.003 45);              /* Slightly off-white for cards */
   --card-foreground: oklch(0.28 0.06 155);   /* Forest green text */
   --popover: oklch(0.99 0.003 45);           /* Card color for popovers */
   --popover-foreground: oklch(0.28 0.06 155);
-  
+
   /* Interactive States */
   --muted: oklch(0.85 0.02 85);              /* Warm neutral for muted elements */
   --muted-foreground: oklch(0.45 0.04 155);  /* Lighter forest green for muted text */
   --border: oklch(0.85 0.02 85);             /* Subtle warm borders */
   --input: oklch(0.96 0.005 45);             /* Slightly darker than background */
   --ring: oklch(0.65 0.15 25);               /* Terracotta focus rings */
-  
+
   /* Destructive Actions */
   --destructive: oklch(0.62 0.22 15);        /* Warm red for destructive actions */
   --destructive-foreground: oklch(0.98 0.005 45);
-  
+
   /* Chart Colors - Harmonious with brand */
   --chart-1: oklch(0.65 0.15 25);            /* Primary terracotta */
   --chart-2: oklch(0.72 0.08 145);           /* Sage green */
   --chart-3: oklch(0.55 0.12 35);            /* Deeper terracotta */
   --chart-4: oklch(0.62 0.06 135);           /* Deeper sage */
   --chart-5: oklch(0.75 0.04 85);            /* Light warm neutral */
-  
+
   /* Sidebar Colors */
   --sidebar: oklch(0.96 0.005 45);           /* Slightly darker than background */
   --sidebar-foreground: oklch(0.28 0.06 155);
@@ -134,37 +152,37 @@ select {
   --foreground: oklch(0.95 0.01 45);         /* Warm cream text #f5ede9 */
   --primary: oklch(0.439 0.1032 35.98);            /* Brighter terracotta #e06b5f */
   --primary-foreground: oklch(0.12 0.02 155); /* Dark forest on terracotta */
-  
+
   /* Secondary & Supporting Colors */
   --secondary: oklch(0.45 0.08 145);         /* Muted sage green #4a6b4c */
   --secondary-foreground: oklch(0.95 0.01 45); /* Cream text */
   --accent: oklch(0.35 0.03 85);             /* Dark warm neutral #463f39 */
   --accent-foreground: oklch(0.95 0.01 45);  /* Cream text */
-  
+
   /* UI Element Colors */
   --card: oklch(0.18 0.015 155);             /* Slightly lighter than background #0c140f */
   --card-foreground: oklch(0.95 0.01 45);    /* Cream text */
   --popover: oklch(0.18 0.015 155);          /* Same as card */
   --popover-foreground: oklch(0.95 0.01 45);
-  
+
   /* Interactive States */
   --muted: oklch(0.35 0.03 85);              /* Dark warm neutral for muted elements */
   --muted-foreground: oklch(0.75 0.02 45);   /* Lighter cream for muted text */
   --border: oklch(0.25 0.02 155);            /* Subtle dark borders */
   --input: oklch(0.22 0.02 155);             /* Slightly lighter for inputs */
   --ring: oklch(0.68 0.16 25);               /* Terracotta focus rings */
-  
+
   /* Destructive Actions */
   --destructive: oklch(0.65 0.25 15);        /* Bright warm red for destructive actions */
   --destructive-foreground: oklch(0.12 0.02 155);
-  
+
   /* Chart Colors - Dark Mode Harmonious */
   --chart-1: oklch(0.68 0.16 25);            /* Bright terracotta */
   --chart-2: oklch(0.65 0.12 145);           /* Brighter sage green */
   --chart-3: oklch(0.58 0.14 35);            /* Medium terracotta */
   --chart-4: oklch(0.55 0.08 135);           /* Medium sage */
   --chart-5: oklch(0.45 0.04 85);            /* Medium warm neutral */
-  
+
   /* Sidebar Colors */
   --sidebar: oklch(0.15 0.015 155);          /* Slightly lighter than background */
   --sidebar-foreground: oklch(0.95 0.01 45);
@@ -175,7 +193,6 @@ select {
   --sidebar-border: oklch(0.25 0.02 155);
   --sidebar-ring: oklch(0.68 0.16 25);
 }
-
 
 @layer base {
   * {
@@ -227,4 +244,30 @@ select {
 
 .dark .placeholder-text {
   color: rgb(107 114 128);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
 }

@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/essentials/Header";
 import Footer from "@/components/essentials/Footer";
+import LoadingScreen from "@/components/ui/LoadingScreen";
+import AppContent from "@/components/ui/AppContent";
 
 // Custom fonts based on Doora design system
 const bernoru = localFont({
@@ -123,11 +125,10 @@ export default function RootLayout({
       <body
         className={`${bernoru.variable} ${neueMachina.variable} ${openSauce.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
-        <Header />
-        <main className="flex-1">
+        <LoadingScreen />
+        <AppContent>
           {children}
-        </main>
-        <Footer />
+        </AppContent>
       </body>
     </html>
   );
