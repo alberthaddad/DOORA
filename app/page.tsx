@@ -1,20 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useEffect, useRef, useState } from "react";
 import Iphone15Pro from "@/components/magicui/iphone-15-pro";
 import TextType from "@/components/ui/TextType";
 import { Marquee } from "@/components/magicui/marquee";
-import { ArrowRight, Recycle, Shield, Users, Leaf, Heart, Star, Target, Mail, Phone, MapPin, Clock } from "lucide-react";
 
 
 export default function Home() {
