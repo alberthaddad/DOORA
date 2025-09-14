@@ -3,45 +3,40 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
       // Show header when scrolling up, hide when scrolling down
-      if (currentScrollY < lastScrollY) {
+      if (currentScrollY < lastScrollY.current && currentScrollY > 0) {
+        // Scrolling up - show header
         setIsHeaderVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      } else if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+        // Scrolling down and past 50px - hide header
         setIsHeaderVisible(false);
       }
       
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
-    let ticking = false;
-    const requestTick = () => {
-      if (!ticking) {
-        requestAnimationFrame(handleScroll);
-        ticking = true;
-      }
-      ticking = false;
-    };
-
-    window.addEventListener('scroll', requestTick, { passive: true });
-    return () => window.removeEventListener('scroll', requestTick);
-  }, [lastScrollY]);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header 
-      className={`bg-background border-b border-border fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-        isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+      className={`bg-background/95 backdrop-blur-sm border-b border-border fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
+        isHeaderVisible 
+          ? 'translate-y-0 opacity-100' 
+          : '-translate-y-full opacity-0'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

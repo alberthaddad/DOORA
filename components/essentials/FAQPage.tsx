@@ -16,63 +16,519 @@ export default function FAQPage() {
         </div>
 
         {/* FAQ Content */}
-        <div className="space-y-6">
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="text-left">
-                What is DOORA?
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-muted-foreground">
-                  Content will be added here. This is a placeholder for the FAQ content.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+        <div className="space-y-8">
+          {/* GENERAL Section */}
+          <div>
+            <h2 className="text-2xl font-black mb-6 font-title leading-tight text-primary uppercase">
+              GENERAL
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="general-1">
+                <AccordionTrigger className="text-left">
+                  What is DOORA?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    DOORA is a secondhand fashion marketplace where you can buy and sell unused or preloved clothes. Think of it as your digital thrift store, connecting thousands of closets to others.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
 
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-left">
-                How do I get started?
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-muted-foreground">
-                  Content will be added here. This is a placeholder for the FAQ content.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+              <AccordionItem value="general-2">
+                <AccordionTrigger className="text-left">
+                  Is DOORA only for used items?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    No. Items don't have to be worn to be considered secondhand. Many sellers post brand-new pieces (sometimes even with tags). Each listing shows the product condition, and you can filter by condition (e.g. "new with tags") to shop only what you want.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
 
-            <AccordionItem value="item-3">
-              <AccordionTrigger className="text-left">
-                How does the selling process work?
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-muted-foreground">
-                  Content will be added here. This is a placeholder for the FAQ content.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+              <AccordionItem value="general-3">
+                <AccordionTrigger className="text-left">
+                  Where is DOORA available?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    We're starting in Lebanon first and will expand across MENA next!
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
 
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="text-left">
-                What are your fees?
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-muted-foreground">
-                  Content will be added here. This is a placeholder for the FAQ content.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+              <AccordionItem value="general-4">
+                <AccordionTrigger className="text-left">
+                  Who can use DOORA?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Anyone living in Lebanon can create an account and start buying or selling except for manufacturers since our goal is to give clothes a second life, not contribute to overproduction.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
 
-            <AccordionItem value="item-5">
-              <AccordionTrigger className="text-left">
-                How do I contact support?
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-muted-foreground">
-                  Content will be added here. This is a placeholder for the FAQ content.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+              <AccordionItem value="general-5">
+                <AccordionTrigger className="text-left">
+                  How can I use DOORA?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    DOORA is available as an iOS and Android app as well as a web version for desktop access.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="general-6">
+                <AccordionTrigger className="text-left">
+                  Why choose secondhand fashion?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Trends come back. They always do. Instead of buying them new, you can find them secondhand, saving money and keeping clothes in use, not in landfills.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="general-7">
+                <AccordionTrigger className="text-left">
+                  What can I buy & sell on DOORA?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    DOORA is currently focused on fashion: clothes, shoes, and accessories for women, men and kids. Soon we'll expand into new categories.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="general-8">
+                <AccordionTrigger className="text-left">
+                  Is DOORA safe to use?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    DOORA keeps both buyers and sellers protected. Payments are processed securely, orders are tracked, and if something goes wrong, our team steps in.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          {/* BUYING Section */}
+          <div>
+            <h2 className="text-2xl font-black mb-6 font-title leading-tight text-primary uppercase">
+              BUYING
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="buying-1">
+                <AccordionTrigger className="text-left">
+                  How do I buy an item?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-2">
+                    <p>Browse your personalized homepage or use our advanced filtering tools to find what you love.</p>
+                    <p>Tap "Buy Now", pay securely through us and wait for the seller to ship your order.</p>
+                    <p className="text-sm italic">(We always recommend you read the item description carefully before purchasing and message the seller if you have questions or would like additional pictures)</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="buying-2">
+                <AccordionTrigger className="text-left">
+                  What extra fees am I paying?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-2">
+                    <p>The following fees are calculated at checkout:</p>
+                    <ul className="list-disc list-inside space-y-1 ml-4">
+                      <li>A delivery fee ($4–$5)</li>
+                      <li>A small Buyer Protection fee (covers you if your order never arrives, is damaged, or is not as described).</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="buying-3">
+                <AccordionTrigger className="text-left">
+                  How much is delivery?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Between $4–$5 all over Lebanon.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="buying-4">
+                <AccordionTrigger className="text-left">
+                  How long does delivery take?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-2">
+                    <p>Sellers have up to 5 days to prepare your order (after which the order is automatically canceled)</p>
+                    <p>Once picked up, delivery usually takes 1–4 business days depending on your location.</p>
+                    <p>That means your order could arrive the same day, or up to 9 business days later at the latest. For express delivery, please contact our customer support.</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="buying-5">
+                <AccordionTrigger className="text-left">
+                  When do I pay?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    You pay at checkout. The seller only receives the payment after you confirm the item was delivered and is as described.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="buying-6">
+                <AccordionTrigger className="text-left">
+                  Are prices negotiable?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    It depends on the seller. Some listings are set as non-negotiable, while others allow negotiation. When price offers are possible, buyers and sellers can chat directly in the app to agree on a fair deal.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="buying-7">
+                <AccordionTrigger className="text-left">
+                  Can I return an item?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Yes, depending on the seller's return settings and Buyer Protection. (See Returns & Disputes below.)
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          {/* SELLING Section */}
+          <div>
+            <h2 className="text-2xl font-black mb-6 font-title leading-tight text-primary uppercase">
+              SELLING
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="selling-1">
+                <AccordionTrigger className="text-left">
+                  How do I list an item?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Sign up easily, upload photos, add details (brand, size, condition, price), and publish!
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="selling-2">
+                <AccordionTrigger className="text-left">
+                  Do I need to pay to list items?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Nope, listing items on DOORA is totally free!
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="selling-3">
+                <AccordionTrigger className="text-left">
+                  Are all types of images allowed?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Only real photos taken by you are allowed. No stock photos, AI generated images, or stolen pictures. Buyers need to see the real product they'll receive.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="selling-4">
+                <AccordionTrigger className="text-left">
+                  How do I send an order?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Once your item sells, you have 5 days to prepare it. When ready, simply request a pickup and a courier will then pick it up directly from you.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="selling-5">
+                <AccordionTrigger className="text-left">
+                  How do I package my item?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Once your item sells, you'll receive a prepaid shipping label by email. Print it, stick it on your package, and hand it to the courier.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="selling-6">
+                <AccordionTrigger className="text-left">
+                  How and when do I get paid?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    After the buyer confirms successful delivery and that everything is okay, your payment is transferred to your DOORA wallet. Payments will reflect in your wallet within minutes.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="selling-7">
+                <AccordionTrigger className="text-left">
+                  How can I make sure my item sells?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-2">
+                    <p>Take clear photos in natural light, ideally against a simple background (modeled photos work even better). Write a detailed description and include as much information as possible (even measurements). The more details, the more confident buyers feel.</p>
+                    <p>You can also use boosting to increase your item's visibility.</p>
+                    <p>Finally, always respond quickly to buyers who request extra photos or information.</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          {/* SHIPPING & DELIVERY Section */}
+          <div>
+            <h2 className="text-2xl font-black mb-6 font-title leading-tight text-primary uppercase">
+              SHIPPING & DELIVERY
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="shipping-1">
+                <AccordionTrigger className="text-left">
+                  Who handles delivery?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    We partner with trusted local couriers (Aramex).
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="shipping-2">
+                <AccordionTrigger className="text-left">
+                  Where do you deliver?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    All over Lebanon. Expansion across MENA is coming soon.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="shipping-3">
+                <AccordionTrigger className="text-left">
+                  Can I track my order?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Yes, you'll get tracking updates by email and in-app once the seller ships your item.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="shipping-4">
+                <AccordionTrigger className="text-left">
+                  Can I try on the item at delivery?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Unfortunately, couriers cannot wait at your door for safety and efficiency reasons.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="shipping-5">
+                <AccordionTrigger className="text-left">
+                  What if I miss the delivery?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    The courier will contact you to reschedule. You get up to 3 delivery attempts (call, message, or delivery). After that, the package is returned to the seller.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="shipping-6">
+                <AccordionTrigger className="text-left">
+                  Is DOORA's delivery sustainable?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    We're aware that traditional door-to-door delivery isn't sustainable enough. That's why we're working on greener, cheaper alternatives. In Lebanon, options are still limited, but as DOORA grows, we'll introduce more sustainable choices, including pickup and drop-off points.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          {/* PAYMENTS & FEES Section */}
+          <div>
+            <h2 className="text-2xl font-black mb-6 font-title leading-tight text-primary uppercase">
+              PAYMENTS & FEES
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="payments-1">
+                <AccordionTrigger className="text-left">
+                  How does money transfer work?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    The buyer pays at checkout. DOORA holds the money securely and only releases it to the in-app wallet of the seller after the buyer confirms everything is okay.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="payments-2">
+                <AccordionTrigger className="text-left">
+                  What payment methods are available?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Credit/debit cards, mobile wallets, and cash on delivery.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="payments-3">
+                <AccordionTrigger className="text-left">
+                  How can I use my DOORA wallet?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-2">
+                    <p>You can:</p>
+                    <ul className="list-disc list-inside space-y-1 ml-4">
+                      <li>Use it to buy items on DOORA</li>
+                      <li>Spend it on in-app boosters (promoting your items)</li>
+                      <li>Transfer it to your bank account or e-wallet</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="payments-4">
+                <AccordionTrigger className="text-left">
+                  What is the Buyer Protection Fee?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-2">
+                    <p>With every purchase, a small Buyer Protection fee is added. It covers the buyer if:</p>
+                    <ul className="list-disc list-inside space-y-1 ml-4">
+                      <li>The package never arrives</li>
+                      <li>The package is damaged in transit</li>
+                      <li>The item is not as described (counterfeit, wrong item, false description)</li>
+                    </ul>
+                    <p>In these cases, the buyer will be fully refunded (item price + delivery fee + Buyer Protection fee). Depending on the case, the buyer may need to return the item to the seller.</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          {/* RETURNS & DISPUTES Section */}
+          <div>
+            <h2 className="text-2xl font-black mb-6 font-title leading-tight text-primary uppercase">
+              RETURNS & DISPUTES
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="returns-1">
+                <AccordionTrigger className="text-left">
+                  Can I return an item on DOORA?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-3">
+                    <p>Every seller can choose to accept or refuse returns in their account setting:</p>
+                    <div className="space-y-2">
+                      <p><strong>If the seller accepts returns:</strong></p>
+                      <ul className="list-disc list-inside space-y-1 ml-4">
+                        <li>You can return for any reason (wrong size, not as expected, change of mind).</li>
+                        <li>Seller covers the return fee ($1 flat).</li>
+                        <li>You'll need to print a label and schedule a pickup.</li>
+                        <li>You'll then receive a refund (item price + buyer protection fee). Delivery fees are not refunded in this case.</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-2">
+                      <p><strong>If the seller does not accept returns:</strong> The order falls under Buyer Protection conditions. Which means that returns/refunds are only possible if the item is not as described (fake, damaged, wrong item). You may be asked to provide proof (photos, videos, or other details) to support your claim.</p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="returns-2">
+                <AccordionTrigger className="text-left">
+                  What if my item never arrives?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    You can open a dispute if your order is marked as delivered but is missing, and you'll get a full refund.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="returns-3">
+                <AccordionTrigger className="text-left">
+                  What if I receive a fake or counterfeit item?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    Report it immediately. Counterfeits are not tolerated on DOORA, and you'll be fully refunded.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="returns-4">
+                <AccordionTrigger className="text-left">
+                  What can I do if a return is not possible but I want a refund?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    If both buyer and seller agree, a partial refund can be arranged instead of a return + full refund. The buyer keeps the item and receives part of the money back, while the seller receives a partial payment. Refund amounts are calculated on a case-by-case basis and shown clearly during the dispute process.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="returns-5">
+                <AccordionTrigger className="text-left">
+                  How long do I have to report a problem?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-2">
+                    <p>You must report an issue within 2 days of being notified that your order was delivered.</p>
+                    <p><strong>Steps:</strong> Open your order conversation → Tap "I have an issue" → Follow the instructions.</p>
+                    <p>If you don't report a problem within 2 days (or confirm that "Everything is OK"), the order is finalized and the seller is paid.</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="returns-6">
+                <AccordionTrigger className="text-left">
+                  What happens after I report a problem?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-muted-foreground space-y-2">
+                    <p>The order is temporarily put on hold while our team reviews your case.</p>
+                    <p>Once resolved, either your money is refunded or the payment is released to the seller.</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="returns-7">
+                <AccordionTrigger className="text-left">
+                  What if a return and refund isn't possible?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground">
+                    If you can't return a product or get your money back, you can always resell the item on DOORA.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
 
         {/* Contact CTA */}

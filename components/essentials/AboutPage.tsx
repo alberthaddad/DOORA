@@ -17,7 +17,7 @@ export default function AboutPage() {
   ];
 
   const unSDGDataBottom = [
-    { image: "/images/E_WEB_10.png", title: "Reduced Inequalities", number: "10" },
+    { image: "/images/E_WEB_09.png", title: "Industry, Innovation and Infrastructure", number: "9" },
     { image: "/images/E_WEB_12.png", title: "Responsible Consumption", number: "12" },
     { image: "/images/E_WEB_13.png", title: "Climate Action", number: "13" },
   ];
@@ -126,14 +126,14 @@ export default function AboutPage() {
           </div>
 
           {/* UN SDGs Marquee Section */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" id="sustainability">
             <h3 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
               WE ALIGN WITH 6 OF THE UN&apos;S SUSTAINABLE DEVELOPMENT GOALS
             </h3>
           </div>
 
           {/* UN SDG Images Marquee - 2 Rows */}
-          <div className="mx-auto my-10 max-w-7xl">
+          <div className="relative mx-auto my-10 max-w-7xl">
             {/* Preload all images */}
             <div className="hidden">
               {[...unSDGDataTop, ...unSDGDataBottom].map((sdg, index) => (
@@ -185,6 +185,10 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+
+            {/* Fade Effects */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
           </div>
         </section>
 
