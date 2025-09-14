@@ -1,8 +1,6 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import Header from "@/components/essentials/Header";
-import Footer from "@/components/essentials/Footer";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import AppContent from "@/components/ui/AppContent";
 
