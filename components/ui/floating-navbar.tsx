@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useState as useStateHook } from "react";
 import { Menu, X } from "lucide-react";
 import {
   motion,
@@ -20,13 +19,13 @@ export const FloatingNav = ({
   navItems: {
     name: string;
     link: string;
-    icon?: JSX.Element;
+    icon?: React.ReactElement;
   }[];
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useStateHook(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
   // Cleanup timeout on unmount
@@ -40,7 +39,7 @@ export const FloatingNav = ({
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
         setVisible(false);

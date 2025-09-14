@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function FAQPage() {
@@ -82,12 +83,12 @@ export default function FAQPage() {
           <p className="text-muted-foreground mb-6">
             Can&apos;t find what you&apos;re looking for? Get in touch with our support team.
           </p>
-          <a
+          <Link
             href="/contact"
             className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
           >
             Contact Support
-          </a>
+          </Link>
         </div>
       </div>
     </div>
