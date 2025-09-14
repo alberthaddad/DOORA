@@ -219,3 +219,12 @@ select {
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration) linear infinite;
 }
+
+/* 3D Transform utilities for 3D Marquee */
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-distant {
+  perspective: 1000px;
+}

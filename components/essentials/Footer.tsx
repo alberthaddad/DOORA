@@ -29,7 +29,7 @@ export default function Footer() {
                 href="/about" 
                 className="block text-muted-foreground hover:text-primary transition-colors"
               >
-                About Us
+                About
               </Link>
               <Link 
                 href="/contact" 
@@ -38,11 +38,25 @@ export default function Footer() {
                 Contact
               </Link>
               <Link 
+                href="/faq" 
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                FAQ
+              </Link>
+              <Link 
                 href="/sustainability" 
                 className="block text-muted-foreground hover:text-primary transition-colors"
               >
                 Sustainability
               </Link>
+              <a 
+                href="https://www.instagram.com/doora.app?igsh=MWVxY2p2YjYxbHQwZg==" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                Instagram
+              </a>
             </div>
           </div>
 

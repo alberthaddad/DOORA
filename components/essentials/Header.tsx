@@ -66,13 +66,18 @@ export default function Header() {
               About
             </Link>
             <Link 
+              href="/faq" 
+              className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
+            >
+              FAQ
+            </Link>
+            <Link 
               href="/contact" 
               className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
             >
               Contact
             </Link>
           </nav>
-
 
           {/* Mobile Menu Button */}
           <Button
@@ -99,6 +104,13 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
+              </Link>
+              <Link
+                href="/faq"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                FAQ
               </Link>
               <Link
                 href="/contact"

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,8 +7,21 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Recycle, Globe, Users, Heart, Leaf, Target } from "lucide-react";
 import Link from "next/link";
+import { Marquee } from "@/components/magicui/marquee";
 
 export default function AboutPage() {
+  const unSDGDataTop = [
+    { image: "/images/E_WEB_01.png", title: "No Poverty", number: "1" },
+    { image: "/images/E_WEB_05.png", title: "Gender Equality", number: "5" },
+    { image: "/images/E_WEB_08.png", title: "Decent Work & Economic Growth", number: "8" },
+  ];
+
+  const unSDGDataBottom = [
+    { image: "/images/E_WEB_10.png", title: "Reduced Inequalities", number: "10" },
+    { image: "/images/E_WEB_12.png", title: "Responsible Consumption", number: "12" },
+    { image: "/images/E_WEB_13.png", title: "Climate Action", number: "13" },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -110,18 +125,65 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* UN SDGs Section */}
-          <div className="text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
+          {/* UN SDGs Marquee Section */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
               WE ALIGN WITH 6 OF THE UN&apos;S SUSTAINABLE DEVELOPMENT GOALS
             </h3>
-            <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
-              <Badge variant="outline" className="text-sm">No Poverty</Badge>
-              <Badge variant="outline" className="text-sm">Gender Equality</Badge>
-              <Badge variant="outline" className="text-sm">Decent Work & Economic Growth</Badge>
-              <Badge variant="outline" className="text-sm">Reduced Inequalities</Badge>
-              <Badge variant="outline" className="text-sm">Responsible Consumption</Badge>
-              <Badge variant="outline" className="text-sm">Climate Action</Badge>
+          </div>
+
+          {/* UN SDG Images Marquee - 2 Rows */}
+          <div className="mx-auto my-10 max-w-7xl">
+            {/* Preload all images */}
+            <div className="hidden">
+              {[...unSDGDataTop, ...unSDGDataBottom].map((sdg, index) => (
+                <Image
+                  key={`preload-${index}`}
+                  src={sdg.image}
+                  alt={`UN SDG ${sdg.number}: ${sdg.title}`}
+                  width={128}
+                  height={128}
+                  priority
+                />
+              ))}
+            </div>
+
+            {/* Row 1 - Moving Right to Left (Top 3 icons) */}
+            <Marquee pauseOnHover className="[--duration:20s] mb-4">
+              {unSDGDataTop.map((sdg, index) => (
+                <div key={`row1-${index}`} className="w-32 h-32 mx-4 relative">
+                  <Image
+                    src={sdg.image}
+                    alt={`UN SDG ${sdg.number}: ${sdg.title}`}
+                    fill
+                    className="object-cover rounded-lg"
+                    priority
+                  />
+                </div>
+              ))}
+            </Marquee>
+
+            {/* Row 2 - Moving Left to Right (Bottom 3 icons) - Custom Reverse */}
+            <div className="group flex overflow-hidden p-2 [--duration:20s] [--gap:1rem] [gap:var(--gap)]">
+              {Array(4).fill(0).map((_, i) => (
+                <div
+                  key={i}
+                  className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]"
+                  style={{ animationDirection: 'reverse' }}
+                >
+                  {unSDGDataBottom.map((sdg, index) => (
+                    <div key={`row2-${i}-${index}`} className="w-32 h-32 mx-4 relative">
+                      <Image
+                        src={sdg.image}
+                        alt={`UN SDG ${sdg.number}: ${sdg.title}`}
+                        fill
+                        className="object-cover rounded-lg"
+                        priority
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
         </section>
