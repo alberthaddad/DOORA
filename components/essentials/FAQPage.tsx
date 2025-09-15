@@ -40,7 +40,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    No. Items don't have to be worn to be considered secondhand. Many sellers post brand-new pieces (sometimes even with tags). Each listing shows the product condition, and you can filter by condition (e.g. "new with tags") to shop only what you want.
+                    No. Items don&apos;t have to be worn to be considered secondhand. Many sellers post brand-new pieces (sometimes even with tags). Each listing shows the product condition, and you can filter by condition (e.g. &ldquo;new with tags&rdquo;) to shop only what you want.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -51,7 +51,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    We're starting in Lebanon first and will expand across MENA next!
+                    We&apos;re starting in Lebanon first and will expand across MENA next!
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -95,7 +95,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    DOORA is currently focused on fashion: clothes, shoes, and accessories for women, men and kids. Soon we'll expand into new categories.
+                    DOORA is currently focused on fashion: clothes, shoes, and accessories for women, men and kids. Soon we&apos;ll expand into new categories.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -126,7 +126,7 @@ export default function FAQPage() {
                 <AccordionContent>
                   <div className="text-muted-foreground space-y-2">
                     <p>Browse your personalized homepage or use our advanced filtering tools to find what you love.</p>
-                    <p>Tap "Buy Now", pay securely through us and wait for the seller to ship your order.</p>
+                    <p>Tap &ldquo;Buy Now&rdquo;, pay securely through us and wait for the seller to ship your order.</p>
                     <p className="text-sm italic">(We always recommend you read the item description carefully before purchasing and message the seller if you have questions or would like additional pictures)</p>
                   </div>
                 </AccordionContent>
@@ -199,7 +199,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Yes, depending on the seller's return settings and Buyer Protection. (See Returns & Disputes below.)
+                    Yes, depending on the seller&apos;s return settings and Buyer Protection. (See Returns & Disputes below.)
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -240,7 +240,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Only real photos taken by you are allowed. No stock photos, AI generated images, or stolen pictures. Buyers need to see the real product they'll receive.
+                    Only real photos taken by you are allowed. No stock photos, AI generated images, or stolen pictures. Buyers need to see the real product they&apos;ll receive.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -262,7 +262,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Once your item sells, you'll receive a prepaid shipping label by email. Print it, stick it on your package, and hand it to the courier.
+                    Once your item sells, you&apos;ll receive a prepaid shipping label by email. Print it, stick it on your package, and hand it to the courier.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -285,7 +285,7 @@ export default function FAQPage() {
                 <AccordionContent>
                   <div className="text-muted-foreground space-y-2">
                     <p>Take clear photos in natural light, ideally against a simple background (modeled photos work even better). Write a detailed description and include as much information as possible (even measurements). The more details, the more confident buyers feel.</p>
-                    <p>You can also use boosting to increase your item's visibility.</p>
+                    <p>You can also use boosting to increase your item&apos;s visibility.</p>
                     <p>Finally, always respond quickly to buyers who request extra photos or information.</p>
                   </div>
                 </AccordionContent>
@@ -327,7 +327,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Yes, you'll get tracking updates by email and in-app once the seller ships your item.
+                    Yes, you&apos;ll get tracking updates by email and in-app once the seller ships your item.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -356,11 +356,11 @@ export default function FAQPage() {
 
               <AccordionItem value="shipping-6">
                 <AccordionTrigger className="text-left">
-                  Is DOORA's delivery sustainable?
+                  Is DOORA&apos;s delivery sustainable?
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    We're aware that traditional door-to-door delivery isn't sustainable enough. That's why we're working on greener, cheaper alternatives. In Lebanon, options are still limited, but as DOORA grows, we'll introduce more sustainable choices, including pickup and drop-off points.
+                    We&apos;re aware that traditional door-to-door delivery isn&apos;t sustainable enough. That&apos;s why we&apos;re working on greener, cheaper alternatives. In Lebanon, options are still limited, but as DOORA grows, we&apos;ll introduce more sustainable choices, including pickup and drop-off points.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -448,8 +448,8 @@ export default function FAQPage() {
                       <ul className="list-disc list-inside space-y-1 ml-4">
                         <li>You can return for any reason (wrong size, not as expected, change of mind).</li>
                         <li>Seller covers the return fee ($1 flat).</li>
-                        <li>You'll need to print a label and schedule a pickup.</li>
-                        <li>You'll then receive a refund (item price + buyer protection fee). Delivery fees are not refunded in this case.</li>
+                        <li>You&apos;ll need to print a label and schedule a pickup.</li>
+                        <li>You&apos;ll then receive a refund (item price + buyer protection fee). Delivery fees are not refunded in this case.</li>
                       </ul>
                     </div>
                     <div className="space-y-2">
@@ -465,7 +465,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    You can open a dispute if your order is marked as delivered but is missing, and you'll get a full refund.
+                    You can open a dispute if your order is marked as delivered but is missing, and you&apos;ll get a full refund.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -476,7 +476,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Report it immediately. Counterfeits are not tolerated on DOORA, and you'll be fully refunded.
+                    Report it immediately. Counterfeits are not tolerated on DOORA, and you&apos;ll be fully refunded.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -499,8 +499,8 @@ export default function FAQPage() {
                 <AccordionContent>
                   <div className="text-muted-foreground space-y-2">
                     <p>You must report an issue within 2 days of being notified that your order was delivered.</p>
-                    <p><strong>Steps:</strong> Open your order conversation → Tap "I have an issue" → Follow the instructions.</p>
-                    <p>If you don't report a problem within 2 days (or confirm that "Everything is OK"), the order is finalized and the seller is paid.</p>
+                    <p><strong>Steps:</strong> Open your order conversation → Tap &ldquo;I have an issue&rdquo; → Follow the instructions.</p>
+                    <p>If you don&apos;t report a problem within 2 days (or confirm that &ldquo;Everything is OK&rdquo;), the order is finalized and the seller is paid.</p>
                   </div>
                 </AccordionContent>
               </AccordionItem>
@@ -519,11 +519,11 @@ export default function FAQPage() {
 
               <AccordionItem value="returns-7">
                 <AccordionTrigger className="text-left">
-                  What if a return and refund isn't possible?
+                  What if a return and refund isn&apos;t possible?
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    If you can't return a product or get your money back, you can always resell the item on DOORA.
+                    If you can&apos;t return a product or get your money back, you can always resell the item on DOORA.
                   </p>
                 </AccordionContent>
               </AccordionItem>
