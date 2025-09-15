@@ -32,13 +32,13 @@ export default function ActivityPage() {
               <Card>
                 <CardContent className="p-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                      <Package className="h-5 w-5 text-green-600" />
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{backgroundColor: 'oklch(0.2354 0.0041 84.59)'}}>
+                      <Package className="h-5 w-5" style={{color: 'oklch(0.2354 0.0041 84.59)'}} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
                         <h3 className="font-medium text-foreground">Item Sold</h3>
-                        <Badge className="bg-green-100 text-green-800">+$45.00</Badge>
+                        <Badge style={{backgroundColor: 'oklch(0.2354 0.0041 84.59)', color: 'oklch(0.2354 0.0041 84.59)'}}>+$45.00</Badge>
                       </div>
                       <p className="text-sm text-muted-foreground mt-1">
                         Vintage Stussy T-Shirt sold to @fashion_lover

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { useEffect, useRef, useState } from "react";
 import Iphone15Pro from "@/components/magicui/iphone-15-pro";
 import TextType from "@/components/ui/TextType";
@@ -61,9 +62,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Hero Section */}
-      <section className="pt-20 pb-32 px-4 lg:px-8 min-h-screen flex items-center">
+      <section className="pt-2 pb-20 px-4 lg:px-8 h-[85vh] flex items-center bg-muted/30">
         <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full">
-          <div className="mb-8 lg:mb-0 mt-16">
+          <div className="mb-8 lg:mb-0 mt-32">
             {/* Mobile/Tablet logos */}
             <Image 
               src="/images/doora_logo_light.png" 
@@ -121,11 +122,16 @@ export default function Home() {
                 </Button>
               </div>
               
-            <p className="text-xs text-muted-foreground ">
+            <p className="text-xs" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
               No spam, just updates.
             </p>
           </div>
+        </div>
+      </section>
 
+      {/* Content Section without background */}
+      <section className="py-20 px-4 lg:px-8 -mt-12">
+        <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full">
           <div className="pt-16 mb-8">
             <h1 
               ref={headlineRef}
@@ -140,15 +146,16 @@ export default function Home() {
               ref={solutionRef}
               className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 animate-fade-in-up"
             >
-              Second hand is the solution.
+              Secondhand Is The Solution
             </p>
           </div>
 
-          <h2 
+            <h2 
             ref={descriptionRef}
-            className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl lg:max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in-up"
+            className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in-up"
+            style={{color: 'oklch(0.2354 0.0041 84.59)'}}
           >
-            Whether you&apos;re clearing out your closet or browsing for unique finds, our fashion resale platform brings buyers and sellers togther in one simple, secure space.
+            Whether you&apos;re clearing out your closet or browsing for unique finds, our fashion resale platform connects thousands of closets in one simple, secure space.
           </h2>
           
           {/* iPhone 15 Component */}
@@ -166,12 +173,12 @@ export default function Home() {
       <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 lg:px-8">
 
         {/* How It Works */}
-        <section className="py-2">
+        <section className="py-2 -mt-16">
           <div className="text-center mb-8">
              <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
                Easy Listings
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
               Clear out your closet in 3 simple steps
             </p>
           </div>
@@ -181,9 +188,9 @@ export default function Home() {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">
                 1
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Take a Picture</h3>
-              <p className="text-muted-foreground">
-                (Make sure it&apos;s a good one)
+              <h3 className="text-xl font-semibold text-foreground mb-4">Take a Pic'</h3>
+              <p style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                Make sure it&apos;s a good one
               </p>
             </div>
 
@@ -191,9 +198,9 @@ export default function Home() {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">
                 2
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Set Your Price</h3>
-              <p className="text-muted-foreground">
-                And fill out a few more fields
+              <h3 className="text-xl font-semibold text-foreground mb-4">Price It</h3>
+              <p style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                And add a product description
               </p>
             </div>
 
@@ -201,11 +208,10 @@ export default function Home() {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">
                 3
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Sold!</h3>
-               <p className="text-muted-foreground mb-12">
-                 Package your item
-                 <br />
-                 and someone will pick it up
+              <h3 className="text-xl font-semibold text-foreground mb-4">Sell it</h3>
+               <p className="mb-12" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                 We'll notify you when it sells
+
               </p>
             </div>
           </div>
@@ -217,12 +223,10 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
               Premium Shopping Experience
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Let&apos;s face it, the second hand shopping experience is not a pleasant one, it&apos;s either digging through a pile of clothes or trying to find the right instagram page.
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            Let's face it, secondhand shopping can be overwhelming. Digging through piles of clothes, scrolling through endless reseller pages....We're changing that. 
             <br />
-            We&apos;re changing that.
-            <br />
-            Ethical fashion has never been easier:
+            Sustainable shopping has never been easier:
             </p>
           </div>
 
@@ -303,6 +307,13 @@ export default function Home() {
 
             <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
             <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+          </div>
+          
+          {/* Title underneath Marquee */}
+          <div className="text-center mt-32 mb-8">
+            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary">
+              DOORA Is Designed To Make Secondhand Feel Premium And NOT Second Best!
+            </p>
           </div>
         </section>
 

@@ -48,7 +48,7 @@ export default function Header() {
               alt="DOORA" 
               width={96}
               height={96}
-              className="h-3 w-auto"
+              className="h-4 w-auto"
             />
           </Link>
 
@@ -58,7 +58,7 @@ export default function Header() {
               href="/about" 
               className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
             >
-              About
+              About Us
             </Link>
             <Link 
               href="/faq" 
@@ -98,7 +98,7 @@ export default function Header() {
                 className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                About Us
               </Link>
               <Link
                 href="/faq"

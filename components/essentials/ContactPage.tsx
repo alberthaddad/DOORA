@@ -46,7 +46,7 @@ export default function ContactPage() {
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
             Get in Touch
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
             Have questions about Doora? Want to partner with us? We&apos;d love to hear from you. 
             Our team is here to help you make the most of circular fashion.
           </p>
@@ -161,8 +161,8 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">hello@doora.com</p>
-                    <p className="text-sm text-muted-foreground">support@doora.com</p>
+                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>hello@doora.com</p>
+                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>support@doora.com</p>
                   </div>
                 </div>
                 
@@ -170,8 +170,8 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-sm text-muted-foreground">+961 XX XXX XXX</p>
-                    <p className="text-xs text-muted-foreground">Available 9 AM - 6 PM (GMT+2)</p>
+                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>+961 XX XXX XXX</p>
+                    <p className="text-xs" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>Available 9 AM - 6 PM (GMT+2)</p>
                   </div>
                 </div>
                 
@@ -179,7 +179,7 @@ export default function ContactPage() {
                   <MapPin className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Address</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
                       Beirut, Lebanon<br />
                       (Exact address coming soon)
                     </p>
@@ -190,7 +190,7 @@ export default function ContactPage() {
                   <Clock className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Business Hours</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
                       Saturday: 10:00 AM - 4:00 PM<br />
                       Sunday: Closed
@@ -208,21 +208,21 @@ export default function ContactPage() {
               <CardContent className="space-y-3">
                 <div className="flex items-center gap-3">
                   <MessageSquare className="h-4 w-4 text-primary" />
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-sm hover:text-primary transition-colors" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
                     Live Chat Support
                   </a>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <Users className="h-4 w-4 text-primary" />
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-sm hover:text-primary transition-colors" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
                     Community Forum
                   </a>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <Briefcase className="h-4 w-4 text-primary" />
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#" className="text-sm hover:text-primary transition-colors" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
                     Business Partnerships
                   </a>
                 </div>
@@ -280,7 +280,7 @@ export default function ContactPage() {
           <h2 className="text-3xl font-bold text-foreground mb-4">
             Interested in Partnering with Us?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-lg max-w-2xl mx-auto mb-8" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
             We&apos;re always looking for like-minded businesses and organizations to collaborate with. 
             Whether you&apos;re a delivery service, payment provider, or sustainability advocate, 
             let&apos;s explore how we can work together.

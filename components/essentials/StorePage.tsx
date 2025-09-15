@@ -133,7 +133,7 @@ export default function StorePage() {
             <h1 className="text-4xl font-bold text-foreground mb-4">
               Browse Sustainable Fashion
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg style={{color: 'oklch(0.2354 0.0041 84.59)'}} max-w-2xl mx-auto">
               Discover unique, pre-loved fashion pieces from trusted sellers. 
               Every purchase helps reduce fashion waste and supports circular economy.
             </p>
@@ -141,7 +141,7 @@ export default function StorePage() {
 
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 style={{color: 'oklch(0.2354 0.0041 84.59)'}}" />
             <Input
               type="text"
               placeholder="Search for items, brands, or sellers..."
@@ -291,7 +291,7 @@ export default function StorePage() {
             <h2 className="text-2xl font-semibold text-foreground">
               {filteredItems.length} Items Found
             </h2>
-            <p className="text-muted-foreground">
+            <p className="style={{color: 'oklch(0.2354 0.0041 84.59)'}}">
               {selectedCategory !== "All" && `in ${selectedCategory}`}
               {searchQuery && ` matching "${searchQuery}"`}
             </p>
@@ -308,7 +308,7 @@ export default function StorePage() {
             <Card key={item.id} className="group hover:shadow-lg transition-shadow">
               <div className="relative overflow-hidden">
                 <div className="aspect-square bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground">Image Placeholder</span>
+                  <span className="style={{color: 'oklch(0.2354 0.0041 84.59)'}}">Image Placeholder</span>
                 </div>
                 <div className="absolute top-3 right-3 flex gap-2">
                   <Button
@@ -336,7 +336,7 @@ export default function StorePage() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="font-medium text-foreground line-clamp-1">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.brand}</p>
+                      <p className="text-sm style={{color: 'oklch(0.2354 0.0041 84.59)'}}">{item.brand}</p>
                     </div>
                     <Badge variant="outline" className="text-xs">
                       {item.condition}
@@ -345,12 +345,12 @@ export default function StorePage() {
                   
                   <div className="flex items-center gap-2">
                     <span className="text-lg font-semibold text-foreground">${item.price}</span>
-                    <span className="text-sm text-muted-foreground line-through">
+                    <span className="text-sm style={{color: 'oklch(0.2354 0.0041 84.59)'}} line-through">
                       ${item.originalPrice}
                     </span>
                   </div>
                   
-                  <div className="flex justify-between items-center text-sm text-muted-foreground">
+                  <div className="flex justify-between items-center text-sm style={{color: 'oklch(0.2354 0.0041 84.59)'}}">
                     <span>Size {item.size}</span>
                     <div className="flex items-center gap-1">
                       <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
@@ -358,7 +358,7 @@ export default function StorePage() {
                     </div>
                   </div>
                   
-                  <p className="text-sm text-muted-foreground">by {item.seller}</p>
+                  <p className="text-sm style={{color: 'oklch(0.2354 0.0041 84.59)'}}">by {item.seller}</p>
                 </div>
               </CardContent>
               
@@ -390,7 +390,7 @@ export default function StorePage() {
           <h2 className="text-3xl font-bold text-foreground mb-4">
             Want to See More?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-lg style={{color: 'oklch(0.2354 0.0041 84.59)'}} max-w-2xl mx-auto mb-8">
             Sign up for free to access our full marketplace, save favorites, 
             and get personalized recommendations based on your style.
           </p>
@@ -408,17 +408,17 @@ export default function StorePage() {
           </div>
           
           <div className="mt-8 flex justify-center">
-            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+            <div className="flex items-center space-x-4 text-sm style={{color: 'oklch(0.2354 0.0041 84.59)'}}">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span className="w-2 h-2 rounded-full" style={{backgroundColor: 'oklch(0.2354 0.0041 84.59)'}}></span>
                 Free to join
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span className="w-2 h-2 rounded-full" style={{backgroundColor: 'oklch(0.2354 0.0041 84.59)'}}></span>
                 Secure payments
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span className="w-2 h-2 rounded-full" style={{backgroundColor: 'oklch(0.2354 0.0041 84.59)'}}></span>
                 Verified sellers
               </span>
             </div>
