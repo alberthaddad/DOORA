@@ -6,13 +6,20 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Mobile: Quick Links and Follow Us side by side */}
           <div className="md:hidden grid grid-cols-2 gap-8">
             {/* Quick Links */}
             <div className="space-y-4 text-center">
               <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Quick Links</h3>
               <div className="space-y-2 text-sm">
+                <Link 
+                  href="/" 
+                  className="block hover:text-primary transition-colors"
+                  style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                >
+                  Home
+                </Link>
                 <Link 
                   href="/about" 
                   className="block hover:text-primary transition-colors"
@@ -113,6 +120,13 @@ export default function Footer() {
               <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Quick Links</h3>
               <div className="space-y-2 text-sm">
                 <Link 
+                  href="/" 
+                  className="block hover:text-primary transition-colors"
+                  style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                >
+                  Home
+                </Link>
+                <Link 
                   href="/about" 
                   className="block hover:text-primary transition-colors"
                   style={{color: 'oklch(0.2354 0.0041 84.59)'}}
@@ -190,31 +204,32 @@ export default function Footer() {
                 </a>
               </div>
             </div>
+
+            {/* Newsletter - Desktop */}
+            <div className="space-y-4 text-center">
+              <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Newsletter</h3>
+              <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                Sign up to our newsletter so that you never miss exciting new features and news.
+              </p>
+              <div className="flex flex-col gap-3">
+                <div className="relative">
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email"
+                    className="w-full max-w-lg px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
+                  />
+                </div>
+                <button className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-semibold whitespace-nowrap text-white">
+                  Subscribe
+                </button>
+              </div>
+            </div>
           </div>
 
         </div>
 
         <Separator className="my-6" />
 
-        {/* Newsletter Section - Desktop */}
-        <div className="hidden md:block text-center mb-8">
-          <h3 className="text-xl font-black font-title leading-tight text-primary uppercase mb-4">Newsletter</h3>
-          <p className="text-sm mb-4" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            Sign up to our newsletter so that you never miss exciting new features and news.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
-            <div className="flex-1 relative">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
-              />
-            </div>
-            <button className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-semibold whitespace-nowrap text-white">
-              Subscribe
-            </button>
-          </div>
-        </div>
 
         {/* Newsletter Section - Mobile only */}
         <div className="md:hidden text-center mb-8">
@@ -236,7 +251,6 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator className="my-6" />
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">

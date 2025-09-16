@@ -86,7 +86,7 @@ export default function Home() {
             />
           </div>
           
-          <div className="font-accent text-sm md:text-lg lg:text-xl text-primary mb-20 tracking-wide uppercase">
+          <div className="font-accent text-sm md:text-lg lg:text-xl text-primary mb-20 lg:mt-8 tracking-wide uppercase">
             FROM CLOSET TO CLOSET
           </div>
 
@@ -175,7 +175,7 @@ export default function Home() {
         {/* How It Works */}
         <section className="py-2 -mt-16">
           <div className="text-center mb-8">
-             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
+             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-3 font-title leading-tight text-primary uppercase">
                Easy Listings
             </h2>
             <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
@@ -235,7 +235,7 @@ export default function Home() {
             <Marquee pauseOnHover className="[--duration:20s]">
               <Card className="w-64 mx-4">
                 <CardHeader className="flex items-center justify-center h-full">
-                  <CardTitle className="text-center">AI-powered Trend Forecasting</CardTitle>
+                  <CardTitle className="text-center">Smart Trend Forecasting</CardTitle>
                 </CardHeader>
               </Card>
 

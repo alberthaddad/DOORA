@@ -3,7 +3,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import { AlertTriangle, Globe, Users, ShoppingBag, Zap } from "lucide-react";
+import { Trash2, Globe, Frown, ShoppingBag, RotateCcw } from "lucide-react";
 
 export function ProblemCards() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -69,7 +69,6 @@ export function ProblemCards() {
         {active && typeof active === "object" ? (
           <div className="fixed inset-0 flex items-center justify-center z-[100] p-4">
             <motion.div
-              layoutId={`card-${active.title}-${id}`}
               ref={ref}
               className="w-full max-w-2xl bg-background border border-border rounded-2xl overflow-hidden shadow-2xl"
               initial={{ scale: 0.9, opacity: 0 }}
@@ -125,42 +124,38 @@ export function ProblemCards() {
       </AnimatePresence>
       <div className="max-w-5xl mx-auto w-full space-y-2 px-4 lg:px-8">
         {cards.map((card, index) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
+          <div
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
             className="p-4 flex items-center justify-between hover:bg-muted/30 rounded-lg cursor-pointer transition-colors group"
           >
             <div className="flex items-center gap-3 flex-1 max-w-[calc(100%-60px)]">
-              <motion.div layoutId={`image-${card.title}-${id}`} className="flex-shrink-0">
+              <div className="flex-shrink-0">
                 <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   {card.icon}
                 </div>
-              </motion.div>
+              </div>
               <div className="flex-1 min-w-0">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
+                <h3
                   className="font-semibold text-base mb-1 truncate"
                   style={{color: 'oklch(0.2354 0.0041 84.59)'}}
                 >
                   {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
+                </h3>
+                <p
                   className="text-sm truncate"
                   style={{color: 'oklch(0.2354 0.0041 84.59)'}}
                 >
                   {card.description}
-                </motion.p>
+                </p>
               </div>
             </div>
-            <motion.button
-              layoutId={`button-${card.title}-${id}`}
+            <button
               className="w-8 h-8 rounded-full font-bold bg-primary hover:bg-primary/90 text-white transition-colors flex-shrink-0 flex items-center justify-center ml-2"
             >
-              &gt;
-            </motion.button>
-          </motion.div>
+              ❯
+            </button>
+          </div>
         ))}
       </div>
     </>
@@ -202,29 +197,27 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    title: "Fast Fashion Overconsumption",
-    description: "Waste and environmental damage",
-    icon: <AlertTriangle className="h-7 w-7 text-primary" />,
-    ctaText: ">",
+    title: "Overconsumption",
+    description: "Environmental damage",
+    icon: <Trash2 className="h-7 w-7 text-primary" />,
+    ctaText: "❯",
     ctaLink: "#",
     content: () => {
       return (
         <div className="space-y-4">
           <p>
-            The fashion world is full of contradictions. We have more than enough clothes to dress the next eight generations, yet fast fashion dominates. Fueled by fleeting microtrends, this cycle of overconsumption creates immense waste and environmental damage.
-          </p>
+          Fast fashion's relentless cycle of microtrends encourages buying new clothes frequently and discarding them just as fast. This model creates Millions of tons of clothing that are sent to landfills each year, contributing to a global waste crisis.          </p>
           <p>
-            Every year, millions of tons of clothing end up in landfills, while the fashion industry continues to produce at an unsustainable rate. The environmental cost is staggering, from water pollution to carbon emissions.
-          </p>
+          From massive water usage and textile dyeing that contaminates waterways, to immense carbon emissions from manufacturing and transport, this constant demand for new, cheap clothes comes with a staggering environmental price tag.          </p>
         </div>
       );
     },
   },
   {
     title: "Trends vs Quality",
-    description: "Timeless pieces exist, waiting to be found",
-    icon: <Zap className="h-7 w-7 text-primary" />,
-    ctaText: ">",
+    description: "Shifting culture",
+    icon: <RotateCcw className="h-7 w-7 text-primary" />,
+    ctaText: "❯",
     ctaLink: "#",
     content: () => {
       return (
@@ -232,37 +225,32 @@ const cards = [
           <p>
             Trends are a cycle, not a race. The styles of the past always come back, but the quality doesn&apos;t. We believe in keeping great clothes in circulation because the timeless, well-made pieces you&apos;re looking for already exist, they&apos;re just waiting to be found.
           </p>
-          <p>
-            Instead of chasing every microtrend, we focus on pieces that stand the test of time. Quality over quantity, style over speed.
-          </p>
         </div>
       );
     },
   },
   {
-    title: "Regional Market Gap",
-    description: "Middle East lacks sustainable options",
+    title: "Regional Market",
+    description: "No sustainable options",
     icon: <Globe className="h-7 w-7 text-primary" />,
-    ctaText: ">",
+    ctaText: "❯",
     ctaLink: "#",
     content: () => {
       return (
         <div className="space-y-4">
           <p>
-            Despite being one of the world&apos;s fastest-growing fashion markets, the Middle East remains underserved when it comes to sustainable fashion options.
-          </p>
+          Despite being one of the world's fastest-growing fashion markets, the Middle East remains underserved when it comes to sustainable shopping options. While other regions have embraced secondhand fashion, the Middle East has been left behind.          </p>
           <p>
-            While other regions have embraced secondhand fashion, the Middle East has been left behind, with limited options for conscious consumers who want to make sustainable choices.
-          </p>
+          When local markets lack sustainable and affordable alternatives, fast fashion's low prices and wide availability make it the only practical option. It's a normal and rational response for people to choose the most accessible and cost-effective solution available to them. The real issue lies not with the consumer's decision, but with the lack of developed, sustainable solutions within the market.          </p>
         </div>
       );
     },
   },
   {
-    title: "Fragmented Experience",
-    description: "Broken secondhand shopping ecosystem",
-    icon: <Users className="h-7 w-7 text-primary" />,
-    ctaText: ">",
+    title: "Poor Experience",
+    description: "Secondhand shopping",
+    icon: <Frown className="h-7 w-7 text-primary" />,
+    ctaText: "❯",
     ctaLink: "#",
     content: () => {
       return (
@@ -271,7 +259,7 @@ const cards = [
             The secondhand shopping experience is fragmented and frustrating for both buyers and sellers. Thousands of resellers struggle with processes, visibility, and lack of business features, while buyers struggle with trust, filtering, and shopping experience.
           </p>
           <p>
-            From Instagram pages to scattered marketplaces, there&apos;s no unified platform that makes secondhand shopping easy, trustworthy, and enjoyable for everyone involved.
+          This disjointed experience has prevented secondhand culture from growing, keeping it a niche hobby instead of a norm.
           </p>
         </div>
       );
@@ -281,7 +269,7 @@ const cards = [
     title: "The Fast Fashion Fallback",
     description: "Convenience over conscience",
     icon: <ShoppingBag className="h-7 w-7 text-primary" />,
-    ctaText: ">",
+    ctaText: "❯",
     ctaLink: "#",
     content: () => {
       return (

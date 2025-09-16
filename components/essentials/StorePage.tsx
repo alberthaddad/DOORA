@@ -153,7 +153,7 @@ export default function StorePage() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Filters and Controls */}
         <div className="flex flex-col lg:flex-row gap-4 mb-8">
           {/* Category Tabs */}

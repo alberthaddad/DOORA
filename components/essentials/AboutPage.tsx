@@ -5,10 +5,75 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Recycle, Globe, Users, Heart, Leaf, Target } from "lucide-react";
+import { Recycle, Zap, Users, Heart, Leaf, Target, Globe, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { Marquee } from "@/components/magicui/marquee";
 import { ProblemCards } from "./ProblemCards";
+import { Timeline } from "@/components/ui/timeline";
+
+function OurStoryTimeline() {
+  const data = [
+    {
+      title: "Beginning",
+      content: (
+        <div>
+          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            At 17, I launched two small businesses focused on upcycling and thrifting, driven by the belief that clothes deserve a second life. Later, I moved to Paris to pursue my dream of working in the fashion industry, joining leading fashion groups to learn how the industry truly operates.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Reality",
+      content: (
+        <div>
+          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            But inside these glossy offices, I quickly realized that sustainability was never more than a marketing line. Every strategy was designed to fuel overconsumption, pushing customers to buy more, faster, with little thought for the impact it has.
+          </p>
+          <p className="mb-12 text-sm md:text-base leading-relaxed font-semibold text-primary italic">
+            I didn&apos;t want to be a part of that anymore.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Vision",
+      content: (
+        <div>
+          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            At the same time, I saw the need and the massive opportunity to build something different for the Middle East. A platform that gives everyone a chance to have fun with fashion, no matter their budget.
+          </p>
+          <p className="mb-12 text-sm md:text-base leading-relaxed font-semibold text-primary italic">
+            That&apos;s why DOORA exists today.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Mission",
+      content: (
+        <div>
+          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            I know sustainability isn&apos;t everyone&apos;s top priority, but at DOORA, it&apos;s at the heart of everything we do.
+          </p>
+          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            If building this platform means people across the region can easily earn extra income while contributing to a more conscious way of consuming fashion, then that&apos;s exactly what I&apos;m here to do.
+          </p>
+          <div className="text-right mt-8 pt-6 border-t border-primary/20">
+            <p className="text-lg font-semibold text-primary italic">– Andrea Tegho</p>
+            <p className="text-sm mt-1 font-medium" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>Founder & CEO</p>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <div className="relative w-full overflow-clip">
+      <Timeline data={data} />
+    </div>
+  );
+}
 
 export default function AboutPage() {
   const unSDGDataTop = [
@@ -26,9 +91,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-20 px-4 bg-muted/30 flex items-center justify-center min-h-[300px]">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xl max-w-2xl mx-auto mb-8" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+          <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
             Inspired by the Arabic word for &quot;circle&quot;, DOORA reflects our core mission 
             to drive circular fashion in the Middle East.
           </p>
@@ -37,7 +102,7 @@ export default function AboutPage() {
 
       <div className="max-w-6xl mx-auto px-4">
         {/* About Doora Section */}
-        <section className="pt-8 pb-20">
+        <section className="py-12">
 
           {/* Our Values Section */}
           <div className="mb-16">
@@ -49,12 +114,14 @@ export default function AboutPage() {
             
             <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
               <Card className="border-l-4 border-l-primary">
-                <CardHeader className="pb-3">
-                  <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-2 sm:gap-3">
+                <CardHeader className="pb-3 text-center lg:text-left">
+                  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-3">
                     <div className="p-2 sm:p-3 bg-primary/10 rounded-lg">
                       <Target className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                     </div>
-                    <CardTitle className="text-lg sm:text-xl">ACCESSIBILITY</CardTitle>
+                    <div className="flex flex-col items-center lg:items-start gap-1">
+                      <CardTitle className="text-base sm:text-lg">ACCESSIBILITY</CardTitle>
+                    </div>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
@@ -66,13 +133,13 @@ export default function AboutPage() {
               </Card>
 
               <Card className="border-l-4 border-l-secondary">
-                <CardHeader className="pb-3">
-                  <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-2 sm:gap-3">
+                <CardHeader className="pb-3 text-center lg:text-left">
+                  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-3">
                     <div className="p-2 sm:p-3 bg-secondary/10 rounded-lg">
                       <Leaf className="h-6 w-6 sm:h-8 sm:w-8 text-secondary" />
                     </div>
                     <div className="flex flex-col items-center lg:items-start gap-1">
-                      <CardTitle className="text-lg sm:text-xl">SUSTAINABILITY</CardTitle>
+                      <CardTitle className="text-base sm:text-lg">SUSTAINABILITY</CardTitle>
                       <Badge variant="secondary" className="text-xs">obviously</Badge>
                     </div>
                   </div>
@@ -176,12 +243,11 @@ export default function AboutPage() {
         <Separator />
 
         {/* The Problem We're Solving Section */}
-        <section className="py-16">
+        <section className="py-12">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">The Problem We&apos;re Solving</h2>
             <p className="text-lg max-w-3xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-              Despite being one of the world&apos;s fastest-growing fashion markets, the Middle East 
-              remains underserved when it comes to sustainable fashion options.
+              The fashion world is full of contradictions. We have more than enough clothes to dress the next eight generations, yet fast fashion dominates.
             </p>
           </div>
 
@@ -190,7 +256,7 @@ export default function AboutPage() {
           </div>
           
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-black text-primary uppercase mb-4">Our Solutions</h3>
+            <h3 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">Our Solutions</h3>
           </div>
           
           <div className="grid grid-cols-2 gap-4">
@@ -199,17 +265,17 @@ export default function AboutPage() {
                   <Recycle className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h4 className="font-semibold text-foreground">Circular Fashion</h4>
                   <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Extending the life of fashion items
+                    Extending the life of clothes and reducing waste
                   </p>
                 </CardContent>
               </Card>
               
               <Card className="text-center">
                 <CardContent className="pt-6">
-                  <Globe className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h4 className="font-semibold text-foreground">Regional Focus</h4>
+                  <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h4 className="font-semibold text-foreground">Easy Process</h4>
                   <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Built for the MENA market
+                    We handle everything from delivery to payments
                   </p>
                 </CardContent>
               </Card>
@@ -219,7 +285,7 @@ export default function AboutPage() {
                   <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h4 className="font-semibold text-foreground">Community</h4>
                   <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Connecting fashion lovers
+                    Connecting fashion lovers across the region
                   </p>
                 </CardContent>
               </Card>
@@ -229,50 +295,16 @@ export default function AboutPage() {
                   <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h4 className="font-semibold text-foreground">Trust</h4>
                   <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Safe and secure platform
+                    Safe, secure and transparent platform
                   </p>
                 </CardContent>
               </Card>
             </div>
         </section>
 
-        {/* Our Story Section - Moved to End */}
+        {/* Our Story Section - Timeline */}
         <section className="py-20">
-          <div className="mb-16">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
-                Our Story
-              </h3>
-            </div>
-
-            <div className="max-w-4xl lg:max-w-6xl mx-auto space-y-6 text-lg lg:text-xl leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-              <p>
-                At 17, I launched two small businesses focused on upcycling and thrifting, driven by the belief that clothes deserve a second life. Later, I moved to Paris to pursue my dream of working in the fashion industry, joining leading fashion groups to learn how the industry truly operates.
-              </p>
-              <p>
-                But inside these glossy offices, I quickly realized that sustainability was never more than a marketing line. Every strategy was designed to fuel overconsumption, pushing customers to buy more, faster, with little thought for the impact it has.
-              </p>
-              <p className="font-semibold text-foreground">
-                I didn&apos;t want to be a part of that anymore.
-              </p>
-              <p>
-                At the same time, I saw the need and the massive opportunity to build something different for the Middle East. A platform that gives everyone a chance to have fun with fashion, no matter their budget.
-              </p>
-              <p className="font-semibold text-foreground">
-                That&apos;s why DOORA exists today.
-              </p>
-              <p>
-                I know sustainability isn&apos;t everyone&apos;s top priority, but at DOORA, it&apos;s at the heart of everything we do.
-              </p>
-              <p>
-                If building this platform means people across the region can earn extra income, declutter their closets, and contribute to a more conscious way of consuming fashion, then that&apos;s exactly what I&apos;m here to do.
-              </p>
-              <div className="text-center mt-8">
-                <p className="text-xl font-semibold text-primary italic">– Andrea Tegho –</p>
-                <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>Founder & CEO</p>
-              </div>
-            </div>
-          </div>
+          <OurStoryTimeline />
         </section>
       </div>
     </div>

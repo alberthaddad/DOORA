@@ -55,6 +55,12 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
+              href="/" 
+              className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
+            >
+              Home
+            </Link>
+            <Link 
               href="/about" 
               className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
             >
@@ -93,6 +99,13 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-border">
             <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link
+                href="/"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
               <Link
                 href="/about"
                 className="block px-3 py-2 text-foreground hover:text-primary transition-colors font-medium cursor-pointer"

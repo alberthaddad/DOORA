@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Phone, MapPin, Clock, MessageSquare, Users, Briefcase } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageSquare, Users, Briefcase, Instagram, Linkedin, Youtube } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -47,13 +47,12 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            Have questions about Doora? Want to partner with us? We&apos;d love to hear from you. 
-            Our team is here to help you make the most of circular fashion.
+            Questions? Ideas? We'd love to chat. Reach out to the team anytime.
           </p>
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">
@@ -75,6 +74,7 @@ export default function ContactPage() {
                         placeholder="Your full name"
                         value={formData.name}
                         onChange={(e) => handleInputChange("name", e.target.value)}
+                        className="text-xm placeholder:text-xs"
                         required
                       />
                     </div>
@@ -87,6 +87,7 @@ export default function ContactPage() {
                         placeholder="your.email@example.com"
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
+                        className="text-xs placeholder:text-xs"
                         required
                       />
                     </div>
@@ -95,7 +96,7 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <Label htmlFor="category">Category</Label>
                     <Select value={formData.category} onValueChange={(value) => handleInputChange("category", value)}>
-                      <SelectTrigger>
+                      <SelectTrigger className="text-xs">
                         <SelectValue placeholder="Select a category" />
                       </SelectTrigger>
                       <SelectContent>
@@ -118,6 +119,7 @@ export default function ContactPage() {
                       placeholder="Brief subject of your message"
                       value={formData.subject}
                       onChange={(e) => handleInputChange("subject", e.target.value)}
+                      className="text-xs placeholder:text-xs"
                       required
                     />
                   </div>
@@ -130,6 +132,7 @@ export default function ContactPage() {
                       rows={6}
                       value={formData.message}
                       onChange={(e) => handleInputChange("message", e.target.value)}
+                      className="text-xs placeholder:text-xs"
                       required
                     />
                   </div>
@@ -161,8 +164,7 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>hello@doora.com</p>
-                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>support@doora.com</p>
+                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>doora.app@gmail.com</p>
                   </div>
                 </div>
                 
@@ -170,8 +172,7 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>+961 XX XXX XXX</p>
-                    <p className="text-xs" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>Available 9 AM - 6 PM (GMT+2)</p>
+                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>+961 70 998 701</p>
                   </div>
                 </div>
                 
@@ -180,8 +181,7 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium text-foreground">Address</p>
                     <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                      Beirut, Lebanon<br />
-                      (Exact address coming soon)
+                      Beirut, Lebanon
                     </p>
                   </div>
                 </div>
@@ -192,81 +192,57 @@ export default function ContactPage() {
                     <p className="font-medium text-foreground">Business Hours</p>
                     <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 10:00 AM - 4:00 PM<br />
-                      Sunday: Closed
+                      Saturday - Sunday: Closed
                     </p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
 
-            {/* Quick Links */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Quick Links</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <MessageSquare className="h-4 w-4 text-primary" />
-                  <a href="#" className="text-sm hover:text-primary transition-colors" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Live Chat Support
-                  </a>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <Users className="h-4 w-4 text-primary" />
-                  <a href="#" className="text-sm hover:text-primary transition-colors" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Community Forum
-                  </a>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <Briefcase className="h-4 w-4 text-primary" />
-                  <a href="#" className="text-sm hover:text-primary transition-colors" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Business Partnerships
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* FAQ Section */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Frequently Asked Questions</CardTitle>
-                <CardDescription>
-                  Find quick answers to common questions
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-medium text-foreground mb-1">How does Doora work?</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Doora connects buyers and sellers of secondhand fashion items through our secure platform.
-                  </p>
-                </div>
-                
-                <Separator />
-                
-                <div>
-                  <h4 className="font-medium text-foreground mb-1">Is it safe to buy/sell on Doora?</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Yes! We use secure payment processing and have verification systems in place.
-                  </p>
-                </div>
-                
-                <Separator />
-                
-                <div>
-                  <h4 className="font-medium text-foreground mb-1">What regions do you serve?</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Currently launching in Lebanon, with plans to expand across the MENA region.
-                  </p>
-                </div>
-                
                 <div className="pt-2">
-                  <Button variant="outline" size="sm" className="w-full">
-                    View All FAQs
-                  </Button>
+                  <p className="font-medium text-foreground mb-3">Follow Us</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    <a 
+                      href="https://www.instagram.com/doora.app?igsh=MWVxY2p2YjYxbHQwZg==" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+                      aria-label="Follow us on Instagram"
+                    >
+                      <Instagram className="h-4 w-4 text-primary" />
+                      <span className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>Instagram</span>
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/company/dooraapp" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+                      aria-label="Follow us on LinkedIn"
+                    >
+                      <Linkedin className="h-4 w-4 text-primary" />
+                      <span className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>LinkedIn</span>
+                    </a>
+                    <a 
+                      href="https://www.youtube.com/@DOORA_app" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+                      aria-label="Follow us on YouTube"
+                    >
+                      <Youtube className="h-4 w-4 text-primary" />
+                      <span className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>YouTube</span>
+                    </a>
+                    <a 
+                      href="https://www.tiktok.com/@doora_app?_t=ZN-8xeBR8u0Lzy&_r=1" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+                      aria-label="Follow us on TikTok"
+                    >
+                      <svg className="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                      </svg>
+                      <span className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>TikTok</span>
+                    </a>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -286,12 +262,6 @@ export default function ContactPage() {
             let&apos;s explore how we can work together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Business Partnerships
-            </Button>
-            <Button size="lg" variant="outline">
-              Press & Media Kit
-            </Button>
           </div>
         </section>
       </div>
