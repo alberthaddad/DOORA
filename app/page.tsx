@@ -188,7 +188,7 @@ export default function Home() {
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">
                 1
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Take a Pic'</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Take a Pic&apos;</h3>
               <p style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
                 Make sure it&apos;s a good one
               </p>
@@ -210,7 +210,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Sell it</h3>
                <p className="mb-12" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                 We'll notify you when it sells
+                 We&apos;ll notify you when it sells
 
               </p>
             </div>
@@ -224,7 +224,7 @@ export default function Home() {
               Premium Shopping Experience
             </h2>
             <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            Let's face it, secondhand shopping can be overwhelming. Digging through piles of clothes, scrolling through endless reseller pages....We're changing that. 
+            Let&apos;s face it, secondhand shopping can be overwhelming. Digging through piles of clothes, scrolling through endless reseller pages....We&apos;re changing that. 
             <br />
             Sustainable shopping has never been easier:
             </p>

@@ -644,7 +644,7 @@ export default function FAQPage() {
         {/* Contact CTA */}
         <div className="mt-20 text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20">
           <h2 className="text-2xl font-bold text-foreground mb-4">
-            Can't find what you're looking for?
+            Can&apos;t find what you&apos;re looking for?
           </h2>
           <p className="mb-6 faq-text-color max-w-2xl mx-auto">
             Get in touch with our support team.

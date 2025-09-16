@@ -230,7 +230,7 @@ const cards = [
       return (
         <div className="space-y-4">
           <p>
-            Trends are a cycle, not a race. The styles of the past always come back, but the quality doesn't. We believe in keeping great clothes in circulation because the timeless, well-made pieces you're looking for already exist, they're just waiting to be found.
+            Trends are a cycle, not a race. The styles of the past always come back, but the quality doesn&apos;t. We believe in keeping great clothes in circulation because the timeless, well-made pieces you&apos;re looking for already exist, they&apos;re just waiting to be found.
           </p>
           <p>
             Instead of chasing every microtrend, we focus on pieces that stand the test of time. Quality over quantity, style over speed.
@@ -249,7 +249,7 @@ const cards = [
       return (
         <div className="space-y-4">
           <p>
-            Despite being one of the world's fastest-growing fashion markets, the Middle East remains underserved when it comes to sustainable fashion options.
+            Despite being one of the world&apos;s fastest-growing fashion markets, the Middle East remains underserved when it comes to sustainable fashion options.
           </p>
           <p>
             While other regions have embraced secondhand fashion, the Middle East has been left behind, with limited options for conscious consumers who want to make sustainable choices.
@@ -271,7 +271,7 @@ const cards = [
             The secondhand shopping experience is fragmented and frustrating for both buyers and sellers. Thousands of resellers struggle with processes, visibility, and lack of business features, while buyers struggle with trust, filtering, and shopping experience.
           </p>
           <p>
-            From Instagram pages to scattered marketplaces, there's no unified platform that makes secondhand shopping easy, trustworthy, and enjoyable for everyone involved.
+            From Instagram pages to scattered marketplaces, there&apos;s no unified platform that makes secondhand shopping easy, trustworthy, and enjoyable for everyone involved.
           </p>
         </div>
       );
@@ -287,10 +287,10 @@ const cards = [
       return (
         <div className="space-y-4">
           <p>
-            This is why people turn to fast fashion: it's a cheap and convenient option when no other solution exists in the region. Until now.
+            This is why people turn to fast fashion: it&apos;s a cheap and convenient option when no other solution exists in the region. Until now.
           </p>
           <p>
-            When sustainable options are hard to find, expensive, or unreliable, fast fashion becomes the default choice. We're changing that by making sustainable fashion accessible, affordable, and enjoyable.
+            When sustainable options are hard to find, expensive, or unreliable, fast fashion becomes the default choice. We&apos;re changing that by making sustainable fashion accessible, affordable, and enjoyable.
           </p>
         </div>
       );
