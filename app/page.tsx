@@ -96,7 +96,7 @@ export default function Home() {
                 WE ARE LAUNCHING SOON
               </h2>
               
-            <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md lg:max-w-lg mx-auto mb-3">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center sm:items-center max-w-md lg:max-w-lg mx-auto mb-3">
               <div className="flex-1 relative">
                 <input 
                   type="email" 
