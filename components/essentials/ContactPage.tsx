@@ -47,7 +47,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            Questions? Ideas? We'd love to chat. Reach out to the team anytime.
+            Questions? Ideas? We&apos;d love to chat. Reach out to the team anytime.
           </p>
         </div>
       </section>

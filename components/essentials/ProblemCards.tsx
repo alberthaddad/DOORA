@@ -206,7 +206,7 @@ const cards = [
       return (
         <div className="space-y-4">
           <p>
-          Fast fashion's relentless cycle of microtrends encourages buying new clothes frequently and discarding them just as fast. This model creates Millions of tons of clothing that are sent to landfills each year, contributing to a global waste crisis.          </p>
+          Fast fashion&apos;s relentless cycle of microtrends encourages buying new clothes frequently and discarding them just as fast. This model creates Millions of tons of clothing that are sent to landfills each year, contributing to a global waste crisis.          </p>
           <p>
           From massive water usage and textile dyeing that contaminates waterways, to immense carbon emissions from manufacturing and transport, this constant demand for new, cheap clothes comes with a staggering environmental price tag.          </p>
         </div>
@@ -239,9 +239,9 @@ const cards = [
       return (
         <div className="space-y-4">
           <p>
-          Despite being one of the world's fastest-growing fashion markets, the Middle East remains underserved when it comes to sustainable shopping options. While other regions have embraced secondhand fashion, the Middle East has been left behind.          </p>
+          Despite being one of the world&apos;s fastest-growing fashion markets, the Middle East remains underserved when it comes to sustainable shopping options. While other regions have embraced secondhand fashion, the Middle East has been left behind.          </p>
           <p>
-          When local markets lack sustainable and affordable alternatives, fast fashion's low prices and wide availability make it the only practical option. It's a normal and rational response for people to choose the most accessible and cost-effective solution available to them. The real issue lies not with the consumer's decision, but with the lack of developed, sustainable solutions within the market.          </p>
+          When local markets lack sustainable and affordable alternatives, fast fashion&apos;s low prices and wide availability make it the only practical option. It&apos;s a normal and rational response for people to choose the most accessible and cost-effective solution available to them. The real issue lies not with the consumer&apos;s decision, but with the lack of developed, sustainable solutions within the market.          </p>
         </div>
       );
     },
