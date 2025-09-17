@@ -311,7 +311,7 @@ export default function Home() {
           
           {/* Title underneath Marquee */}
           <div className="text-center mt-32 mb-8">
-            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary">
+            <p className="text-2xl md:text-4xl lg:text-4xl font-black mb-6 font-title leading-tight text-primary uppercase">
               DOORA Is Designed To Make Secondhand Feel Premium And NOT Second Best!
             </p>
           </div>

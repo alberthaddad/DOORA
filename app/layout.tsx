@@ -110,11 +110,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  manifest: "/manifest.json",
   icons: {
-    icon: "/images/Doora_favicon_D.png",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: '/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200',
+    shortcut: '/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200',
+    apple: '/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200',
   },
 };
 
@@ -125,6 +124,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="msapplication-TileColor" content="#dc655f" />
+        <meta name="theme-color" content="#dc655f" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200" />
+        <link rel="shortcut icon" href="/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200" />
+        <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRG9vcmEiLCJzaG9ydF9uYW1lIjoiRG9vcmEiLCJpY29ucyI6W3sic3JjIjoiL2JyYW5kaW5nL2Zhdmljb25zL0RPT1JBIExZZjJfmljGh0IiwiaHJlZkFjdGlvbiI6InN0YXJ0X3VybCIsInNpemVzIjoiMTkyeDI5MiIsInR5cGUiOiJpbWFnZS9wbmcifV19" />
+      </head>
       <body
         className={`${bernoru.variable} ${neueMachina.variable} ${openSauce.variable} font-sans antialiased min-h-screen flex flex-col`}
       >

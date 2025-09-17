@@ -3,9 +3,34 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import { Trash2, Globe, Frown, ShoppingBag, RotateCcw } from "lucide-react";
+import { Recycle, Users, Sparkles, Shield } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
-export function ProblemCards() {
+const CloseIcon = () => (
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 15 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z"
+      fill="currentColor"
+      fillRule="evenodd"
+      clipRule="evenodd"
+    ></path>
+  </svg>
+);
+
+const ExpandIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className="w-4 h-4" style={{transform: 'scaleX(-1)'}}>
+    <path d="M408 64L552 64C565.3 64 576 74.7 576 88L576 232C576 241.7 570.2 250.5 561.2 254.2C552.2 257.9 541.9 255.9 535 249L496 210L409 297C399.6 306.4 384.4 306.4 375.1 297L343.1 265C333.7 255.6 333.7 240.4 343.1 231.1L430.1 144.1L391.1 105.1C384.2 98.2 382.2 87.9 385.9 78.9C389.6 69.9 398.3 64 408 64zM232 576L88 576C74.7 576 64 565.3 64 552L64 408C64 398.3 69.8 389.5 78.8 385.8C87.8 382.1 98.1 384.2 105 391L144 430L231 343C240.4 333.6 255.6 333.6 264.9 343L296.9 375C306.3 384.4 306.3 399.6 296.9 408.9L209.9 495.9L248.9 534.9C255.8 541.8 257.8 552.1 254.1 561.1C250.4 570.1 241.7 576 232 576z" fill="currentColor"/>
+  </svg>
+);
+
+
+export function SolutionCards() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
@@ -122,147 +147,98 @@ export function ProblemCards() {
           </div>
         ) : null}
       </AnimatePresence>
-      <div className="w-full space-y-2 px-2 lg:px-8">
+      <div className="grid grid-cols-2 gap-4">
         {cards.map((card, index) => (
-          <div
+          <Card 
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex items-center justify-between hover:bg-muted/30 rounded-lg cursor-pointer transition-colors group w-full lg:max-w-5xl lg:mx-auto"
+            className="text-center cursor-pointer hover:shadow-md transition-all duration-200 relative bg-muted/20"
           >
-            <div className="flex items-center gap-3 flex-1 max-w-[calc(100%-60px)]">
-              <div className="flex-shrink-0">
-                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  {card.icon}
-                </div>
+            <CardContent className="pt-6">
+              {/* Expand icon in top right */}
+              <div className="absolute top-3 right-3 text-primary/70 hover:text-primary transition-colors">
+                <ExpandIcon />
               </div>
-              <div className="flex-1 min-w-0">
-                <h3
-                  className="font-semibold text-base mb-1 truncate"
-                  style={{color: 'oklch(0.2354 0.0041 84.59)'}}
-                >
-                  {card.title}
-                </h3>
-                <p
-                  className="text-sm truncate"
-                  style={{color: 'oklch(0.2354 0.0041 84.59)'}}
-                >
-                  {card.description}
-                </p>
+              
+              <div className="w-12 h-12 text-primary mx-auto mb-4 flex items-center justify-center">
+                {card.icon}
               </div>
-            </div>
-            <button
-              className="w-8 h-8 rounded-full font-bold bg-primary hover:bg-primary/90 text-white transition-colors flex-shrink-0 flex items-center justify-center ml-2"
-            >
-              ❯
-            </button>
-          </div>
+              <h4 className="font-semibold text-foreground mb-2">{card.title}</h4>
+              <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                {card.description}
+              </p>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </>
   );
 }
 
-export const CloseIcon = () => {
-  return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-4 w-4 text-foreground"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M18 6l-12 12" />
-      <path d="M6 6l12 12" />
-    </motion.svg>
-  );
-};
-
 const cards = [
   {
-    title: "Overconsumption",
-    description: "Mass made then thrown",
-    icon: <Trash2 className="h-7 w-7 text-primary" />,
+    title: "Circular Fashion",
+    description: "Extend life, reduce waste",
+    icon: <Recycle className="h-12 w-12 text-primary" />,
     ctaText: "❯",
     ctaLink: "#",
     content: () => {
       return (
         <div className="space-y-4">
           <p>
-          Fast fashion&apos;s relentless cycle of microtrends encourages buying new clothes frequently and discarding them just as fast. This model creates Millions of tons of clothing that are sent to landfills each year, contributing to a global waste crisis.          </p>
-          <p>
-          From massive water usage and textile dyeing that contaminates waterways, to immense carbon emissions from manufacturing and transport, this constant demand for new, cheap clothes comes with a staggering environmental price tag.          </p>
-        </div>
-      );
-    },
-  },
-  {
-    title: "Trends vs Quality",
-    description: "Shifting culture",
-    icon: <RotateCcw className="h-7 w-7 text-primary" />,
-    ctaText: "❯",
-    ctaLink: "#",
-    content: () => {
-      return (
-        <div className="space-y-4">
-          <p>
-            Trends are a cycle, not a race. The styles of the past always come back, but the quality doesn&apos;t. We believe in keeping great clothes in circulation because the timeless, well-made pieces you&apos;re looking for already exist, they&apos;re just waiting to be found.
+            By giving clothes a second life, we extend their lifespan and keep them out of landfills. This is a simple, effective way to reduce waste and make a positive impact, one garment at a time.
           </p>
         </div>
       );
     },
   },
   {
-    title: "Regional Market",
-    description: "Choice without options",
-    icon: <Globe className="h-7 w-7 text-primary" />,
+    title: "Mindful",
+    description: "Affordable and ethical",
+    icon: <Users className="h-12 w-12 text-primary" />,
     ctaText: "❯",
     ctaLink: "#",
     content: () => {
       return (
         <div className="space-y-4">
           <p>
-          Despite being one of the world&apos;s fastest-growing fashion markets, the Middle East remains underserved when it comes to sustainable shopping options. While other regions have embraced secondhand fashion, the Middle East has been left behind.          </p>
-          <p>
-          When local markets lack sustainable and affordable alternatives, fast fashion&apos;s low prices and wide availability make it the only practical option. It&apos;s a normal and rational response for people to choose the most accessible and cost-effective solution available to them. The real issue lies not with the consumer&apos;s decision, but with the lack of developed, sustainable solutions within the market.          </p>
+            We prove that affordable and ethical shopping can go together. Our platform makes it possible to shop consciously, with pieces available for as little as a dollar. By choosing secondhand, you can build a high-quality, unique wardrobe without the high cost or negative impact on people and the planet.
+          </p>
         </div>
       );
     },
   },
   {
-    title: "Poor Experience",
-    description: "Secondhand shopping",
-    icon: <Frown className="h-7 w-7 text-primary" />,
+    title: "Trust",
+    description: "Safe & seamless process",
+    icon: <Shield className="h-12 w-12 text-primary" />,
     ctaText: "❯",
     ctaLink: "#",
     content: () => {
       return (
         <div className="space-y-4">
           <p>
-            The secondhand shopping experience is fragmented and frustrating for both buyers and sellers. Thousands of resellers struggle with processes, visibility, and lack of business features, while buyers struggle with trust, filtering, and shopping experience.
-          </p>
-          <p>
-          This disjointed experience has prevented secondhand culture from growing, keeping it a niche hobby instead of a norm.
+            We manage all logistics, from secure payments to reliable shipping. Our secure and transparent process ensures a smooth and reliable experience for both buyers and sellers.
           </p>
         </div>
       );
     },
   },
+  {
+    title: "Beyond Trends",
+    description: "Timeless pieces that feel like you",
+    icon: <Sparkles className="h-12 w-12 text-primary" />,
+    ctaText: "❯",
+    ctaLink: "#",
+    content: () => {
+      return (
+        <div className="space-y-4">
+          <p>
+            Fast fashion pushes everyone to look and dress the same. We want you to stand out. Our platform is a treasure trove where you can discover one-of-a-kind pieces that truly express who you are. We believe style should be a fun and personal journey, not a race to keep up with trends.
+          </p>
+        </div>
+      );
+    },
+  },
+ 
 ];

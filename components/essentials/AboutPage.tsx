@@ -9,6 +9,7 @@ import { Recycle, Zap, Users, Heart, Leaf, Target, Globe, Briefcase } from "luci
 import Link from "next/link";
 import { Marquee } from "@/components/magicui/marquee";
 import { ProblemCards } from "./ProblemCards";
+import { SolutionCards } from "./SolutionCards";
 import { Timeline } from "@/components/ui/timeline";
 
 function OurStoryTimeline() {
@@ -61,7 +62,7 @@ function OurStoryTimeline() {
           </p>
           <div className="text-right mt-8 pt-6 border-t border-primary/20">
             <p className="text-lg font-semibold text-primary italic">– Andrea Tegho</p>
-            <p className="text-sm mt-1 font-medium" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>Founder & CEO</p>
+            <p className="text-sm mt-1 font-medium" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>Founder</p>
           </div>
         </div>
       ),
@@ -112,42 +113,64 @@ export default function AboutPage() {
               </h3>
             </div>
             
-            <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
-              <Card className="border-l-4 border-l-primary">
-                <CardHeader className="pb-3 text-center lg:text-left">
-                  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-3">
-                    <div className="p-2 sm:p-3 bg-primary/10 rounded-lg">
-                      <Target className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+            {/* Modern Values Design */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+              {/* Accessibility Value */}
+              <Card className="text-center hover:shadow-md transition-all duration-200 h-full bg-muted/20">
+                <CardContent className="pt-6">
+                  {/* Icon and Title Section */}
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="w-16 h-16 lg:w-20 lg:h-20 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
+                      <Target className="h-8 w-8 lg:h-10 lg:w-10 text-primary" />
                     </div>
-                    <div className="flex flex-col items-center lg:items-start gap-1">
-                      <CardTitle className="text-base sm:text-lg">ACCESSIBILITY</CardTitle>
+                    <div className="text-center">
+                      <h4 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-wide mb-2">
+                        Accessibility
+                      </h4>
+                      <div className="w-12 h-1 bg-primary rounded-full mx-auto"></div>
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-sm sm:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    <br className="lg:hidden" />
-                    DOORA is for everyone; all styles, all sizes, and all budgets. Whether you&apos;re a thrifter, a vintage lover, or a luxury shopper, you&apos;ll find what you&apos;re looking for. Above all, we believe everyone should experience the simple joy of having fun with fashion, and secondhand is the way to do it.
-                  </p>
+                  
+                  {/* Content Section */}
+                  <div className="flex-1 text-center">
+                    <p className="text-base lg:text-lg leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                      DOORA is for everyone; all styles, all sizes, and most importantly all budgets. Whether you&apos;re a thrifter, a vintage lover, or a luxury shopper, you&apos;ll find what you&apos;re looking for.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-secondary">
-                <CardHeader className="pb-3 text-center lg:text-left">
-                  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-3">
-                    <div className="p-2 sm:p-3 bg-secondary/10 rounded-lg">
-                      <Leaf className="h-6 w-6 sm:h-8 sm:w-8 text-secondary" />
+              {/* Sustainability Value */}
+              <Card className="text-center hover:shadow-md transition-all duration-200 h-full bg-muted/20">
+                <CardContent className="pt-6">
+                  {/* Icon and Title Section */}
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center transition-colors duration-300"
+                         style={{
+                           backgroundColor: 'oklch(0.5354 0.0644 135.23 / 0.1)'
+                         }}
+                         onMouseEnter={(e) => {
+                           e.currentTarget.style.backgroundColor = 'oklch(0.5354 0.0644 135.23 / 0.15)';
+                         }}
+                         onMouseLeave={(e) => {
+                           e.currentTarget.style.backgroundColor = 'oklch(0.5354 0.0644 135.23 / 0.1)';
+                         }}>
+                      <Leaf className="h-8 w-8 lg:h-10 lg:w-10" style={{color: 'oklch(0.5354 0.0644 135.23)'}} />
                     </div>
-                    <div className="flex flex-col items-center lg:items-start gap-1">
-                      <CardTitle className="text-base sm:text-lg">SUSTAINABILITY</CardTitle>
-                      <Badge variant="secondary" className="text-xs">obviously</Badge>
+                    <div className="text-center">
+                      <h4 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mb-2" style={{color: 'oklch(0.5354 0.0644 135.23)'}}>
+                        Sustainability
+                      </h4>
+                      <div className="w-12 h-1 rounded-full mx-auto" style={{backgroundColor: 'oklch(0.5354 0.0644 135.23)'}}></div>
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-sm sm:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    We&apos;re fighting fast fashion by promoting a circular approach that gives clothes a longer life. By making conscious shopping affordable and easier than ever, we&apos;re also breaking the stigma around secondhand fashion in the region. Making you wonder why this wasn&apos;t available sooner!
-                  </p>
+                  
+                  {/* Content Section */}
+                  <div className="flex-1 text-center">
+                    <p className="text-base lg:text-lg leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                      We&apos;re fighting fast fashion by promoting a circular approach that gives clothes a longer life. We make conscious shopping affordable and easier than ever, breaking the stigma around secondhand fashion in the region.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -245,7 +268,7 @@ export default function AboutPage() {
         {/* The Problem We're Solving Section */}
         <section className="py-12">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">The Problem We&apos;re Solving</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">The Problems</h2>
             <p className="text-lg max-w-3xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
               The fashion world is full of contradictions. We have more than enough clothes to dress the next eight generations, yet fast fashion dominates.
             </p>
@@ -259,47 +282,9 @@ export default function AboutPage() {
             <h3 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">Our Solutions</h3>
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Recycle className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h4 className="font-semibold text-foreground">Circular Fashion</h4>
-                  <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Extending the life of clothes and reducing waste
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h4 className="font-semibold text-foreground">Easy Process</h4>
-                  <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    We handle everything from delivery to payments
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h4 className="font-semibold text-foreground">Community</h4>
-                  <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Connecting fashion lovers across the region
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h4 className="font-semibold text-foreground">Trust</h4>
-                  <p className="text-sm mt-2" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-                    Safe, secure and transparent platform
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+          <div className="mb-12">
+            <SolutionCards />
+          </div>
         </section>
 
         {/* Our Story Section - Timeline */}
