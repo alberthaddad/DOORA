@@ -12,29 +12,66 @@ export default function FAQPage() {
           color: oklch(0.2354 0.0041 84.59) !important;
         }
         .faq-accordion-item {
-          border: 1px solid rgba(var(--border), 0.3);
-          border-radius: 0.5rem;
-          background: rgba(var(--background), 0.5);
-          transition: all 0.2s ease;
-          margin-bottom: 0.5rem;
-        }
-        .faq-accordion-item:hover {
-          background: rgba(var(--background), 0.8);
+          border: none;
+          background: transparent;
+          margin-bottom: 1rem;
         }
         .faq-accordion-trigger {
-          padding: 0.75rem 1rem;
+          padding: 0;
           text-align: left;
-          transition: all 0.2s ease;
+          transition: all 0.3s ease;
+          font-weight: 600;
+          font-size: 1rem;
+          line-height: 1.4;
+          margin-bottom: 0.75rem;
+          position: relative;
+          cursor: pointer;
+          margin-left: 1.5rem;
+        }
+        .faq-accordion-trigger::before {
+          content: '';
+          position: absolute;
+          left: -1.5rem;
+          top: 0;
+          width: 4px;
+          height: 0px;
+          background-color: oklch(0.439 0.1032 35.98) !important;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          z-index: 1;
+        }
+        .faq-accordion-trigger:hover::before {
+          height: 1rem !important;
         }
         .faq-accordion-trigger:hover {
           text-decoration: none;
+          color: oklch(0.439 0.1032 35.98) !important;
         }
         .faq-accordion-trigger[data-state="open"] {
-          background: rgba(var(--primary), 0.05);
-          color: rgb(var(--primary));
+          color: oklch(0.439 0.1032 35.98) !important;
+        }
+        .faq-accordion-trigger[data-state="open"]::before {
+          height: 2rem !important;
+          width: 4px !important;
+        }
+        .faq-accordion-trigger[data-state="closed"]::before {
+          height: 0px !important;
+        }
+        @media (hover: none) {
+          .faq-accordion-trigger[data-state="closed"] {
+            color: rgb(var(--foreground)) !important;
+          }
         }
         .faq-accordion-content {
-          padding: 0 1rem 0.75rem 1rem;
+          padding: 0;
+          background: transparent;
+          margin: 0;
+          margin-left: 1.5rem;
+        }
+        .faq-content-text {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: oklch(0.2354 0.0041 84.59);
         }
       `}</style>
       <div className="min-h-screen bg-background">
@@ -51,56 +88,122 @@ export default function FAQPage() {
       </section>
 
       {/* Navigation Section */}
-      <section className="py-12 px-4 bg-gradient-to-b from-muted/20 to-background border-b border-border/50">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-wrap gap-2 justify-center">
+      <section className="py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             <Button
               variant="outline"
-              size="sm"
-              onClick={() => document.getElementById('general')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-medium border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 rounded-lg px-4 py-2"
+              onClick={() => {
+                const element = document.getElementById('general');
+                if (element) {
+                  const headerOffset = 100;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+              }}
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
             >
-              GENERAL
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                General
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
+            
             <Button
               variant="outline"
-              size="sm"
-              onClick={() => document.getElementById('buying')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-medium border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 rounded-lg px-4 py-2"
+              onClick={() => {
+                const element = document.getElementById('buying');
+                if (element) {
+                  const headerOffset = 100;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+              }}
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
             >
-              BUYING
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                Buying
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
+            
             <Button
               variant="outline"
-              size="sm"
-              onClick={() => document.getElementById('selling')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-medium border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 rounded-lg px-4 py-2"
+              onClick={() => {
+                const element = document.getElementById('selling');
+                if (element) {
+                  const headerOffset = 100;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+              }}
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
             >
-              SELLING
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                Selling
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
+            
             <Button
               variant="outline"
-              size="sm"
-              onClick={() => document.getElementById('shipping')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-medium border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 rounded-lg px-4 py-2"
+              onClick={() => {
+                const element = document.getElementById('shipping');
+                if (element) {
+                  const headerOffset = 100;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+              }}
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
             >
-              SHIPPING & DELIVERY
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                Shipping
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
+            
             <Button
               variant="outline"
-              size="sm"
-              onClick={() => document.getElementById('payments')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-medium border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 rounded-lg px-4 py-2"
+              onClick={() => {
+                const element = document.getElementById('payments');
+                if (element) {
+                  const headerOffset = 100;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+              }}
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
             >
-              PAYMENTS & FEES
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                Payments
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
+            
             <Button
               variant="outline"
-              size="sm"
-              onClick={() => document.getElementById('returns')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-sm font-medium border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 rounded-lg px-4 py-2"
+              onClick={() => {
+                const element = document.getElementById('returns');
+                if (element) {
+                  const headerOffset = 100;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+              }}
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
             >
-              RETURNS & DISPUTES
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                Returns
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
           </div>
         </div>
@@ -117,13 +220,13 @@ export default function FAQPage() {
                 GENERAL
               </h2>
             </div>
-            <Accordion type="single" collapsible className="w-full space-y-2">
+            <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="general-1" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   What is DOORA?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
+                  <p className="faq-content-text">
                     DOORA is a secondhand fashion marketplace where you can buy and sell unused or preloved clothes. Think of it as your digital thrift store, connecting thousands of closets to others.
                   </p>
                 </AccordionContent>
@@ -134,7 +237,7 @@ export default function FAQPage() {
                   Is DOORA only for used items?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
+                  <p className="faq-content-text">
                     No. Items don&apos;t have to be worn to be considered secondhand. Many sellers post brand-new pieces (sometimes even with tags). Each listing shows the product condition, and you can filter by condition (e.g. &ldquo;new with tags&rdquo;) to shop only what you want.
                   </p>
                 </AccordionContent>
@@ -145,7 +248,7 @@ export default function FAQPage() {
                   Where is DOORA available?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
+                  <p className="faq-content-text">
                     We&apos;re starting in Lebanon first and will expand across MENA next!
                   </p>
                 </AccordionContent>
@@ -156,7 +259,7 @@ export default function FAQPage() {
                   Who can use DOORA?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
+                  <p className="faq-content-text">
                     Anyone living in Lebanon can create an account and start buying or selling except for manufacturers since our goal is to give clothes a second life, not contribute to overproduction.
                   </p>
                 </AccordionContent>
@@ -167,7 +270,7 @@ export default function FAQPage() {
                   How can I use DOORA?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
+                  <p className="faq-content-text">
                     DOORA is available as an iOS and Android app as well as a web version for desktop access.
                   </p>
                 </AccordionContent>
@@ -178,7 +281,7 @@ export default function FAQPage() {
                   Why choose secondhand fashion?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
+                  <p className="faq-content-text">
                     Trends come back. They always do. Instead of buying them new, you can find them secondhand, saving money and keeping clothes in use, not in landfills.
                   </p>
                 </AccordionContent>
@@ -189,7 +292,7 @@ export default function FAQPage() {
                   What can I buy & sell on DOORA?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
+                  <p className="faq-content-text">
                     DOORA is currently focused on fashion: clothes, shoes, and accessories for women, men and kids. Soon we&apos;ll expand into new categories.
                   </p>
                 </AccordionContent>
@@ -200,7 +303,7 @@ export default function FAQPage() {
                   Is DOORA safe to use?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
+                  <p className="faq-content-text">
                     DOORA keeps both buyers and sellers protected. Payments are processed securely, orders are tracked, and if something goes wrong, our team steps in.
                   </p>
                 </AccordionContent>
@@ -216,7 +319,7 @@ export default function FAQPage() {
                 BUYING
               </h2>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="buying-1" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   How do I buy an item?
@@ -312,7 +415,7 @@ export default function FAQPage() {
                 SELLING
               </h2>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="selling-1" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   How do I list an item?
@@ -402,7 +505,7 @@ export default function FAQPage() {
                 SHIPPING & DELIVERY
               </h2>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="shipping-1" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   Who handles delivery?
@@ -479,7 +582,7 @@ export default function FAQPage() {
                 PAYMENTS & FEES
               </h2>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="payments-1" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   How does money transfer work?
@@ -545,7 +648,7 @@ export default function FAQPage() {
                 RETURNS & DISPUTES
               </h2>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="returns-1" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   Can I return an item on DOORA?

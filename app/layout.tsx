@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import AppContent from "@/components/ui/AppContent";
 
-// Custom fonts based on Doora design system
+// Custom fonts based on DOORA design system
 const bernoru = localFont({
   src: [
     {
@@ -78,26 +78,26 @@ const openSauce = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Doora - From Closet to Closet",
-    template: "%s | Doora"
+    default: "DOORA - From Closet to Closet",
+    template: "%s | DOORA"
   },
-  description: "Doora is a secondhand fashion marketplace inspired by the Arabic word for 'circle'. Making secondhand feel premium and NOT second best!",
+  description: "DOORA is a secondhand fashion marketplace inspired by the Arabic word for 'circle'. Making secondhand feel premium and NOT second best!",
   keywords: ["secondhand fashion", "sustainable fashion", "circular fashion", "Middle East", "Lebanon", "fashion marketplace", "pre-owned clothing"],
-  authors: [{ name: "Doora Team" }],
-  creator: "Doora",
+  authors: [{ name: "DOORA Team" }],
+  creator: "DOORA",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://doora.com",
-    title: "Doora - From Closet to Closet",
+    url: "https://DOORA.com",
+    title: "DOORA - From Closet to Closet",
     description: "Making secondhand feel premium and NOT second best! Shop sustainable fashion in the Middle East.",
-    siteName: "Doora",
+    siteName: "DOORA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dora - From Closet to Closet",
+    title: "DOORA - From Closet to Closet",
     description: "Making secondhand feel premium and NOT second best! Shop sustainable fashion in the Middle East.",
-    creator: "@doora",
+    creator: "@DOORA",
   },
   robots: {
     index: true,
@@ -111,9 +111,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200',
-    shortcut: '/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200',
-    apple: '/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200',
+    icon: '/branding/favicons/DOORA LOGO-21.png',
+    shortcut: '/branding/favicons/DOORA LOGO-21.png',
+    apple: '/branding/favicons/DOORA LOGO-21.png',
   },
 };
 
@@ -127,10 +127,10 @@ export default function RootLayout({
       <head>
         <meta name="msapplication-TileColor" content="#dc655f" />
         <meta name="theme-color" content="#dc655f" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200" />
-        <link rel="shortcut icon" href="/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/branding/favicons/DOORA LOGO-21.png?cache-bust=1642435200" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/branding/favicons/DOORA LOGO-21.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/branding/favicons/DOORA LOGO-21.png" />
+        <link rel="shortcut icon" href="/branding/favicons/DOORA LOGO-21.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/branding/favicons/DOORA LOGO-21.png" />
         <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRG9vcmEiLCJzaG9ydF9uYW1lIjoiRG9vcmEiLCJpY29ucyI6W3sic3JjIjoiL2JyYW5kaW5nL2Zhdmljb25zL0RPT1JBIExZZjJfmljGh0IiwiaHJlZkFjdGlvbiI6InN0YXJ0X3VybCIsInNpemVzIjoiMTkyeDI5MiIsInR5cGUiOiJpbWFnZS9wbmcifV19" />
       </head>
       <body

@@ -15,50 +15,30 @@ import { Timeline } from "@/components/ui/timeline";
 function OurStoryTimeline() {
   const data = [
     {
-      title: "Beginning",
+      title: "",
       content: (
         <div>
-          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            At 17, I launched two small businesses focused on upcycling and thrifting, driven by the belief that clothes deserve a second life. Later, I moved to Paris to pursue my dream of working in the fashion industry, joining leading fashion groups to learn how the industry truly operates.
+          <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            "At 17, I launched small businesses focused on giving clothes a longer life through upcycling and secondhand. That love for fashion took me to Paris, where I joined leading luxury groups to understand how the industry truly operated.
+          </p>
+          <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            But behind those glossy offices, sustainability and ethics were nothing more than buzzwords. Every strategy was built to drive overconsumption, and I was a part of that system.
+          </p>
+          <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            So I walked away and created DOORA, a platform that makes conscious fashion easy and accessible to anyone.
+          </p>
+          <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            I know sustainability may not be everyone's first concern, but at DOORA, it is.
           </p>
         </div>
       ),
     },
     {
-      title: "Reality",
+      title: "",
       content: (
         <div>
-          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            But inside these glossy offices, I quickly realized that sustainability was never more than a marketing line. Every strategy was designed to fuel overconsumption, pushing customers to buy more, faster, with little thought for the impact it has.
-          </p>
-          <p className="mb-12 text-sm md:text-base leading-relaxed font-semibold text-primary italic">
-            I didn&apos;t want to be a part of that anymore.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Vision",
-      content: (
-        <div>
-          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            At the same time, I saw the need and the massive opportunity to build something different for the Middle East. A platform that gives everyone a chance to have fun with fashion, no matter their budget.
-          </p>
-          <p className="mb-12 text-sm md:text-base leading-relaxed font-semibold text-primary italic">
-            That&apos;s why DOORA exists today.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Mission",
-      content: (
-        <div>
-          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            I know sustainability isn&apos;t everyone&apos;s top priority, but at DOORA, it&apos;s at the heart of everything we do.
-          </p>
-          <p className="mb-12 text-sm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            If building this platform means people across the region can easily earn extra income while contributing to a more conscious way of consuming fashion, then that&apos;s exactly what I&apos;m here to do.
+          <p className="-mt-4 mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            My mission is simple: give people the possibility to enjoy fashion while still making ethical choices."
           </p>
           <div className="text-right mt-8 pt-6 border-t border-primary/20">
             <p className="text-lg font-semibold text-primary italic">– Andrea Tegho</p>
@@ -127,7 +107,7 @@ export default function AboutPage() {
                       <h4 className="text-2xl lg:text-3xl font-black text-primary uppercase tracking-wide mb-2">
                         Accessibility
                       </h4>
-                      <div className="w-12 h-1 bg-primary rounded-full mx-auto"></div>
+                      <div className="w-12 h-1 bg-primary rounded-full mx-auto mb-6"></div>
                     </div>
                   </div>
                   
@@ -145,15 +125,9 @@ export default function AboutPage() {
                 <CardContent className="pt-6">
                   {/* Icon and Title Section */}
                   <div className="flex flex-col items-center gap-4">
-                    <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center transition-colors duration-300"
+                    <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center"
                          style={{
                            backgroundColor: 'oklch(0.5354 0.0644 135.23 / 0.1)'
-                         }}
-                         onMouseEnter={(e) => {
-                           e.currentTarget.style.backgroundColor = 'oklch(0.5354 0.0644 135.23 / 0.15)';
-                         }}
-                         onMouseLeave={(e) => {
-                           e.currentTarget.style.backgroundColor = 'oklch(0.5354 0.0644 135.23 / 0.1)';
                          }}>
                       <Leaf className="h-8 w-8 lg:h-10 lg:w-10" style={{color: 'oklch(0.5354 0.0644 135.23)'}} />
                     </div>
@@ -161,7 +135,7 @@ export default function AboutPage() {
                       <h4 className="text-2xl lg:text-3xl font-black uppercase tracking-wide mb-2" style={{color: 'oklch(0.5354 0.0644 135.23)'}}>
                         Sustainability
                       </h4>
-                      <div className="w-12 h-1 rounded-full mx-auto" style={{backgroundColor: 'oklch(0.5354 0.0644 135.23)'}}></div>
+                      <div className="w-12 h-1 rounded-full mx-auto mb-6" style={{backgroundColor: 'oklch(0.5354 0.0644 135.23)'}}></div>
                     </div>
                   </div>
                   
@@ -282,7 +256,7 @@ export default function AboutPage() {
             <h3 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">Our Solutions</h3>
           </div>
           
-          <div className="mb-12">
+          <div className="mb-2">
             <SolutionCards />
           </div>
         </section>

@@ -14,14 +14,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <div className="relative overflow-hidden rounded-lg p-1 group-hover:bg-primary/5 transition-all duration-300">
+          <Link href="/" className="flex items-center">
+            <div className="relative overflow-hidden rounded-lg p-1">
               <Image 
                 src="/images/doora_logo_light_desktop.png" 
                 alt="DOORA" 
                 width={100}
                 height={16}
-                className="h-5 w-auto transition-transform duration-300 group-hover:scale-105"
+                className="h-5 w-auto"
                 priority
                 quality={100}
               />

@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useRef, useState } from "react";
-import Iphone15Pro from "@/components/magicui/iphone-15-pro";
 import TextType from "@/components/ui/TextType";
 import { Marquee } from "@/components/magicui/marquee";
 
@@ -123,7 +122,7 @@ export default function Home() {
               </div>
               
             <p className="text-xs" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-              No spam, just updates.
+              No spam, just updates
             </p>
           </div>
         </div>
@@ -152,21 +151,50 @@ export default function Home() {
 
             <h2 
             ref={descriptionRef}
-            className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in-up"
+            className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-16 leading-relaxed animate-fade-in-up"
             style={{color: 'oklch(0.2354 0.0041 84.59)'}}
           >
             Whether you&apos;re clearing out your closet or browsing for unique finds, our fashion resale platform connects thousands of closets in one simple, secure space.
           </h2>
           
-          {/* iPhone 15 Component */}
+          {/* Responsive iPhone Images */}
           <div className="flex justify-center mt-8 mb-2">
-            <div className="relative">
-              <Iphone15Pro 
+            {/* Desktop: Two iPhones with dramatic size difference and positioning */}
+            <div className="hidden lg:flex items-start justify-center relative">
+              <div className="relative z-10 -mr-8 -mt-8">
+                <Image 
+                  src="/images/iphone_doora.png"
+                  alt="DOORA App on iPhone"
+                  width={280}
+                  height={560}
+                  className="w-72 h-auto"
+                  priority
+                />
+              </div>
+              <div className="relative z-20 -ml-20 mt-4">
+                <Image 
+                  src="/images/iphone_angled.png"
+                  alt="DOORA App on iPhone (Angled)"
+                  width={450}
+                  height={900}
+                  className="w-[390px] h-auto"
+                  priority
+                />
+              </div>
+            </div>
+            
+            {/* Mobile: Single realistic iPhone */}
+            <div className="relative lg:hidden">
+              <Image 
+                src="/images/iphone_realistic.png"
+                alt="DOORA App on iPhone"
+                width={320}
+                height={640}
                 className="w-80 h-auto"
-                src="/images/Homepage.png"
+                priority
               />
             </div>
-            </div>
+          </div>
           </div>
         </section>
 
@@ -233,20 +261,20 @@ export default function Home() {
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
             {/* Row 1 - Mobile: Cards 1 & 2, Desktop: Cards 1, 2, 3 */}
             <Marquee pauseOnHover className="[--duration:20s]">
-              <Card className="w-64 mx-4">
+              <Card className="w-64 mx-4 bg-muted/20">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Smart Trend Forecasting</CardTitle>
                 </CardHeader>
               </Card>
 
-              <Card className="w-64 mx-4">
+              <Card className="w-64 mx-4 bg-muted/20">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Personalized Recommendations</CardTitle>
                 </CardHeader>
               </Card>
 
               {/* Desktop only - Card 3 */}
-              <Card className="w-64 mx-4 hidden lg:block">
+              <Card className="w-64 mx-4 hidden lg:block bg-muted/20">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Search By Image</CardTitle>
                 </CardHeader>
@@ -262,26 +290,26 @@ export default function Home() {
                   style={{ animationDirection: 'reverse' }}
                 >
                   {/* Mobile only - Card 3 */}
-                  <Card className="w-64 mx-4 lg:hidden">
+                  <Card className="w-64 mx-4 lg:hidden bg-muted/20">
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Search By Image</CardTitle>
                     </CardHeader>
                   </Card>
 
-                  <Card className="w-64 mx-4">
+                  <Card className="w-64 mx-4 bg-muted/20">
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Real Reviews</CardTitle>
                     </CardHeader>
                   </Card>
 
                   {/* Desktop only - Cards 5 & 6 */}
-                  <Card className="w-64 mx-4 hidden lg:block">
+                  <Card className="w-64 mx-4 hidden lg:block bg-muted/20">
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Secure Payments</CardTitle>
                     </CardHeader>
                   </Card>
 
-                  <Card className="w-64 mx-4 hidden lg:block">
+                  <Card className="w-64 mx-4 hidden lg:block bg-muted/20">
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Track Your Orders</CardTitle>
                     </CardHeader>
@@ -292,13 +320,13 @@ export default function Home() {
 
             {/* Row 3 - Mobile only - Cards 5 & 6 */}
             <Marquee pauseOnHover className="[--duration:20s] lg:hidden">
-              <Card className="w-64 mx-4">
+              <Card className="w-64 mx-4 bg-muted/20">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Secure Payments</CardTitle>
                 </CardHeader>
               </Card>
 
-              <Card className="w-64 mx-4">
+              <Card className="w-64 mx-4 bg-muted/20">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Track Your Orders</CardTitle>
                 </CardHeader>

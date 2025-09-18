@@ -155,16 +155,19 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
-                <CardDescription>
-                  Reach out to us through any of these channels
-                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Mail className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>doora.app@gmail.com</p>
+                    <a 
+                      href="mailto:contact@doora.app"
+                      className="text-sm hover:text-primary transition-colors underline-offset-4 hover:underline"
+                      style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                    >
+                      contact@doora.app
+                    </a>
                   </div>
                 </div>
                 
@@ -172,7 +175,13 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>+961 70 998 701</p>
+                    <a 
+                      href="tel:+96170998701"
+                      className="text-sm hover:text-primary transition-colors underline-offset-4 hover:underline"
+                      style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                    >
+                      +961 70 998 701
+                    </a>
                   </div>
                 </div>
                 
@@ -205,7 +214,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle>Follow Us</CardTitle>
                 <CardDescription>
-                  We&apos;re more fun on social media
+                  We&apos;re more fun on social media!
                 </CardDescription>
               </CardHeader>
               <CardContent>
