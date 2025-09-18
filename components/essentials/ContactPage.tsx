@@ -205,7 +205,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle>Follow Us</CardTitle>
                 <CardDescription>
-                  We're more fun on social media
+                  We&apos;re more fun on social media
                 </CardDescription>
               </CardHeader>
               <CardContent>
