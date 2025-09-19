@@ -6,15 +6,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { User, MapPin, Calendar, Star, Heart, MessageCircle, UserPlus } from "lucide-react";
 
 interface UserProfilePageProps {
-  params: {
+  params: Promise<{
     username: string;
-  };
+  }>;
 }
 
-export function generateMetadata({ params }: UserProfilePageProps): Metadata {
+export async function generateMetadata({ params }: UserProfilePageProps): Promise<Metadata> {
+  const { username } = await params;
   return {
-    title: `@${params.username} - Doora`,
-    description: `View ${params.username}'s profile, items, and reviews on Doora marketplace.`,
+    title: `@${username} - Doora`,
+    description: `View ${username}'s profile, items, and reviews on Doora marketplace.`,
   };
 }
 
@@ -35,7 +36,8 @@ const mockItems = [
   },
 ];
 
-export default function UserProfilePage({ params }: UserProfilePageProps) {
+export default async function UserProfilePage({ params }: UserProfilePageProps) {
+  const { username } = await params;
   return (
     <div className="min-h-screen bg-background p-4">
       <div className="max-w-6xl mx-auto">
@@ -50,7 +52,7 @@ export default function UserProfilePage({ params }: UserProfilePageProps) {
                 </div>
                 <div className="text-center md:text-left">
                   <h1 className="text-2xl font-bold text-foreground mb-1">Maya&apos;s Vintage</h1>
-                  <p className="text-muted-foreground mb-2">@{params.username}</p>
+                  <p className="text-muted-foreground mb-2">@{username}</p>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                     <MapPin className="h-4 w-4" />
                     <span>Beirut, Lebanon</span>
@@ -188,7 +190,7 @@ export default function UserProfilePage({ params }: UserProfilePageProps) {
           <TabsContent value="about" className="mt-6">
             <Card>
               <CardHeader>
-                <CardTitle>About @{params.username}</CardTitle>
+                <CardTitle>About @{username}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>

@@ -19,7 +19,7 @@ function OurStoryTimeline() {
       content: (
         <div>
           <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            "At 17, I launched small businesses focused on giving clothes a longer life through upcycling and secondhand. That love for fashion took me to Paris, where I joined leading luxury groups to understand how the industry truly operated.
+            &quot;At 17, I launched small businesses focused on giving clothes a longer life through upcycling and secondhand. That love for fashion took me to Paris, where I joined leading luxury groups to understand how the industry truly operated.
           </p>
           <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
             But behind those glossy offices, sustainability and ethics were nothing more than buzzwords. Every strategy was built to drive overconsumption, and I was a part of that system.
@@ -28,7 +28,7 @@ function OurStoryTimeline() {
             So I walked away and created DOORA, a platform that makes conscious fashion easy and accessible to anyone.
           </p>
           <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            I know sustainability may not be everyone's first concern, but at DOORA, it is.
+            I know sustainability may not be everyone&apos;s first concern, but at DOORA, it is.
           </p>
         </div>
       ),
@@ -38,7 +38,7 @@ function OurStoryTimeline() {
       content: (
         <div>
           <p className="-mt-4 mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            My mission is simple: give people the possibility to enjoy fashion while still making ethical choices."
+            My mission is simple: give people the possibility to enjoy fashion while still making ethical choices.&quot;
           </p>
           <div className="text-right mt-8 pt-6 border-t border-primary/20">
             <p className="text-lg font-semibold text-primary italic">– Andrea Tegho</p>

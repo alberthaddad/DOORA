@@ -5,15 +5,16 @@ import { Button } from "@/components/ui/button";
 import { User, Star, Filter, ThumbsUp } from "lucide-react";
 
 interface UserReviewsPageProps {
-  params: {
+  params: Promise<{
     username: string;
-  };
+  }>;
 }
 
-export function generateMetadata({ params }: UserReviewsPageProps): Metadata {
+export async function generateMetadata({ params }: UserReviewsPageProps): Promise<Metadata> {
+  const { username } = await params;
   return {
-    title: `Reviews for @${params.username} - Doora`,
-    description: `Read reviews and ratings for ${params.username} on Doora marketplace.`,
+    title: `Reviews for @${username} - Doora`,
+    description: `Read reviews and ratings for ${username} on Doora marketplace.`,
   };
 }
 
@@ -56,7 +57,8 @@ const mockReviews = [
   },
 ];
 
-export default function UserReviewsPage({ params }: UserReviewsPageProps) {
+export default async function UserReviewsPage({ params }: UserReviewsPageProps) {
+  const { username } = await params;
   const averageRating = 4.9;
   const totalReviews = 156;
 
@@ -65,7 +67,7 @@ export default function UserReviewsPage({ params }: UserReviewsPageProps) {
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-foreground mb-2">
-            Reviews for @{params.username}
+            Reviews for @{username}
           </h1>
           <p className="text-muted-foreground">See what buyers are saying</p>
         </div>

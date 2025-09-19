@@ -55,7 +55,7 @@ const nextConfig: NextConfig = {
   
   // Experimental features
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled due to critters dependency issue
   },
   
   // Compiler options

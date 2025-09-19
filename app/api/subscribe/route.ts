@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const mailchimp = require('@mailchimp/mailchimp_marketing');
+// Mailchimp doesn't have TypeScript declarations, so we'll use require with proper typing
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const mailchimp = require('@mailchimp/mailchimp_marketing') as any;
 
 // Configure Mailchimp
 mailchimp.setConfig({

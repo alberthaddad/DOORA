@@ -6,15 +6,16 @@ import { Input } from "@/components/ui/input";
 import { Heart, Share2, Star, Search, Filter, Grid, List } from "lucide-react";
 
 interface UserWardrobePageProps {
-  params: {
+  params: Promise<{
     username: string;
-  };
+  }>;
 }
 
-export function generateMetadata({ params }: UserWardrobePageProps): Metadata {
+export async function generateMetadata({ params }: UserWardrobePageProps): Promise<Metadata> {
+  const { username } = await params;
   return {
-    title: `@${params.username}'s Wardrobe - Doora`,
-    description: `Browse ${params.username}'s collection of fashion items for sale on Doora.`,
+    title: `@${username}'s Wardrobe - Doora`,
+    description: `Browse ${username}'s collection of fashion items for sale on Doora.`,
   };
 }
 
@@ -73,13 +74,15 @@ const mockItems = [
   },
 ];
 
-export default function UserWardrobePage({ params }: UserWardrobePageProps) {
+export default async function UserWardrobePage({ params }: UserWardrobePageProps) {
+  const { username } = await params;
+  
   return (
     <div className="min-h-screen bg-background p-4">
       <div className="max-w-6xl mx-auto">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-foreground mb-2">
-            @{params.username}&apos;s Wardrobe
+            @{username}&apos;s Wardrobe
           </h1>
           <p className="text-muted-foreground">Browse their collection of fashion items</p>
         </div>
@@ -228,7 +231,7 @@ export default function UserWardrobePage({ params }: UserWardrobePageProps) {
         {/* Back to Profile */}
         <div className="text-center mt-8">
           <Button variant="ghost">
-            ← Back to @{params.username}&apos;s Profile
+            ← Back to @{username}&apos;s Profile
           </Button>
         </div>
       </div>
