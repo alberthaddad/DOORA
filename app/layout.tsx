@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import AppContent from "@/components/ui/AppContent";
+import { Analytics } from "@vercel/analytics/next"
 
 // Custom fonts based on DOORA design system
 const bernoru = localFont({
@@ -238,6 +239,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Analytics />
       <head>
         <meta name="msapplication-TileColor" content="#dc655f" />
         <meta name="theme-color" content="#dc655f" />
