@@ -15,6 +15,9 @@ export default function Home() {
   const solutionRef = useRef<HTMLParagraphElement>(null);
   const descriptionRef = useRef<HTMLHeadingElement>(null);
   const [emailValue, setEmailValue] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -57,6 +60,43 @@ export default function Home() {
       }
     };
   }, []);
+
+  const handleEmailSubmit = async () => {
+    // Reset previous messages
+    setSubmitMessage('');
+    setSubmitError('');
+
+    // Validate email
+    if (!emailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+      setSubmitError('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: emailValue }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage(data.message);
+        setEmailValue(''); // Clear the input on success
+      } else {
+        setSubmitError(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setSubmitError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -101,6 +141,11 @@ export default function Home() {
                   type="email" 
                   value={emailValue}
                   onChange={(e) => setEmailValue(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !isSubmitting) {
+                      handleEmailSubmit();
+                    }
+                  }}
                   className="w-full px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
                 />
                 {emailValue === '' && (
@@ -116,11 +161,27 @@ export default function Home() {
                   </div>
                 )}
               </div>
-              <Button className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-semibold whitespace-nowrap">
-                  Notify Me
-                </Button>
+              <Button 
+                onClick={handleEmailSubmit}
+                disabled={isSubmitting}
+                className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-semibold whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Subscribing...' : 'Notify Me'}
+              </Button>
               </div>
               
+            {/* Success and Error Messages */}
+            {submitMessage && (
+              <p className="text-sm text-green-600 font-medium mb-2">
+                {submitMessage}
+              </p>
+            )}
+            {submitError && (
+              <p className="text-sm text-red-600 font-medium mb-2">
+                {submitError}
+              </p>
+            )}
+            
             <p className="text-xs" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
               No spam, just updates
             </p>

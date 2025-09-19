@@ -1,0 +1,274 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DOORA",
+  "alternateName": "DOORA Fashion Marketplace",
+  "description": "DOORA is the Middle East's premier secondhand fashion marketplace, inspired by the Arabic word for 'circle'. We make secondhand fashion feel premium and NOT second best by connecting thousands of closets in one simple, secure space.",
+  "url": "https://doora.app",
+  "logo": "https://doora.app/branding/favicons/DOORA LOGO-21.png",
+  "image": "https://doora.app/images/og-image-homepage.png",
+  "foundingDate": "2024",
+  "founder": {
+    "@type": "Person",
+    "name": "DOORA Founder",
+    "description": "Fashion industry veteran with experience in luxury groups in Paris, now focused on sustainable fashion in the Middle East"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Beirut",
+    "addressCountry": "Lebanon",
+    "addressRegion": "Beirut"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+96170998701",
+    "contactType": "customer service",
+    "email": "contact@doora.app",
+    "availableLanguage": ["English", "Arabic"]
+  },
+  "sameAs": [
+    "https://www.instagram.com/doora.app",
+    "https://www.linkedin.com/company/dooraapp",
+    "https://www.youtube.com/@DOORA_app",
+    "https://www.tiktok.com/@doora_app"
+  ],
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Lebanon"
+    },
+    {
+      "@type": "Country", 
+      "name": "United Arab Emirates"
+    },
+    {
+      "@type": "Country",
+      "name": "Saudi Arabia"
+    },
+    {
+      "@type": "Country",
+      "name": "Kuwait"
+    },
+    {
+      "@type": "Country",
+      "name": "Qatar"
+    },
+    {
+      "@type": "Country",
+      "name": "Bahrain"
+    },
+    {
+      "@type": "Country",
+      "name": "Oman"
+    },
+    {
+      "@type": "Country",
+      "name": "Egypt"
+    },
+    {
+      "@type": "Country",
+      "name": "Jordan"
+    }
+  ],
+  "serviceType": [
+    "Secondhand Fashion Marketplace",
+    "Sustainable Fashion Platform",
+    "Circular Fashion Economy",
+    "Fashion Resale Platform",
+    "Online Thrift Store",
+    "Pre-owned Clothing Marketplace",
+    "Vintage Fashion Platform",
+    "Fashion Trading Platform"
+  ],
+  "keywords": [
+    "secondhand fashion",
+    "sustainable fashion",
+    "circular fashion",
+    "pre-owned clothing",
+    "vintage fashion",
+    "fashion marketplace",
+    "online thrift store",
+    "resale platform",
+    "fashion resale",
+    "clothing exchange",
+    "Middle East fashion",
+    "Lebanon fashion",
+    "UAE fashion",
+    "Saudi Arabia fashion",
+    "Dubai fashion",
+    "Beirut fashion",
+    "Arab fashion",
+    "GCC fashion",
+    "MENA fashion",
+    "luxury secondhand",
+    "designer resale",
+    "premium thrift",
+    "high-end secondhand",
+    "branded clothing",
+    "fashion sustainability",
+    "eco-friendly fashion",
+    "conscious shopping",
+    "ethical fashion",
+    "fashion app",
+    "clothing marketplace",
+    "style platform",
+    "fashion community",
+    "wardrobe sharing",
+    "fashion trading",
+    "closet clearing",
+    "style discovery",
+    "fashion recommendations"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "description": "Access to premium secondhand fashion marketplace with thousands of items from top brands",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "DOORA Fashion Categories",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Women's Clothing",
+          "description": "Secondhand women's clothing from top brands"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Men's Clothing",
+          "description": "Secondhand men's clothing from top brands"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product", 
+          "name": "Accessories",
+          "description": "Secondhand fashion accessories and jewelry"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Shoes",
+          "description": "Secondhand shoes and footwear"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Bags",
+          "description": "Secondhand handbags and purses"
+        }
+      }
+    ]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://doora.app/store?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://doora.app"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Business Model",
+      "value": "Marketplace connecting buyers and sellers of secondhand fashion"
+    },
+    {
+      "@type": "PropertyValue", 
+      "name": "Target Audience",
+      "value": "Fashion-conscious individuals in the Middle East aged 18-45"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Unique Value Proposition", 
+      "value": "Making secondhand fashion feel premium and NOT second best"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Sustainability Focus",
+      "value": "Promoting circular fashion economy and reducing fashion waste"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Geographic Focus",
+      "value": "Middle East and North Africa (MENA) region"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Language Support",
+      "value": "English and Arabic"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Mobile App",
+      "value": "Available as Progressive Web App (PWA)"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Payment Methods",
+      "value": "Multiple payment options for Middle East markets"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Shipping",
+      "value": "Delivery across Middle East region"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Quality Assurance",
+      "value": "Curated selection of high-quality secondhand items"
+    }
+  ],
+  "knowsAbout": [
+    "Secondhand Fashion",
+    "Sustainable Fashion", 
+    "Circular Economy",
+    "Fashion Resale",
+    "Vintage Clothing",
+    "Pre-owned Designer Items",
+    "Fashion Sustainability",
+    "Middle East Fashion Market",
+    "Online Fashion Marketplace",
+    "Fashion Trading",
+    "Wardrobe Management",
+    "Style Curation",
+    "Fashion Trends",
+    "Eco-friendly Shopping",
+    "Conscious Fashion",
+    "Fashion Community Building"
+  ],
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Sustainable Fashion Community"
+    },
+    {
+      "@type": "Organization", 
+      "name": "Middle East E-commerce Association"
+    }
+  ],
+  "award": [
+    {
+      "@type": "Award",
+      "name": "Innovative Fashion Platform",
+      "description": "Recognized for revolutionizing secondhand fashion in the Middle East"
+    }
+  ],
+  "slogan": "From Closet to Closet - Making Secondhand Feel Premium and NOT Second Best",
+  "mission": "To create a premium secondhand fashion marketplace that makes sustainable shopping accessible and desirable in the Middle East, promoting circular fashion economy while connecting fashion-conscious individuals across the region.",
+  "vision": "To become the leading secondhand fashion platform in the Middle East, where every closet becomes a marketplace and every purchase contributes to a more sustainable fashion future."
+}
