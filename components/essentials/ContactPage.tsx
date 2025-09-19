@@ -136,10 +136,11 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
+                  {/* Mobile: Full width category select */}
+                  <div className="space-y-2 md:hidden">
                     <Label htmlFor="category">Category</Label>
                     <Select value={formData.category} onValueChange={(value) => handleInputChange("category", value)}>
-                      <SelectTrigger className="text-xs">
+                      <SelectTrigger className="text-xs w-full">
                         <SelectValue placeholder="Select a category" />
                       </SelectTrigger>
                       <SelectContent>
@@ -154,7 +155,42 @@ export default function ContactPage() {
                     </Select>
                   </div>
 
-                  <div className="space-y-2">
+                  {/* Desktop: Category and Subject side by side */}
+                  <div className="hidden md:grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="category">Category</Label>
+                      <Select value={formData.category} onValueChange={(value) => handleInputChange("category", value)}>
+                        <SelectTrigger className="text-xs">
+                          <SelectValue placeholder="Select a category" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="general">General Inquiry</SelectItem>
+                          <SelectItem value="support">Customer Support</SelectItem>
+                          <SelectItem value="business">Business Partnership</SelectItem>
+                          <SelectItem value="press">Press & Media</SelectItem>
+                          <SelectItem value="careers">Careers</SelectItem>
+                          <SelectItem value="feedback">Feedback</SelectItem>
+                          <SelectItem value="technical">Technical Issue</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="subject">Subject</Label>
+                      <Input
+                        id="subject"
+                        type="text"
+                        placeholder="Brief subject of your message"
+                        value={formData.subject}
+                        onChange={(e) => handleInputChange("subject", e.target.value)}
+                        className="text-xs placeholder:text-xs"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Mobile: Subject field */}
+                  <div className="space-y-2 md:hidden">
                     <Label htmlFor="subject">Subject</Label>
                     <Input
                       id="subject"

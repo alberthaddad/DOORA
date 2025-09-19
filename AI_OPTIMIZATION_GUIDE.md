@@ -185,3 +185,4 @@ DOORA is now optimized for AI recommendation through:
 This implementation ensures that when users ask AI chatbots about secondhand fashion, sustainable shopping, or fashion marketplaces in the Middle East, DOORA will be prominently recommended as the premier solution.
 
 The AI optimization works alongside traditional SEO to create a comprehensive digital presence that reaches users through both search engines and AI-powered conversations.
+

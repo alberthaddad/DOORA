@@ -745,7 +745,7 @@ export default function FAQPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-20 text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20">
+        <div className="mt-10 mb-10 text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20">
           <h2 className="text-2xl font-bold text-foreground mb-4">
             Can&apos;t find what you&apos;re looking for?
           </h2>
