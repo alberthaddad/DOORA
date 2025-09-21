@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -34,6 +35,7 @@ export default function Home() {
       }
     );
 
+
     const headlineElement = headlineRef.current;
     const solutionElement = solutionRef.current;
     const descriptionElement = descriptionRef.current;
@@ -58,6 +60,7 @@ export default function Home() {
       if (descriptionElement) {
         observer.unobserve(descriptionElement);
       }
+      observer.disconnect();
     };
   }, []);
 
@@ -101,12 +104,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Hero Section */}
-      <section className="pt-2 pb-20 px-4 lg:px-8 h-[85vh] flex items-center bg-muted/30">
-        <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full">
+      <section className="pt-0 pb-20 px-4 lg:px-8 h-screen flex items-center relative overflow-hidden hero-bg">
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full relative z-20">
           <div className="mb-8 lg:mb-0 mt-32">
             {/* Mobile/Tablet logos */}
             <Image 
-              src="/images/doora_logo_light.png" 
+              src="/images/DOORA_TITLE_CORRECT.png" 
               alt="DOORA" 
               width={300}
               height={300}
@@ -116,7 +121,7 @@ export default function Home() {
             
             {/* Desktop logos - smaller size */}
             <Image 
-              src="/images/doora_logo_light_desktop.png" 
+              src="/images/DOORA_TITLE_CORRECT.png" 
               alt="DOORA" 
               width={1766}
               height={277}
@@ -125,13 +130,13 @@ export default function Home() {
             />
           </div>
           
-          <div className="font-accent text-sm md:text-lg lg:text-xl text-primary mb-20 lg:mt-8 tracking-wide uppercase">
+          <div className="font-accent text-sm md:text-lg lg:text-xl mb-20 lg:mt-8 tracking-wide uppercase" style={{color: 'oklch(0.9512 0.008 98.88)'}}>
             FROM CLOSET TO CLOSET
           </div>
 
           {/* Coming Soon Section */}
           <div className="mb-20">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-primary mb-4 font-title uppercase">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-black mb-4 font-title uppercase" style={{color: 'oklch(0.9512 0.008 98.88)'}}>
                 WE ARE LAUNCHING SOON
               </h2>
               
@@ -182,7 +187,7 @@ export default function Home() {
               </p>
             )}
             
-            <p className="text-xs" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            <p className="text-xs" style={{color: 'oklch(0.9512 0.008 98.88)'}}>
               No spam, just updates
             </p>
           </div>
@@ -399,10 +404,30 @@ export default function Home() {
           </div>
           
           {/* Title underneath Marquee */}
-          <div className="text-center mt-32 mb-8">
+          <div className="text-center mt-32 mb-2">
             <p className="text-2xl md:text-4xl lg:text-4xl font-black mb-6 font-title leading-tight text-primary uppercase">
               DOORA Is Designed To Make Secondhand Feel Premium And NOT Second Best!
             </p>
+          </div>
+        </section>
+
+        {/* Contact CTA Section */}
+        <section className="py-10 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center bg-muted/20 rounded-2xl p-8">
+              <h2 className="text-xl font-bold text-foreground mb-4">
+                Curious to know more?
+              </h2>
+              <p className="mb-6 max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                Check out the About Us page
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-base font-semibold rounded-lg text-white bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                About DOORA
+              </Link>
+            </div>
           </div>
         </section>
 

@@ -80,7 +80,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             style={{
               height: heightTransform,
               opacity: opacityTransform,
-              background: 'linear-gradient(to bottom, oklch(0.439 0.1032 35.98) 0%, oklch(0.2771 0.0422 150.19) 100%)'
+              background: 'linear-gradient(to bottom, oklch(0.439 0.1032 35.98) 0%, oklch(0.2354 0.0041 84.59) 100%)'
             }}
             className="absolute inset-x-0 top-0  w-[2px] rounded-full"
           />
