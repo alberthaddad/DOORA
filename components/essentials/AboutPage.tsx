@@ -18,16 +18,16 @@ function OurStoryTimeline() {
       title: "",
       content: (
         <div>
-          <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+          <p className="mb-12 text-sm md:text-base leading-relaxed text-foreground">
             &quot;At 17, I launched small businesses focused on giving clothes a longer life through upcycling and secondhand. That love for fashion took me to Paris, where I joined leading luxury groups to understand how the industry truly operated.
           </p>
-          <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+          <p className="mb-12 text-sm md:text-base leading-relaxed text-foreground">
             But behind those glossy offices, sustainability and ethics were nothing more than buzzwords. Every strategy was built to drive overconsumption, and I was a part of that system.
           </p>
-          <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+          <p className="mb-12 text-sm md:text-base leading-relaxed text-foreground">
             So I walked away and created DOORA, a platform that makes conscious fashion easy and accessible to anyone.
           </p>
-          <p className="mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+          <p className="mb-12 text-sm md:text-base leading-relaxed text-foreground">
             I know sustainability may not be everyone&apos;s first concern, but at DOORA, it is.
           </p>
         </div>
@@ -37,12 +37,12 @@ function OurStoryTimeline() {
       title: "",
       content: (
         <div>
-          <p className="-mt-4 mb-12 text-mm md:text-base leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+          <p className="-mt-4 mb-12 text-sm md:text-base leading-relaxed text-foreground">
             My mission is simple: give people the possibility to enjoy fashion while still making ethical choices.&quot;
           </p>
           <div className="text-right mt-8 pt-6 border-t border-primary/20">
             <p className="text-lg font-semibold text-primary italic">– Andrea Tegho</p>
-            <p className="text-sm mt-1 font-medium" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>Founder</p>
+            <p className="text-sm mt-1 font-medium text-foreground">Founder</p>
           </div>
         </div>
       ),
@@ -72,9 +72,17 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-muted/30 flex items-center justify-center min-h-[300px]">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+      <section className="py-20 px-4 flex items-center justify-center min-h-[500px] relative overflow-hidden" 
+               style={{
+                 backgroundImage: "url('/images/Hero About Us Image.jpg')",
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center center',
+                 backgroundRepeat: 'no-repeat'
+               }}>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <p className="text-xl max-w-2xl mx-auto text-white font-medium leading-relaxed">
             Inspired by the Arabic word for &quot;circle&quot;, DOORA reflects our core mission 
             to drive circular fashion in the Middle East.
           </p>
@@ -83,7 +91,7 @@ export default function AboutPage() {
 
       <div className="max-w-6xl mx-auto px-4">
         {/* About Doora Section */}
-        <section className="py-12">
+        <section className="py-20">
 
           {/* Our Values Section */}
           <div className="mb-16">
@@ -96,7 +104,7 @@ export default function AboutPage() {
             {/* Modern Values Design */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
               {/* Accessibility Value */}
-              <Card className="text-center hover:shadow-md transition-all duration-200 h-full bg-muted/20">
+              <Card className="text-center hover:shadow-md transition-all duration-200 h-full bg-muted/30">
                 <CardContent className="pt-6">
                   {/* Icon and Title Section */}
                   <div className="flex flex-col items-center gap-4">
@@ -113,7 +121,7 @@ export default function AboutPage() {
                   
                   {/* Content Section */}
                   <div className="flex-1 text-center">
-                    <p className="text-base lg:text-lg leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                    <p className="text-base lg:text-lg leading-relaxed text-foreground">
                       DOORA is for everyone; all styles, all sizes, and most importantly all budgets. Whether you&apos;re a thrifter, a vintage lover, or a luxury shopper, you&apos;ll find what you&apos;re looking for.
                     </p>
                   </div>
@@ -121,7 +129,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Sustainability Value */}
-              <Card className="text-center hover:shadow-md transition-all duration-200 h-full bg-muted/20">
+              <Card className="text-center hover:shadow-md transition-all duration-200 h-full bg-muted/30">
                 <CardContent className="pt-6">
                   {/* Icon and Title Section */}
                   <div className="flex flex-col items-center gap-4">
@@ -141,7 +149,7 @@ export default function AboutPage() {
                   
                   {/* Content Section */}
                   <div className="flex-1 text-center">
-                    <p className="text-base lg:text-lg leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                    <p className="text-base lg:text-lg leading-relaxed text-foreground">
                       We&apos;re fighting fast fashion by promoting a circular approach that gives clothes a longer life. We make conscious shopping affordable and easier than ever, breaking the stigma around secondhand fashion in the region.
                     </p>
                   </div>
@@ -240,10 +248,10 @@ export default function AboutPage() {
         <Separator />
 
         {/* The Problem We're Solving Section */}
-        <section className="py-12">
+        <section className="py-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">The Problems</h2>
-            <p className="text-lg max-w-3xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            <p className="text-lg max-w-3xl mx-auto text-foreground">
               The fashion world is full of contradictions. We have more than enough clothes to dress the next eight generations, yet fast fashion dominates.
             </p>
           </div>

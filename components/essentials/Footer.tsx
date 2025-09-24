@@ -61,29 +61,25 @@ export default function Footer() {
               <div className="space-y-2 text-sm">
                 <Link 
                   href="/" 
-                  className="block hover:text-primary transition-colors"
-                  style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                  className="block hover:text-primary transition-colors text-foreground"
                 >
                   Home
                 </Link>
                 <Link 
                   href="/about" 
-                  className="block hover:text-primary transition-colors"
-                  style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                  className="block hover:text-primary transition-colors text-foreground"
                 >
                   About Us
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="block hover:text-primary transition-colors"
-                  style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                  className="block hover:text-primary transition-colors text-foreground"
                 >
                   Contact
                 </Link>
                 <Link 
                   href="/faq" 
-                  className="block hover:text-primary transition-colors"
-                  style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                  className="block hover:text-primary transition-colors text-foreground"
                 >
                   FAQ
                 </Link>
@@ -176,29 +172,25 @@ export default function Footer() {
                   <div className="space-y-2 text-sm">
                     <Link 
                       href="/" 
-                      className="block hover:text-primary transition-colors"
-                      style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                      className="block hover:text-primary transition-colors text-foreground"
                     >
                       Home
                     </Link>
                     <Link 
                       href="/about" 
-                      className="block hover:text-primary transition-colors"
-                      style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                      className="block hover:text-primary transition-colors text-foreground"
                     >
                       About Us
                     </Link>
                     <Link 
                       href="/contact" 
-                      className="block hover:text-primary transition-colors"
-                      style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                      className="block hover:text-primary transition-colors text-foreground"
                     >
                       Contact
                     </Link>
                     <Link 
                       href="/faq" 
-                      className="block hover:text-primary transition-colors"
-                      style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+                      className="block hover:text-primary transition-colors text-foreground"
                     >
                       FAQ
                     </Link>
@@ -210,7 +202,7 @@ export default function Footer() {
               <div className="flex-1 text-center">
                 <div className="space-y-4">
                   <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Newsletter</h3>
-                  <p className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+                  <p className="text-sm text-foreground">
                     Sign up to our newsletter so that you never miss exciting new features and news.
                   </p>
                   <div className="flex flex-col gap-3 max-w-sm mx-auto">
@@ -236,12 +228,12 @@ export default function Footer() {
                       {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                     </Button>
                     {submitMessage && (
-                      <p className="text-sm text-green-600 text-center">
+                      <p className="text-sm text-success text-center">
                         {submitMessage}
                       </p>
                     )}
                     {submitError && (
-                      <p className="text-sm text-red-600 text-center">
+                      <p className="text-sm text-error text-center">
                         {submitError}
                       </p>
                     )}
@@ -336,7 +328,7 @@ export default function Footer() {
         {/* Newsletter Section - Mobile only */}
         <div className="md:hidden text-center mb-8">
           <h3 className="text-xl font-black font-title leading-tight text-primary uppercase mb-4">Newsletter</h3>
-          <p className="text-sm mb-4" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+          <p className="text-sm mb-4 text-foreground">
             Sign up to our newsletter so that you never miss exciting new features and news.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
@@ -363,12 +355,12 @@ export default function Footer() {
             </Button>
           </div>
           {submitMessage && (
-            <p className="text-sm text-green-600 text-center mt-2">
+            <p className="text-sm text-success text-center mt-2">
               {submitMessage}
             </p>
           )}
           {submitError && (
-            <p className="text-sm text-red-600 text-center mt-2">
+            <p className="text-sm text-error text-center mt-2">
               {submitError}
             </p>
           )}
@@ -377,7 +369,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
-          <div className="text-sm" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+          <div className="text-sm text-foreground">
             <p>&copy; 2025 Doora. All rights reserved.</p>
           </div>
         </div>

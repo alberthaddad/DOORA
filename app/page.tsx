@@ -157,13 +157,13 @@ export default function Home() {
             />
           </div>
           
-          <div className="font-accent text-sm md:text-lg lg:text-xl mb-20 lg:mt-8 tracking-wide uppercase" style={{color: 'oklch(0.9512 0.008 98.88)'}}>
+          <div className="font-accent text-sm md:text-lg lg:text-xl mb-20 lg:mt-8 tracking-wide uppercase text-light-cream">
             FROM CLOSET TO CLOSET
           </div>
 
           {/* Coming Soon Section */}
           <div className="mb-20">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-black mb-4 font-title uppercase" style={{color: 'oklch(0.9512 0.008 98.88)'}}>
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-black mb-4 font-title uppercase text-light-cream">
                 WE ARE LAUNCHING SOON
               </h2>
               
@@ -204,17 +204,17 @@ export default function Home() {
               
             {/* Success and Error Messages */}
             {submitMessage && (
-              <p className="text-sm text-green-600 font-medium mb-2">
+              <p className="text-sm text-success font-medium mb-2">
                 {submitMessage}
               </p>
             )}
             {submitError && (
-              <p className="text-sm text-red-600 font-medium mb-2">
+              <p className="text-sm text-error font-medium mb-2">
                 {submitError}
               </p>
             )}
             
-            <p className="text-xs" style={{color: 'oklch(0.9512 0.008 98.88)'}}>
+            <p className="text-xs text-light-cream">
               No spam, just updates
             </p>
           </div>
@@ -244,8 +244,7 @@ export default function Home() {
 
             <h2 
             ref={descriptionRef}
-            className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-16 leading-relaxed animate-fade-in-up"
-            style={{color: 'oklch(0.2354 0.0041 84.59)'}}
+            className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-16 leading-relaxed animate-fade-in-up text-foreground"
           >
             Whether you&apos;re clearing out your closet or browsing for unique finds, our fashion resale platform connects thousands of closets in one simple, secure space.
           </h2>
@@ -313,7 +312,7 @@ export default function Home() {
                 1
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Take a Pic&apos;</h3>
-              <p style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <p className="text-foreground">
                 Make sure it&apos;s a good one
               </p>
             </div>
@@ -323,7 +322,7 @@ export default function Home() {
                 2
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Price It</h3>
-              <p style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <p className="text-foreground">
                 And add a product description
               </p>
             </div>
@@ -333,7 +332,7 @@ export default function Home() {
                 3
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Sell it</h3>
-               <p className="mb-12" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+               <p className="mb-12 text-foreground">
                  We&apos;ll notify you when it sells
 
               </p>
@@ -347,7 +346,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
               Premium Shopping Experience
             </h2>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-foreground">
             Let&apos;s face it, secondhand shopping can be overwhelming. Digging through piles of clothes, scrolling through endless reseller pages....We&apos;re changing that. 
             <br />
             Sustainable shopping has never been easier:
@@ -357,20 +356,20 @@ export default function Home() {
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
             {/* Row 1 - Mobile: Cards 1 & 2, Desktop: Cards 1, 2, 3 */}
             <Marquee pauseOnHover className="[--duration:20s]">
-              <Card className="w-64 mx-4 bg-muted/20">
+              <Card className="w-64 mx-4 bg-muted/30">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Smart Trend Forecasting</CardTitle>
                 </CardHeader>
               </Card>
 
-              <Card className="w-64 mx-4 bg-muted/20">
+              <Card className="w-64 mx-4 bg-muted/30">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Personalized Recommendations</CardTitle>
                 </CardHeader>
               </Card>
 
               {/* Desktop only - Card 3 */}
-              <Card className="w-64 mx-4 hidden lg:block bg-muted/20">
+              <Card className="w-64 mx-4 hidden lg:block bg-muted/30">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Search By Image</CardTitle>
                 </CardHeader>
@@ -386,26 +385,26 @@ export default function Home() {
                   style={{ animationDirection: 'reverse' }}
                 >
                   {/* Mobile only - Card 3 */}
-                  <Card className="w-64 mx-4 lg:hidden bg-muted/20">
+                  <Card className="w-64 mx-4 lg:hidden bg-muted/30">
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Search By Image</CardTitle>
                     </CardHeader>
                   </Card>
 
-                  <Card className="w-64 mx-4 bg-muted/20">
+                  <Card className="w-64 mx-4 bg-muted/30">
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Real Reviews</CardTitle>
                     </CardHeader>
                   </Card>
 
                   {/* Desktop only - Cards 5 & 6 */}
-                  <Card className="w-64 mx-4 hidden lg:block bg-muted/20">
+                  <Card className="w-64 mx-4 hidden lg:block bg-muted/30">
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Secure Payments</CardTitle>
                     </CardHeader>
                   </Card>
 
-                  <Card className="w-64 mx-4 hidden lg:block bg-muted/20">
+                  <Card className="w-64 mx-4 hidden lg:block bg-muted/30">
                     <CardHeader className="flex items-center justify-center h-full">
                       <CardTitle className="text-center">Track Your Orders</CardTitle>
                     </CardHeader>
@@ -416,13 +415,13 @@ export default function Home() {
 
             {/* Row 3 - Mobile only - Cards 5 & 6 */}
             <Marquee pauseOnHover className="[--duration:20s] lg:hidden">
-              <Card className="w-64 mx-4 bg-muted/20">
+              <Card className="w-64 mx-4 bg-muted/30">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Secure Payments</CardTitle>
                 </CardHeader>
               </Card>
 
-              <Card className="w-64 mx-4 bg-muted/20">
+              <Card className="w-64 mx-4 bg-muted/30">
                 <CardHeader className="flex items-center justify-center h-full">
                   <CardTitle className="text-center">Track Your Orders</CardTitle>
                 </CardHeader>
@@ -444,11 +443,11 @@ export default function Home() {
         {/* Contact CTA Section */}
         <section className="py-10 px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center bg-muted/20 rounded-2xl p-8">
+            <div className="text-center bg-muted/30 rounded-2xl p-8">
               <h2 className="text-xl font-bold text-foreground mb-4">
                 Curious to know more?
               </h2>
-              <p className="mb-6 max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <p className="mb-6 max-w-2xl mx-auto text-foreground">
                 Check out the About Us page
               </p>
               <Link
