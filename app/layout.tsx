@@ -241,6 +241,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Analytics />
+      <SpeedInsights/>
       <head>
         <meta name="msapplication-TileColor" content="#dc655f" />
         <meta name="theme-color" content="#dc655f" />
