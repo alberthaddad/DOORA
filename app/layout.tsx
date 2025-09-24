@@ -249,6 +249,30 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/branding/favicons/DOORA LOGO-21.png" />
         <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRG9vcmEiLCJzaG9ydF9uYW1lIjoiRG9vcmEiLCJpY29ucyI6W3sic3JjIjoiL2JyYW5kaW5nL2Zhdmljb25zL0RPT1JBIExZZjJfmljGh0IiwiaHJlZkFjdGlvbiI6InN0YXJ0X3VybCIsInNpemVzIjoiMTkyeDI5MiIsInR5cGUiOiJpbWFnZS9wbmcifV19" />
         
+        {/* Critical Resource Preloading for Performance */}
+        {/* Preload Critical Images */}
+        <link rel="preload" as="image" href="/images/Hero BG Test.jpg" type="image/jpeg" />
+        <link rel="preload" as="image" href="/images/DOORA_TITLE_CORRECT.png" type="image/png" />
+        <link rel="preload" as="image" href="/images/iphone_doora.png" type="image/png" />
+        <link rel="preload" as="image" href="/images/iphone_angled.png" type="image/png" />
+        <link rel="preload" as="image" href="/images/iphone_realistic.png" type="image/png" />
+        
+        {/* Preload Critical Fonts */}
+        <link rel="preload" as="font" href="/fonts/bernoru/Archivo-Black.ttf" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/bernoru/bernoru-blackultraexpanded.otf" type="font/otf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/neue-machina/PPNeueMachina-PlainLight.otf" type="font/otf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/neue-machina/PPNeueMachina-PlainRegular.otf" type="font/otf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/neue-machina/PPNeueMachina-PlainUltrabold.otf" type="font/otf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-Light.ttf" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-Regular.ttf" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-Medium.ttf" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-SemiBold.ttf" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-Bold.ttf" type="font/ttf" crossOrigin="anonymous" />
+        
+        {/* DNS Prefetch for External Resources */}
+        <link rel="dns-prefetch" href="//vercel.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        
         {/* AI Training Data and Knowledge Graph */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({

@@ -20,13 +20,36 @@ export default function Home() {
   const [submitMessage, setSubmitMessage] = useState('');
   const [submitError, setSubmitError] = useState('');
 
+  // Preload critical resources immediately when component mounts
   useEffect(() => {
+    // Preload critical images for instant display
+    const preloadImages = [
+      '/images/Hero BG Test.jpg',
+      '/images/DOORA_TITLE_CORRECT.png',
+      '/images/iphone_doora.png',
+      '/images/iphone_angled.png',
+      '/images/iphone_realistic.png'
+    ];
+
+    preloadImages.forEach(src => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
+    // High-performance IntersectionObserver with optimizations
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          }
+        // Use requestAnimationFrame for optimal performance
+        requestAnimationFrame(() => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              // Unobserve elements once they're animated to reduce overhead
+              observer.unobserve(entry.target);
+            }
+          });
         });
       },
       {
@@ -117,6 +140,8 @@ export default function Home() {
               height={300}
               className="max-h-40 md:max-h-48 lg:hidden w-auto mx-auto"
               style={{maxHeight: '320px'}}
+              priority
+              loading="eager"
             />
             
             {/* Desktop logos - smaller size */}
@@ -127,6 +152,8 @@ export default function Home() {
               height={277}
               className="hidden lg:block w-auto mx-auto"
               style={{height: '128px', maxHeight: '128px'}}
+              priority
+              loading="eager"
             />
           </div>
           
@@ -235,6 +262,7 @@ export default function Home() {
                   height={560}
                   className="w-72 h-auto"
                   priority
+                  loading="eager"
                 />
               </div>
               <div className="relative z-20 -ml-20 mt-4">
@@ -245,6 +273,7 @@ export default function Home() {
                   height={900}
                   className="w-[390px] h-auto"
                   priority
+                  loading="eager"
                 />
               </div>
             </div>
@@ -258,6 +287,7 @@ export default function Home() {
                 height={640}
                 className="w-80 h-auto"
                 priority
+                loading="eager"
               />
             </div>
           </div>

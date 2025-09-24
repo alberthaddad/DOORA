@@ -2,14 +2,40 @@
 @import "tw-animate-css";
 
 
-/* Smooth scrolling for anchor links */
+/* High-performance scrolling optimizations */
 html {
   scroll-behavior: smooth;
+  /* Enable hardware acceleration for better scrolling */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Optimize font rendering for performance */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Enable GPU acceleration */
+  will-change: scroll-position;
 }
 
-/* Smooth theme transitions */
+/* Optimize body for scrolling performance */
+body {
+  /* Enable hardware acceleration */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Reduce layout calculations during scroll */
+  contain: layout style paint;
+  /* Optimize paint operations */
+  isolation: isolate;
+}
+
+/* Performance-optimized transitions */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  /* Enable hardware acceleration for elements with transitions */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* Optimize performance during transitions */
+  -webkit-perspective: 1000;
+  perspective: 1000;
 }
 
 /* Ensure consistent transitions for pseudo elements */
@@ -182,11 +208,17 @@ select {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
+  /* Hardware acceleration for fade animations */
+  -webkit-transform: translateZ(0) translateY(30px);
+  transform: translateZ(0) translateY(30px);
+  will-change: opacity, transform;
+  contain: layout style paint;
 }
 
 .animate-fade-in-up.in-view {
   opacity: 1;
-  transform: translateY(0);
+  -webkit-transform: translateZ(0) translateY(0);
+  transform: translateZ(0) translateY(0);
 }
 
 .placeholder-text {
@@ -214,11 +246,22 @@ select {
 
 .animate-marquee {
   animation: marquee var(--duration) linear infinite;
+  /* Hardware acceleration for marquee animations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration) linear infinite;
+  /* Hardware acceleration for vertical marquee animations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style paint;
 }
+
 
 /* 3D Transform utilities for 3D Marquee */
 .transform-3d {
@@ -229,13 +272,19 @@ select {
   perspective: 1000px;
 }
 
-/* Hero background responsive styles */
+/* High-performance hero background */
 .hero-bg {
   background-image: url('/images/Hero BG Test.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  /* Enable hardware acceleration for background images */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Optimize background painting */
+  will-change: transform;
+  contain: layout style paint;
 }
 
 /* Mobile optimization for hero background */
