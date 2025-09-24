@@ -335,3 +335,8 @@ html {
 html::-webkit-scrollbar {
   display: none; /* Webkit browsers */
 }
+
+/* Header scroll behavior */
+header {
+  will-change: transform;
+}

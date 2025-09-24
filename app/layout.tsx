@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import AppContent from "@/components/ui/AppContent";
+import Header from "@/components/essentials/Header";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -339,9 +340,10 @@ export default function RootLayout({
         <meta name="ai-differentiation" content="Middle East specialization, Arabic language, Local payment methods, Regional fashion trends" />
       </head>
       <body
-        className={`${bernoru.variable} ${neueMachina.variable} ${openSauce.variable} font-sans antialiased min-h-screen flex flex-col`}
+        className={`${bernoru.variable} ${neueMachina.variable} ${openSauce.variable} font-sans antialiased min-h-screen`}
       >
         <LoadingScreen />
+        <Header />
         <AppContent>
           {children}
         </AppContent>
