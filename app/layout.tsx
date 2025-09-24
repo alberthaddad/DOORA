@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import AppContent from "@/components/ui/AppContent";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Custom fonts based on DOORA design system
 const bernoru = localFont({
