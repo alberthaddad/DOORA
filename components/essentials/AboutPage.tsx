@@ -72,17 +72,12 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4 flex items-center justify-center min-h-[500px] relative overflow-hidden" 
-               style={{
-                 backgroundImage: "url('/images/Hero About Us Image.jpg')",
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center center',
-                 backgroundRepeat: 'no-repeat'
-               }}>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <p className="text-xl max-w-2xl mx-auto text-white font-medium leading-relaxed">
+      <section className="px-4 bg-muted/30 h-[300px] flex items-center">
+        <div className="max-w-4xl mx-auto text-center w-full">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
+            About Us
+          </h1>
+          <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
             Inspired by the Arabic word for &quot;circle&quot;, DOORA reflects our core mission 
             to drive circular fashion in the Middle East.
           </p>

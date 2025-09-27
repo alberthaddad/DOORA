@@ -1,64 +1,39 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 /* High-performance scrolling optimizations */
 html {
   scroll-behavior: smooth;
-  /* Enable hardware acceleration for better scrolling */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+
   /* Optimize font rendering for performance */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  /* Enable GPU acceleration */
+
+  /* Keep smooth scrolling, but remove transforms that break fixed positioning */
   will-change: scroll-position;
 }
 
 /* Optimize body for scrolling performance */
 body {
-  /* Enable hardware acceleration */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  /* Reduce layout calculations during scroll */
-  contain: layout style paint;
-  /* Optimize paint operations */
-  isolation: isolate;
+  /* Do NOT use transform here → it breaks fixed elements */
+  /* Keep background and text handled by Tailwind */
 }
 
-/* Performance-optimized transitions */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  /* Enable hardware acceleration for elements with transitions */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  /* Optimize performance during transitions */
-  -webkit-perspective: 1000;
-  perspective: 1000;
-}
-
-/* Ensure consistent transitions for pseudo elements */
-*::before,
-*::after {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Specific transitions for common UI elements */
+/* Optimized transitions - only essential elements */
 button,
 input,
 textarea,
 select {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
-/* Smooth transitions for cards and containers */
-.card,
-[class*="card"],
-.bg-muted,
-.bg-background,
-.bg-primary {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+.hover\:bg-primary:hover,
+.hover\:scale-105:hover {
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 @theme inline {
@@ -102,21 +77,15 @@ select {
   --radius-xl: calc(var(--radius) + 4px);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
   @keyframes marquee {
-  from {
-    transform: translateX(0);
-    }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap))); }
   }
+
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
-    }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
-    }
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-100% - var(--gap))); }
   }
 }
 
@@ -124,58 +93,57 @@ select {
   --radius: 0.625rem;
 
   /* Core Brand Colors */
-  --background: oklch(0.9512 0.008 98.88);        /* Warm cream #fcf7f6 */
-  --foreground: oklch(0.2354 0.0041 84.59);        /* Deep forest green #09311b */
-  --primary: oklch(0.439 0.1032 35.98);            /* Warm terracotta #dc655f */
-  --primary-foreground: oklch(0.98 0.005 45); /* Cream on terracotta */
+  --background: oklch(0.9512 0.008 98.88);
+  --foreground: oklch(0.2354 0.0041 84.59);
+  --primary: oklch(0.439 0.1032 35.98);
+  --primary-foreground: oklch(0.98 0.005 45);
 
   /* Secondary & Supporting Colors */
-  --secondary: oklch(0.72 0.08 145);         /* Sage green #85b286 */
-  --secondary-foreground: oklch(0.28 0.06 155); /* Forest green text */
-  --accent: oklch(0.85 0.02 85);             /* Warm neutral #d4cdbf */
-  --accent-foreground: oklch(0.28 0.06 155); /* Forest green text */
+  --secondary: oklch(0.72 0.08 145);
+  --secondary-foreground: oklch(0.28 0.06 155);
+  --accent: oklch(0.85 0.02 85);
+  --accent-foreground: oklch(0.28 0.06 155);
 
   /* UI Element Colors */
-  --card: oklch(0.99 0.003 45);              /* Slightly off-white for cards */
-  --card-foreground: oklch(0.28 0.06 155);   /* Forest green text */
-  --popover: oklch(0.99 0.003 45);           /* Card color for popovers */
+  --card: oklch(0.99 0.003 45);
+  --card-foreground: oklch(0.28 0.06 155);
+  --popover: oklch(0.99 0.003 45);
   --popover-foreground: oklch(0.28 0.06 155);
 
   /* Interactive States */
-  --muted: oklch(0.85 0.02 85);              /* Warm neutral for muted elements */
-  --muted-foreground: oklch(0.45 0.04 155);  /* Lighter forest green for muted text */
-  --border: oklch(0.85 0.02 85);             /* Subtle warm borders */
-  --input: oklch(0.96 0.005 45);             /* Slightly darker than background */
-  --ring: oklch(0.65 0.15 25);               /* Terracotta focus rings */
+  --muted: oklch(0.85 0.02 85);
+  --muted-foreground: oklch(0.45 0.04 155);
+  --border: oklch(0.85 0.02 85);
+  --input: oklch(0.96 0.005 45);
+  --ring: oklch(0.65 0.15 25);
 
   /* Destructive Actions */
-  --destructive: oklch(0.62 0.22 15);        /* Warm red for destructive actions */
+  --destructive: oklch(0.62 0.22 15);
   --destructive-foreground: oklch(0.98 0.005 45);
 
-  /* Chart Colors - Harmonious with brand */
-  --chart-1: oklch(0.65 0.15 25);            /* Primary terracotta */
-  --chart-2: oklch(0.72 0.08 145);           /* Sage green */
-  --chart-3: oklch(0.55 0.12 35);            /* Deeper terracotta */
-  --chart-4: oklch(0.62 0.06 135);           /* Deeper sage */
-  --chart-5: oklch(0.75 0.04 85);            /* Light warm neutral */
+  /* Chart Colors */
+  --chart-1: oklch(0.65 0.15 25);
+  --chart-2: oklch(0.72 0.08 145);
+  --chart-3: oklch(0.55 0.12 35);
+  --chart-4: oklch(0.62 0.06 135);
+  --chart-5: oklch(0.75 0.04 85);
 
   /* Sidebar Colors */
-  --sidebar: oklch(0.96 0.005 45);           /* Slightly darker than background */
+  --sidebar: oklch(0.96 0.005 45);
   --sidebar-foreground: oklch(0.28 0.06 155);
-  --sidebar-primary: oklch(0.65 0.15 25);    /* Terracotta */
+  --sidebar-primary: oklch(0.65 0.15 25);
   --sidebar-primary-foreground: oklch(0.98 0.005 45);
-  --sidebar-accent: oklch(0.85 0.02 85);     /* Warm neutral */
+  --sidebar-accent: oklch(0.85 0.02 85);
   --sidebar-accent-foreground: oklch(0.28 0.06 155);
   --sidebar-border: oklch(0.85 0.02 85);
   --sidebar-ring: oklch(0.65 0.15 25);
 
-  /* Custom Brand Colors for Inline Usage */
-  --text-light: oklch(0.9512 0.008 98.88);   /* Light cream text */
-  --text-medium: oklch(0.5354 0.0644 135.23); /* Medium green */
-  --success: oklch(0.55 0.15 140);           /* Success green */
-  --error: oklch(0.62 0.22 15);              /* Error red */
+  /* Custom Brand Colors */
+  --text-light: oklch(0.9512 0.008 98.88);
+  --text-medium: oklch(0.5354 0.0644 135.23);
+  --success: oklch(0.55 0.15 140);
+  --error: oklch(0.62 0.22 15);
 }
-
 
 @layer base {
   * {
@@ -188,126 +156,70 @@ select {
 
 /* Custom font and color utility classes */
 @layer utilities {
-  .font-title {
-    font-family: var(--font-bernoru), ui-sans-serif, system-ui, sans-serif;
-  }
-  .font-accent {
-    font-family: var(--font-neue-machina), ui-sans-serif, system-ui, sans-serif;
-  }
-  .font-body {
-    font-family: var(--font-open-sauce), ui-sans-serif, system-ui, sans-serif;
-  }
-  
-  /* Brand color utilities */
-  .text-light-cream {
-    color: var(--text-light);
-  }
-  .text-medium-green {
-    color: var(--text-medium);
-  }
-  .text-success {
-    color: var(--success);
-  }
-  .text-error {
-    color: var(--error);
-  }
+  .font-title { font-family: var(--font-bernoru), ui-sans-serif, system-ui, sans-serif; }
+  .font-accent { font-family: var(--font-neue-machina), ui-sans-serif, system-ui, sans-serif; }
+  .font-body { font-family: var(--font-open-sauce), ui-sans-serif, system-ui, sans-serif; }
+
+  .text-light-cream { color: var(--text-light); }
+  .text-medium-green { color: var(--text-medium); }
+  .text-success { color: var(--success); }
+  .text-error { color: var(--error); }
 }
 
+/* Animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
-  /* Hardware acceleration for fade animations */
-  -webkit-transform: translateZ(0) translateY(30px);
-  transform: translateZ(0) translateY(30px);
   will-change: opacity, transform;
-  contain: layout style paint;
 }
 
 .animate-fade-in-up.in-view {
   opacity: 1;
-  -webkit-transform: translateZ(0) translateY(0);
-  transform: translateZ(0) translateY(0);
+  transform: translateY(0);
 }
 
-.placeholder-text {
-  color: rgb(156 163 175);
-}
+.placeholder-text { color: rgb(156 163 175); }
 
-
+/* Marquee */
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap))); }
 }
 
 @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
-  }
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(-100% - var(--gap))); }
 }
 
 .animate-marquee {
   animation: marquee var(--duration) linear infinite;
-  /* Hardware acceleration for marquee animations */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   will-change: transform;
-  contain: layout style paint;
 }
 
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration) linear infinite;
-  /* Hardware acceleration for vertical marquee animations */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   will-change: transform;
-  contain: layout style paint;
 }
 
+/* 3D Marquee */
+.transform-3d { transform-style: preserve-3d; }
+.perspective-distant { perspective: 1000px; }
 
-/* 3D Transform utilities for 3D Marquee */
-.transform-3d {
-  transform-style: preserve-3d;
-}
-
-.perspective-distant {
-  perspective: 1000px;
-}
-
-/* High-performance hero background */
+/* Hero background */
 .hero-bg {
   background-image: url('/images/Hero BG Test.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* Enable hardware acceleration for background images */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  /* Optimize background painting */
-  will-change: transform;
-  contain: layout style paint;
+  background-attachment: scroll; /* keep scroll for mobile perf */
 }
 
-/* Mobile optimization for hero background */
 @media (max-width: 768px) {
   .hero-bg {
     background-position: center top;
@@ -316,27 +228,25 @@ select {
   .hero-bg::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.3);
     z-index: 1;
     pointer-events: none;
   }
 }
 
-/* Hide scrollbar but keep functionality */
+/* Hide scrollbar but keep scrolling */
 html {
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  -ms-overflow-style: none; /* IE10+ */
 }
+html::-webkit-scrollbar { display: none; }
 
-html::-webkit-scrollbar {
-  display: none; /* Webkit browsers */
-}
-
-/* Header scroll behavior */
+/* Header */
 header {
-  will-change: transform;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
 }

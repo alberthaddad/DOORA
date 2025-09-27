@@ -76,12 +76,12 @@ export default function FAQPage() {
       `}</style>
       <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-black font-title leading-tight text-primary uppercase mb-6">
+      <section className="px-4 bg-muted/30 h-[300px] flex items-center">
+        <div className="max-w-4xl mx-auto text-center w-full">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed faq-text-color">
+          <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
             Find answers to all of your questions about DOORA.
           </p>
         </div>

@@ -20,18 +20,15 @@ export default function Home() {
   const [submitMessage, setSubmitMessage] = useState('');
   const [submitError, setSubmitError] = useState('');
 
-  // Preload critical resources immediately when component mounts
+  // Optimized preloading - only critical above-the-fold images
   useEffect(() => {
-    // Preload critical images for instant display
-    const preloadImages = [
+    // Only preload the hero background and title for instant display
+    const criticalImages = [
       '/images/Hero BG Test.jpg',
-      '/images/DOORA_TITLE_CORRECT.png',
-      '/images/iphone_doora.png',
-      '/images/iphone_angled.png',
-      '/images/iphone_realistic.png'
+      '/images/DOORA_TITLE_CORRECT.png'
     ];
 
-    preloadImages.forEach(src => {
+    criticalImages.forEach(src => {
       const img = new window.Image();
       img.src = src;
     });
@@ -260,8 +257,8 @@ export default function Home() {
                   width={280}
                   height={560}
                   className="w-72 h-auto"
-                  priority
-                  loading="eager"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               <div className="relative z-20 -ml-20 mt-4">
@@ -272,7 +269,7 @@ export default function Home() {
                   height={900}
                   className="w-[390px] h-auto"
                   priority
-                  loading="eager"
+                  quality={85}
                 />
               </div>
             </div>
@@ -286,7 +283,7 @@ export default function Home() {
                 height={640}
                 className="w-80 h-auto"
                 priority
-                loading="eager"
+                quality={85}
               />
             </div>
           </div>

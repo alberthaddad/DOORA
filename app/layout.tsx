@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import AppContent from "@/components/ui/AppContent";
-import Header from "@/components/essentials/Header";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-// Custom fonts based on DOORA design system
+// Optimized fonts - only essential weights for performance
 const bernoru = localFont({
   src: [
     {
@@ -15,45 +14,27 @@ const bernoru = localFont({
       weight: "900",
       style: "normal",
     },
-    {
-      path: "../fonts/bernoru/bernoru-blackultraexpanded.otf",
-      weight: "950",
-      style: "normal",
-    },
   ],
   variable: "--font-bernoru",
   display: "swap",
+  preload: true,
 });
 
 const neueMachina = localFont({
   src: [
     {
-      path: "../fonts/neue-machina/PPNeueMachina-PlainLight.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
       path: "../fonts/neue-machina/PPNeueMachina-PlainRegular.otf",
       weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../fonts/neue-machina/PPNeueMachina-PlainUltrabold.otf",
-      weight: "800",
       style: "normal",
     },
   ],
   variable: "--font-neue-machina",
   display: "swap",
+  preload: false,
 });
 
 const openSauce = localFont({
   src: [
-    {
-      path: "../fonts/open-sauce/OpenSauceOne-Light.ttf",
-      weight: "300",
-      style: "normal",
-    },
     {
       path: "../fonts/open-sauce/OpenSauceOne-Regular.ttf",
       weight: "400",
@@ -77,6 +58,7 @@ const openSauce = localFont({
   ],
   variable: "--font-open-sauce",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -250,27 +232,15 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/branding/favicons/DOORA LOGO-21.png" />
         <link rel="shortcut icon" href="/branding/favicons/DOORA LOGO-21.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/branding/favicons/DOORA LOGO-21.png" />
-        <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRG9vcmEiLCJzaG9ydF9uYW1lIjoiRG9vcmEiLCJpY29ucyI6W3sic3JjIjoiL2JyYW5kaW5nL2Zhdmljb25zL0RPT1JBIExZZjJfmljGh0IiwiaHJlZkFjdGlvbiI6InN0YXJ0X3VybCIsInNpemVzIjoiMTkyeDI5MiIsInR5cGUiOiJpbWFnZS9wbmcifV19" />
+        <link rel="manifest" href="/manifest.json" />
         
         {/* Critical Resource Preloading for Performance */}
-        {/* Preload Critical Images */}
+        {/* Preload only the most critical above-the-fold images */}
         <link rel="preload" as="image" href="/images/Hero BG Test.jpg" type="image/jpeg" />
         <link rel="preload" as="image" href="/images/DOORA_TITLE_CORRECT.png" type="image/png" />
-        <link rel="preload" as="image" href="/images/iphone_doora.png" type="image/png" />
-        <link rel="preload" as="image" href="/images/iphone_angled.png" type="image/png" />
-        <link rel="preload" as="image" href="/images/iphone_realistic.png" type="image/png" />
         
-        {/* Preload Critical Fonts */}
-        <link rel="preload" as="font" href="/fonts/bernoru/Archivo-Black.ttf" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/bernoru/bernoru-blackultraexpanded.otf" type="font/otf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/neue-machina/PPNeueMachina-PlainLight.otf" type="font/otf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/neue-machina/PPNeueMachina-PlainRegular.otf" type="font/otf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/neue-machina/PPNeueMachina-PlainUltrabold.otf" type="font/otf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-Light.ttf" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-Regular.ttf" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-Medium.ttf" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-SemiBold.ttf" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/open-sauce/OpenSauceOne-Bold.ttf" type="font/ttf" crossOrigin="anonymous" />
+        {/* Preload only critical font - using Next.js optimized path */}
+        <link rel="preload" as="font" href="/_next/static/media/Archivo_Black-s.p.dc06ae13.ttf" type="font/ttf" crossOrigin="anonymous" />
         
         {/* DNS Prefetch for External Resources */}
         <link rel="dns-prefetch" href="//vercel.com" />
@@ -343,7 +313,6 @@ export default function RootLayout({
         className={`${bernoru.variable} ${neueMachina.variable} ${openSauce.variable} font-sans antialiased min-h-screen`}
       >
         <LoadingScreen />
-        <Header />
         <AppContent>
           {children}
         </AppContent>

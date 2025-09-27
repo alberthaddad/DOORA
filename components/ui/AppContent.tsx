@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Header from "@/components/essentials/Header";
 import Footer from "@/components/essentials/Footer";
 
 interface AppContentProps {
@@ -12,15 +13,15 @@ export default function AppContent({ children }: AppContentProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Start showing content earlier
+    // Start showing content much earlier for faster perceived loading
     const showTimer = setTimeout(() => {
       setIsLoaded(true);
-    }, 1800); // Show content before loading screen starts fading
+    }, 300); // Show content much earlier
 
     // Make content visible right when loading screen starts fading
     const visibleTimer = setTimeout(() => {
       setIsVisible(true);
-    }, 2100); // Slight delay after loading screen fade starts
+    }, 600); // Align with new loading screen timing
 
     return () => {
       clearTimeout(showTimer);
@@ -28,18 +29,21 @@ export default function AppContent({ children }: AppContentProps) {
     };
   }, []);
 
-  if (!isLoaded) return null;
-
   return (
-    <div 
-      className={`transition-opacity duration-500 ease-out ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      }`}
-    >
-      <main className="pt-16">
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <>
+      {isLoaded && <Header />}
+      {isLoaded && (
+        <div 
+          className={`transition-opacity duration-500 ease-out ${
+            isVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <main className="pt-16">
+            {children}
+          </main>
+          <Footer />
+        </div>
+      )}
+    </>
   );
 }

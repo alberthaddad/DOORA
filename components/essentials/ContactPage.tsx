@@ -84,8 +84,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="px-4 bg-muted/30 h-[300px] flex items-center">
+        <div className="max-w-4xl mx-auto text-center w-full">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
             Get in Touch
           </h1>
