@@ -2,7 +2,7 @@ import ContactPage from "@/components/essentials/ContactPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact DOORA - Get in Touch with Our Team",
+  title: "Contact DOORA - Get in Touch with Us",
   description: "Get in touch with DOORA. We'd love to hear from you about partnerships, support, or general inquiries. Contact us for business partnerships, customer support, or media inquiries.",
   keywords: [
     "contact DOORA", "DOORA support", "business partnerships", "customer service",

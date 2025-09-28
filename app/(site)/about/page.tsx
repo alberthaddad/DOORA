@@ -2,7 +2,7 @@ import AboutPage from "@/components/essentials/AboutPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About DOORA - The Middle East's Premier Secondhand Fashion Marketplace",
+  title: "About DOORA - The MENA Region's Premier Secondhand Fashion Marketplace",
   description: "Learn about DOORA's mission to drive circular fashion in the Middle East. From closet to closet, making secondhand feel premium and NOT second best. Discover our story, values, and commitment to sustainable fashion.",
   keywords: [
     "about DOORA", "DOORA story", "circular fashion Middle East", "sustainable fashion platform",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "pre-owned clothing platform", "fashion resale Middle East", "DOORA values", "fashion community"
   ],
   openGraph: {
-    title: "About DOORA - The Middle East's Premier Secondhand Fashion Marketplace",
+    title: "About DOORA - The Pre-loved Fashion Marketplace",
     description: "Learn about DOORA's mission to drive circular fashion in the Middle East. From closet to closet, making secondhand feel premium and NOT second best.",
     url: "https://doora.app/about",
     type: "website",
