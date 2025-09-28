@@ -41,7 +41,6 @@ export default function AppContent({ children }: AppContentProps) {
           <main className="pt-16">
             {children}
           </main>
-          <Footer />
         </div>
       )}
     </>

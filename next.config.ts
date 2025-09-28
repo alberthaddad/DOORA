@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    qualities: [75, 85, 100], // Add quality configuration for Next.js 16
+    qualities: [75, 85, 90, 100], // Add quality configuration for Next.js 16
   },
   
   // Security headers

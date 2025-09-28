@@ -234,10 +234,17 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/branding/favicons/DOORA LOGO-21.png" />
         <link rel="manifest" href="/manifest.json" />
         
-        {/* Critical Resource Preloading for Performance */}
-        {/* Preload only the most critical above-the-fold images */}
-        <link rel="preload" as="image" href="/images/Hero BG Test.jpg" type="image/jpeg" />
-        <link rel="preload" as="image" href="/images/DOORA_TITLE_CORRECT.png" type="image/png" />
+        {/* Critical Resource Preloading for Performance - Mobile Optimized */}
+        {/* Preload critical above-the-fold content with mobile optimization */}
+        <link rel="preload" as="image" href="/images/DOORA_TITLE_CORRECT.png" type="image/png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/Hero BG Test.jpg" type="image/jpeg" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/iphone_realistic.png" type="image/png" />
+        
+        {/* Mobile-specific optimizations */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         
         {/* Preload only critical font - using Next.js optimized path */}
         <link rel="preload" as="font" href="/_next/static/media/Archivo_Black-s.p.dc06ae13.ttf" type="font/ttf" crossOrigin="anonymous" />

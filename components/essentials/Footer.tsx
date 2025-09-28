@@ -50,7 +50,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-border bg-muted/30">
+    <footer className="border-t border-border bg-muted/30 relative z-20" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8">
         <div className="grid grid-cols-1 gap-8">
           {/* Mobile: Quick Links and Follow Us side by side */}

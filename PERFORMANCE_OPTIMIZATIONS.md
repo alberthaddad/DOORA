@@ -101,3 +101,4 @@ With these optimizations, you should see:
 
 The site should now load significantly faster and provide a much better user experience.
 
+

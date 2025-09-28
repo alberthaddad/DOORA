@@ -9,6 +9,8 @@ import { Separator } from "@/components/ui/separator";
 import { useEffect, useRef, useState } from "react";
 import TextType from "@/components/ui/TextType";
 import { Marquee } from "@/components/magicui/marquee";
+import Footer from "@/components/essentials/Footer";
+import HeroPortal from "@/components/HeroPortal";
 
 
 export default function Home() {
@@ -20,17 +22,19 @@ export default function Home() {
   const [submitMessage, setSubmitMessage] = useState('');
   const [submitError, setSubmitError] = useState('');
 
-  // Optimized preloading - only critical above-the-fold images
+  // Optimized preloading - critical above-the-fold images with mobile optimization
   useEffect(() => {
-    // Only preload the hero background and title for instant display
+    // Preload critical images with mobile-optimized approach
     const criticalImages = [
-      '/images/Hero BG Test.jpg',
-      '/images/DOORA_TITLE_CORRECT.png'
+      '/images/DOORA_TITLE_CORRECT.png',
+      '/images/Hero BG Test.jpg'
     ];
 
     criticalImages.forEach(src => {
       const img = new window.Image();
       img.src = src;
+      img.loading = 'eager';
+      img.fetchPriority = 'high';
     });
   }, []);
 
@@ -51,7 +55,7 @@ export default function Home() {
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
@@ -121,107 +125,117 @@ export default function Home() {
     }
   };
 
-  return (
-    <div className="min-h-screen bg-background pb-20">
-      {/* Hero Section */}
-      <section className="pt-0 pb-20 px-4 lg:px-8 h-screen flex items-center relative overflow-hidden hero-bg">
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full relative z-20">
-          <div className="mb-8 lg:mb-0 mt-32">
-            {/* Mobile/Tablet logos */}
-            <Image 
-              src="/images/DOORA_TITLE_CORRECT.png" 
-              alt="DOORA" 
-              width={300}
-              height={300}
-              className="max-h-40 md:max-h-48 lg:hidden w-auto mx-auto"
-              style={{maxHeight: '320px'}}
-              priority
-              loading="eager"
-            />
-            
-            {/* Desktop logos - smaller size */}
-            <Image 
-              src="/images/DOORA_TITLE_CORRECT.png" 
-              alt="DOORA" 
-              width={1766}
-              height={277}
-              className="hidden lg:block w-auto mx-auto"
-              style={{height: '128px', maxHeight: '128px'}}
-              priority
-              loading="eager"
-            />
-          </div>
-          
-          <div className="font-accent text-sm md:text-lg lg:text-xl mb-20 lg:mt-8 tracking-wide uppercase text-light-cream">
-            FROM CLOSET TO CLOSET
-          </div>
 
-          {/* Coming Soon Section */}
-          <div className="mb-20">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-black mb-4 font-title uppercase text-light-cream">
+  return (
+    <>
+      <HeroPortal />
+      <div className="min-h-screen">
+        {/* Hero Section */}
+        <section className="hero-section">
+          {/* CONTENT */}
+          <div className="hero-content">
+          <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full relative z-20">
+            <div className="mb-8 lg:mb-8 mt-8">
+              {/* Mobile/Tablet logos */}
+              <Image 
+                src="/images/DOORA_TITLE_CORRECT.png" 
+                alt="DOORA" 
+                width={300}
+                height={300}
+                className="max-h-40 md:max-h-48 lg:hidden w-auto mx-auto"
+                style={{ maxHeight: '320px' }}
+                priority
+                loading="eager"
+                quality={85}
+                sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, 500px"
+              />
+              
+              {/* Desktop logos - smaller size */}
+              <Image 
+                src="/images/DOORA_TITLE_CORRECT.png" 
+                alt="DOORA" 
+                width={1766}
+                height={277}
+                className="hidden lg:block w-auto mx-auto"
+                style={{ height: '128px', maxHeight: '128px' }}
+                priority
+                loading="eager"
+                quality={85}
+                sizes="(min-width: 1024px) 800px, 0px"
+              />
+            </div>
+            
+            <div className="font-accent text-sm md:text-lg lg:text-xl mb-20 tracking-wide uppercase text-light-cream">
+              FROM CLOSET TO CLOSET
+            </div>
+
+            {/* Coming Soon Section */}
+            <div className="mb-20">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-black mb-4 font-title uppercase text-light-cream">
                 WE ARE LAUNCHING SOON
               </h2>
-              
-            <div className="flex flex-col sm:flex-row gap-3 justify-center sm:items-center max-w-md lg:max-w-lg mx-auto mb-3">
-              <div className="flex-1 relative">
-                <input 
-                  type="email" 
-                  value={emailValue}
-                  onChange={(e) => setEmailValue(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' && !isSubmitting) {
-                      handleEmailSubmit();
-                    }
-                  }}
-                  className="w-full px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
-                />
-                {emailValue === '' && (
-                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-sm placeholder-text">
-                    <TextType 
-                      text={["Enter your email", "Get notified", "Join the waitlist"]}
-                      typingSpeed={150}
-                      pauseDuration={3000}
-                      showCursor={true}
-                      cursorCharacter="|"
-                      loop={true}
-                    />
-                  </div>
-                )}
+
+              <div className="flex flex-col sm:flex-row gap-3 justify-center sm:items-center max-w-md lg:max-w-lg mx-auto mb-3">
+                <div className="flex-1 relative">
+                  <input 
+                    type="email" 
+                    value={emailValue}
+                    onChange={(e) => setEmailValue(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && !isSubmitting) {
+                        handleEmailSubmit();
+                      }
+                    }}
+                    className="w-full px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
+                  />
+                  {emailValue === '' && (
+                    <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-sm placeholder-text">
+                      <TextType 
+                        text={["Enter your email", "Get notified", "Join the waitlist"]}
+                        typingSpeed={150}
+                        pauseDuration={3000}
+                        showCursor={true}
+                        cursorCharacter="|"
+                        loop={true}
+                      />
+                    </div>
+                  )}
+                </div>
+                <Button 
+                  onClick={handleEmailSubmit}
+                  disabled={isSubmitting}
+                  className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-semibold whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Subscribing...' : 'Notify Me'}
+                </Button>
               </div>
-              <Button 
-                onClick={handleEmailSubmit}
-                disabled={isSubmitting}
-                className="bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-sm font-semibold whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? 'Subscribing...' : 'Notify Me'}
-              </Button>
-              </div>
+
+              {/* Success and Error Messages */}
+              {submitMessage && (
+                <p className="text-sm text-success font-medium mb-2">
+                  {submitMessage}
+                </p>
+              )}
+              {submitError && (
+                <p className="text-sm text-error font-medium mb-2">
+                  {submitError}
+                </p>
+              )}
               
-            {/* Success and Error Messages */}
-            {submitMessage && (
-              <p className="text-sm text-success font-medium mb-2">
-                {submitMessage}
+              <p className="text-xs text-light-cream">
+                No spam, just updates
               </p>
-            )}
-            {submitError && (
-              <p className="text-sm text-error font-medium mb-2">
-                {submitError}
-              </p>
-            )}
-            
-            <p className="text-xs text-light-cream">
-              No spam, just updates
-            </p>
+            </div>
           </div>
         </div>
-      </section>
+        </section>
 
-      {/* Content Section without background */}
-      <section className="py-20 px-4 lg:px-8 -mt-12">
+      {/* White Background Section */}
+      <div className="bg-background relative">
+        {/* Content Section */}
+        <section className="py-20 px-4 lg:px-8">
         <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full">
-          <div className="pt-16 mb-8">
+          <div className="pt-8 mb-8">
             <h1 
               ref={headlineRef}
               className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase tracking-normal animate-fade-in-up"
@@ -259,6 +273,7 @@ export default function Home() {
                   className="w-72 h-auto"
                   loading="lazy"
                   quality={85}
+                  sizes="(min-width: 1024px) 280px, 0px"
                 />
               </div>
               <div className="relative z-20 -ml-20 mt-4">
@@ -270,6 +285,7 @@ export default function Home() {
                   className="w-[390px] h-auto"
                   priority
                   quality={85}
+                  sizes="(min-width: 1024px) 450px, 0px"
                 />
               </div>
             </div>
@@ -284,13 +300,14 @@ export default function Home() {
                 className="w-80 h-auto"
                 priority
                 quality={85}
+                sizes="(max-width: 768px) 320px, (max-width: 1024px) 400px, 500px"
               />
             </div>
           </div>
           </div>
         </section>
 
-      <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 lg:px-8">
 
         {/* How It Works */}
         <section className="py-2 -mt-16">
@@ -456,8 +473,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        </div>
+        
+        {/* Footer inside white background */}
+        <Footer />
       </div>
-    </div>
+      </div>
+    </>
   );
 }

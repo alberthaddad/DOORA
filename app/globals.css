@@ -150,7 +150,7 @@ select {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }
 
@@ -211,27 +211,50 @@ select {
 .transform-3d { transform-style: preserve-3d; }
 .perspective-distant { perspective: 1000px; }
 
-/* Hero background */
-.hero-bg {
+/* Hero background - Fixed portal approach for iOS/Android compatibility */
+.hero-bg-fixed {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
   background-image: url('/images/Hero BG Test.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: scroll; /* keep scroll for mobile perf */
+  z-index: -2; /* behind everything */
+  pointer-events: none;
+  will-change: auto; /* Optimize for performance */
+}
+
+.hero-overlay-fixed {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* adjust darkness */
+  z-index: -1; /* behind content but above background */
+  pointer-events: none;
+  will-change: auto; /* Optimize for performance */
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10; /* sits above bg + overlay */
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
-  .hero-bg {
+  .hero-bg-fixed {
     background-position: center top;
-    background-attachment: scroll;
-  }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    pointer-events: none;
   }
 }
 
@@ -249,4 +272,75 @@ header {
   left: 0;
   right: 0;
   z-index: 10000;
+}
+
+/* ---------------------------
+   HERO PARALLAX (desktop + mobile-safe)
+   --------------------------- */
+
+/* NOTE: avoid adding transform, filter or will-change on hero ancestors.
+   If you previously had `html { will-change: scroll-position; }` consider changing
+   it to `will-change: auto;` or removing it (see notes below). */
+
+/* Hero wrapper */
+.hero-section {
+  position: relative;
+  height: 100vh;      /* full viewport hero */
+  /* DO NOT use overflow: hidden here — it can clip fixed positioned children on some browsers */
+  overflow: visible;
+}
+
+/* Fixed bg (desktop / browsers that accept fixed) */
+.hero-bg {
+  position: fixed;  /* stays in place while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/images/Hero BG Test.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 0;             /* behind overlay & content */
+  pointer-events: none;   /* don’t block clicks */
+}
+/* overlay sits above the background but beneath content */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* darken for legibility — match previous value */
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* content must be above overlay */
+.hero-content {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+/* Mobile fallback: some iOS / older Android will prefer non-fixed.
+   In that case we let JS do a translateY parallax and switch the bg to absolute so it won't be clipped. */
+@media (max-width: 1024px) {
+  .hero-bg {
+    /* start with absolute on mobile — JS will set transform for parallax. */
+    position: fixed;
+    background-attachment: fixed;
+    height: 100vh; /* a bit taller so translate doesn't show edges */
+    top: 0;
+  }
+}
+
+/* If user prefers reduced motion, disable JS parallax movement */
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg {
+    will-change: auto;
+    transform: none !important;
+  }
 }
