@@ -13,15 +13,6 @@ export default function robots(): MetadataRoute.Robots {
           '/_next/',
           '/admin/',
           '/private/',
-          '/user/settings/',
-          '/user/profile/',
-          '/user/activity/',
-          '/user/favorites/',
-          '/user/following/',
-          '/user/sell/',
-          '/user/chat/',
-          '/user/*/reviews/',
-          '/user/*/wardrobe/',
         ],
       },
       {
@@ -32,15 +23,6 @@ export default function robots(): MetadataRoute.Robots {
           '/_next/',
           '/admin/',
           '/private/',
-          '/user/settings/',
-          '/user/profile/',
-          '/user/activity/',
-          '/user/favorites/',
-          '/user/following/',
-          '/user/sell/',
-          '/user/chat/',
-          '/user/*/reviews/',
-          '/user/*/wardrobe/',
         ],
       },
       {
@@ -51,15 +33,6 @@ export default function robots(): MetadataRoute.Robots {
           '/_next/',
           '/admin/',
           '/private/',
-          '/user/settings/',
-          '/user/profile/',
-          '/user/activity/',
-          '/user/favorites/',
-          '/user/following/',
-          '/user/sell/',
-          '/user/chat/',
-          '/user/*/reviews/',
-          '/user/*/wardrobe/',
         ],
       },
     ],
@@ -67,6 +40,7 @@ export default function robots(): MetadataRoute.Robots {
     host: baseUrl,
   }
 }
+
 
 
 

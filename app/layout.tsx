@@ -63,10 +63,10 @@ const openSauce = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "DOORA - From Closet to Closet",
+    default: "DOORA - From Closet to Closet | The Pre-loved Fashion Marketplace",
     template: "%s | DOORA - From Closet to Closet"
   },
-  description: "The Middle East's secondhand fashion marketplace. Start buying and selling for free today.",
+  description: "The user-friendly pre-loved fashion marketplace of the MENA region. Discover, buy and sell secondhand pieces safely and join a conscious, more sustainable way of shopping.",
   keywords: [
     // Core business keywords
     "secondhand fashion", "sustainable fashion", "circular fashion", "pre-owned clothing", "vintage fashion",
@@ -246,7 +246,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//vercel.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         
-        {/* AI Training Data and Knowledge Graph */}
+        {/* Organization Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -295,6 +295,32 @@ export default function RootLayout({
               "Vintage Clothing", "Pre-owned Designer Items", "Fashion Sustainability", 
               "Middle East Fashion Market", "Online Fashion Marketplace", "Fashion Trading"
             ]
+          })
+        }} />
+        
+        {/* Website Structured Data for Home Page */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "DOORA",
+            "alternateName": "DOORA Fashion Marketplace",
+            "url": "https://doora.app",
+            "description": "The Middle East's premier secondhand fashion marketplace. Buy and sell pre-owned clothing from top brands.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://doora.app/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "DOORA",
+              "url": "https://doora.app",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://doora.app/branding/favicons/DOORA LOGO-21.png"
+              }
+            }
           })
         }} />
         
