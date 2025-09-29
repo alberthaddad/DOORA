@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Clock, MessageSquare, Users, Briefcase, Instagram, Linkedin, Youtube } from "lucide-react";
+import Footer from "@/components/essentials/Footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -378,6 +379,9 @@ export default function ContactPage() {
           </div>
         </section>
       </div>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

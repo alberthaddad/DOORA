@@ -11,6 +11,7 @@ import { Marquee } from "@/components/magicui/marquee";
 import { ProblemCards } from "./ProblemCards";
 import { SolutionCards } from "./SolutionCards";
 import { Timeline } from "@/components/ui/timeline";
+import Footer from "@/components/essentials/Footer";
 
 function OurStoryTimeline() {
   const data = [
@@ -269,6 +270,9 @@ export default function AboutPage() {
           <OurStoryTimeline />
         </section>
       </div>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

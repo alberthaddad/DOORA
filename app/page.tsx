@@ -278,7 +278,7 @@ export default function Home() {
               </div>
               <div className="relative z-20 -ml-20 mt-4">
                 <Image 
-                  src="/images/iphone_angled.png"
+                  src="/images/DOORA full presentation -left.png"
                   alt="DOORA App on iPhone (Angled)"
                   width={450}
                   height={900}
@@ -293,7 +293,7 @@ export default function Home() {
             {/* Mobile: Single realistic iPhone */}
             <div className="relative lg:hidden">
               <Image 
-                src="/images/iphone_realistic.png"
+                src="/images/DOORA full presentation-portrait.png"
                 alt="DOORA App on iPhone"
                 width={320}
                 height={640}
@@ -360,7 +360,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
               Premium Shopping Experience
             </h2>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-foreground">
+            <p className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-16 leading-relaxed text-foreground">
             Let&apos;s face it, secondhand shopping can be overwhelming. Digging through piles of clothes, scrolling through endless reseller pages....We&apos;re changing that. 
             <br />
             Sustainable shopping has never been easier:
@@ -445,31 +445,54 @@ export default function Home() {
             <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
             <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
           </div>
-          
-          {/* Title underneath Marquee */}
-          <div className="text-center mt-32 mb-2">
-            <p className="text-2xl md:text-4xl lg:text-4xl font-black mb-6 font-title leading-tight text-primary uppercase">
-              DOORA Is Designed To Make Secondhand Feel Premium And NOT Second Best!
-            </p>
-          </div>
-        </section>
+          </section>
 
-        {/* Contact CTA Section */}
-        <section className="py-10 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center bg-muted/30 rounded-2xl p-8">
-              <h2 className="text-xl font-bold text-foreground mb-4">
-                Curious to know more?
-              </h2>
-              <p className="mb-6 max-w-2xl mx-auto text-foreground">
-                Check out the About Us page
+        {/* Added Content for SEOs */}
+        <section className="py-20 px-4 lg:px-8  from-muted/20 via-background to-muted/30 relative overflow-hidden rounded-4xl mb-24 mt-10">
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+          
+          <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full relative z-10">
+            {/* Main heading with enhanced styling */}
+            <div className="mb-12">
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase tracking-normal">
+                Your Circular Fashion Platform
+              </h1>
+              
+              {/* Subtitle with accent line */}
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-1 bg-primary rounded-full"></div>
+              </div>
+              
+              <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 max-w-4xl mx-auto leading-relaxed">
+                Designed To Make Secondhand Feel Premium And Not Second Best
               </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-base font-semibold rounded-lg text-white bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-              >
-                About DOORA
-              </Link>
+            </div>
+
+            {/* Content with enhanced card styling */}
+            <div className="bg-card/40 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-border/50 shadow-xl">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-lg md:text-xl lg:text-2xl leading-relaxed text-foreground mb-8">
+                  DOORA is set to become the most user-friendly preloved fashion marketplace in the MENA region. We make it easier than ever to buy and sell secondhand clothing at accessible prices, all while supporting a more ethical fashion future. From closet clean-outs to hidden gems, DOORA helps you refresh your closet without the waste.
+                </h2>
+                
+                {/* Integrated CTA Section */}
+                <div className="mt-8 pt-8 border-t border-border/30">
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-8">
+                      Curious to know more?
+                    </h3>
+                    <Link
+                      href="/about"
+                      className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-base font-semibold rounded-lg text-white bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                    >
+                      About DOORA
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

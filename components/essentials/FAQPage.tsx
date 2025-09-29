@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/essentials/Footer";
 
 export default function FAQPage() {
   return (
@@ -760,6 +761,9 @@ export default function FAQPage() {
           </Link>
         </div>
       </div>
+      
+      {/* Footer */}
+      <Footer />
     </div>
     </>
   );
