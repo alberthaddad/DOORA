@@ -31,12 +31,6 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
-              href="/" 
-              className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-            >
-              Home
-            </Link>
-            <Link 
               href="/about" 
               className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
             >

@@ -99,20 +99,20 @@ select {
   --primary-foreground: oklch(0.98 0.005 45);
 
   /* Secondary & Supporting Colors */
-  --secondary: oklch(0.72 0.08 145);
-  --secondary-foreground: oklch(0.28 0.06 155);
+  --secondary: oklch(0.2354 0.0041 84.59);
+  --secondary-foreground: oklch(0.2354 0.0041 84.59);
   --accent: oklch(0.85 0.02 85);
-  --accent-foreground: oklch(0.28 0.06 155);
+  --accent-foreground: oklch(0.2354 0.0041 84.59);
 
   /* UI Element Colors */
   --card: oklch(0.99 0.003 45);
-  --card-foreground: oklch(0.28 0.06 155);
+  --card-foreground: oklch(0.2354 0.0041 84.59);
   --popover: oklch(0.99 0.003 45);
-  --popover-foreground: oklch(0.28 0.06 155);
+  --popover-foreground: oklch(0.2354 0.0041 84.59);
 
   /* Interactive States */
   --muted: oklch(0.85 0.02 85);
-  --muted-foreground: oklch(0.45 0.04 155);
+  --muted-foreground: oklch(0.45 0.01 0);
   --border: oklch(0.85 0.02 85);
   --input: oklch(0.96 0.005 45);
   --ring: oklch(0.65 0.15 25);
@@ -130,11 +130,11 @@ select {
 
   /* Sidebar Colors */
   --sidebar: oklch(0.96 0.005 45);
-  --sidebar-foreground: oklch(0.28 0.06 155);
+  --sidebar-foreground: oklch(0.2354 0.0041 84.59);
   --sidebar-primary: oklch(0.65 0.15 25);
   --sidebar-primary-foreground: oklch(0.98 0.005 45);
   --sidebar-accent: oklch(0.85 0.02 85);
-  --sidebar-accent-foreground: oklch(0.28 0.06 155);
+  --sidebar-accent-foreground: oklch(0.2354 0.0041 84.59);
   --sidebar-border: oklch(0.85 0.02 85);
   --sidebar-ring: oklch(0.65 0.15 25);
 
@@ -147,10 +147,11 @@ select {
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: oklch(from var(--ring) l c h / 0.5);
   }
   body {
-    @apply text-foreground;
+    color: var(--foreground);
   }
 }
 

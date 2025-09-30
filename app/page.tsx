@@ -482,7 +482,7 @@ export default function Home() {
                 <div className="mt-8 pt-8 border-t border-border/30">
                   <div className="text-center">
                     <h3 className="text-xl font-bold text-foreground mb-8">
-                      Curious to know more?
+                      Curious to know more?   
                     </h3>
                     <Link
                       href="/about"
