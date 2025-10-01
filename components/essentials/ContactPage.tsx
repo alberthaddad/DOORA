@@ -164,7 +164,7 @@ export default function ContactPage() {
                     <div className="space-y-2">
                       <Label htmlFor="category">Category</Label>
                       <Select value={formData.category} onValueChange={(value) => handleInputChange("category", value)}>
-                        <SelectTrigger className="text-xs">
+                        <SelectTrigger className="w-full text-xs">
                           <SelectValue placeholder="Select a category" />
                         </SelectTrigger>
                         <SelectContent>

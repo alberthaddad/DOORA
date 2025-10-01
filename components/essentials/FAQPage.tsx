@@ -8,75 +8,8 @@ import Footer from "@/components/essentials/Footer";
 export default function FAQPage() {
   return (
     <>
-      {/* Infinite white background block */}
-      <div className="fixed inset-0 bg-white -z-[9999]"></div>
-      <style jsx global>{`
-        .faq-text-color {
-          color: oklch(0.2354 0.0041 84.59) !important;
-        }
-        .faq-accordion-item {
-          border: none;
-          background: transparent;
-          margin-bottom: 1rem;
-        }
-        .faq-accordion-trigger {
-          padding: 0;
-          text-align: left;
-          transition: all 0.3s ease;
-          font-weight: 600;
-          font-size: 1rem;
-          line-height: 1.4;
-          margin-bottom: 0.75rem;
-          position: relative;
-          cursor: pointer;
-          margin-left: 1.5rem;
-        }
-        .faq-accordion-trigger::before {
-          content: '';
-          position: absolute;
-          left: -1.5rem;
-          top: 0;
-          width: 4px;
-          height: 0px;
-          background-color: oklch(0.439 0.1032 35.98) !important;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-          z-index: 1;
-        }
-        .faq-accordion-trigger:hover::before {
-          height: 1rem !important;
-        }
-        .faq-accordion-trigger:hover {
-          text-decoration: none;
-          color: oklch(0.439 0.1032 35.98) !important;
-        }
-        .faq-accordion-trigger[data-state="open"] {
-          color: oklch(0.439 0.1032 35.98) !important;
-        }
-        .faq-accordion-trigger[data-state="open"]::before {
-          height: 2rem !important;
-          width: 4px !important;
-        }
-        .faq-accordion-trigger[data-state="closed"]::before {
-          height: 0px !important;
-        }
-        @media (hover: none) {
-          .faq-accordion-trigger[data-state="closed"] {
-            color: rgb(var(--foreground)) !important;
-          }
-        }
-        .faq-accordion-content {
-          padding: 0;
-          background: transparent;
-          margin: 0;
-          margin-left: 1.5rem;
-        }
-        .faq-content-text {
-          font-size: 0.95rem;
-          line-height: 1.6;
-          color: oklch(0.2354 0.0041 84.59);
-        }
-      `}</style>
+        {/* Infinite white background block */}
+        <div className="fixed inset-0 bg-white -z-[9999]"></div>
       <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="px-4 bg-muted/30 h-[300px] flex">
@@ -84,9 +17,9 @@ export default function FAQPage() {
           <h1 className="text-5xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase pt-20">
             FAQ
           </h1>
-          <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-            Find answers to all of your questions about DOORA.
-          </p>
+            <p className="text-xl max-w-2xl mx-auto faq-text-color">
+              Find answers to all of your questions about DOORA.
+            </p>
         </div>
       </section>
 
@@ -106,9 +39,9 @@ export default function FAQPage() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
               }}
-              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-muted hover:border-primary bg-white/80 hover:bg-white shadow-md hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300 faq-text-color">
                 General
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -125,9 +58,9 @@ export default function FAQPage() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
               }}
-              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-muted hover:border-primary bg-white/80 hover:bg-white shadow-md hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300 faq-text-color">
                 Buying
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -144,9 +77,9 @@ export default function FAQPage() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
               }}
-              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-muted hover:border-primary bg-white/80 hover:bg-white shadow-md hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300 faq-text-color">
                 Selling
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -163,9 +96,9 @@ export default function FAQPage() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
               }}
-              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-muted hover:border-primary bg-white/80 hover:bg-white shadow-md hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300 faq-text-color">
                 Shipping
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -182,9 +115,9 @@ export default function FAQPage() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
               }}
-              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-muted hover:border-primary bg-white/80 hover:bg-white shadow-md hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300 faq-text-color">
                 Payments
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -201,9 +134,9 @@ export default function FAQPage() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
               }}
-              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-primary/20 hover:border-primary bg-muted/20 hover:bg-muted/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1"
+              className="group relative overflow-hidden h-12 px-6 rounded-full border-2 border-muted hover:border-primary bg-white/80 hover:bg-white shadow-md hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
+              <span className="relative z-10 font-bold text-primary group-hover:text-primary/90 transition-colors duration-300 faq-text-color">
                 Returns
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
