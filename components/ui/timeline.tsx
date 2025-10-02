@@ -6,7 +6,6 @@ import {
   motion,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
-import { Separator } from "@/components/ui/separator";
 
 interface TimelineEntry {
   title: string;
@@ -38,7 +37,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-background font-sans md:px-10"
       ref={containerRef}
     >
-    <Separator />
       <div className="max-w-7xl mx-auto pt-20 pb-8 px-4 md:px-8 lg:px-10">
         <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase text-center">
           Our Story

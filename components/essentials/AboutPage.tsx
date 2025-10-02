@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { Recycle, Zap, Users, Heart, Leaf, Target, Globe, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { Marquee } from "@/components/magicui/marquee";
@@ -243,8 +242,6 @@ export default function AboutPage() {
             <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
           </div>
         </section>
-
-        <Separator />
 
         {/* The Problem We're Solving Section */}
         <section className="py-16 md:py-20">
