@@ -76,7 +76,7 @@ export default function AboutPage() {
       <div className="fixed inset-0 bg-white -z-[9999]"></div>
       <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="px-4 bg-muted/30 h-[300px] flex">
+      <section className="px-4 sm:px-6 lg:px-8 bg-muted/30 h-[300px] flex">
         <div className="max-w-4xl mx-auto text-center w-full">
           <h1 className="text-5xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase pt-20">
             About Us
@@ -88,9 +88,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Doora Section */}
-        <section className="py-20">
+        <section className="py-16 md:py-20">
 
           {/* Our Values Section */}
           <div className="mb-16">
@@ -101,12 +101,12 @@ export default function AboutPage() {
             </div>
             
             {/* Modern Values Design */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {/* Accessibility Value */}
               <Card className="text-center hover:shadow-md transition-all duration-200 h-full bg-muted/30">
                 <CardContent className="pt-6">
                   {/* Icon and Title Section */}
-                  <div className="flex flex-col items-center gap-4">
+                  <div className="flex flex-col items-center gap-6">
                     <div className="w-16 h-16 lg:w-20 lg:h-20 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
                       <Target className="h-8 w-8 lg:h-10 lg:w-10 text-primary" />
                     </div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
               <Card className="text-center hover:shadow-md transition-all duration-200 h-full bg-muted/30">
                 <CardContent className="pt-6">
                   {/* Icon and Title Section */}
-                  <div className="flex flex-col items-center gap-4">
+                  <div className="flex flex-col items-center gap-6">
                     <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl flex items-center justify-center"
                          style={{
                            backgroundColor: 'oklch(0.5354 0.0644 135.23 / 0.1)'
@@ -247,7 +247,7 @@ export default function AboutPage() {
         <Separator />
 
         {/* The Problem We're Solving Section */}
-        <section className="py-20">
+        <section className="py-16 md:py-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">The Problems</h2>
             <p className="text-lg max-w-3xl mx-auto text-foreground">
@@ -269,7 +269,7 @@ export default function AboutPage() {
         </section>
 
         {/* Our Story Section - Timeline */}
-        <section className="py-20">
+        <section className="py-16 md:py-20">
           <OurStoryTimeline />
         </section>
       </div>

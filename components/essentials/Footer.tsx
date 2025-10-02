@@ -51,14 +51,14 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-muted/30 relative z-20" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 gap-8">
           {/* Mobile: Quick Links and Follow Us side by side */}
           <div className="md:hidden grid grid-cols-2 gap-8">
             {/* Quick Links */}
-            <div className="space-y-4 text-center">
+            <div className="space-y-6 text-center">
               <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Quick Links</h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-3 text-sm">
                 <Link 
                   href="/" 
                   className="block hover:text-primary transition-colors text-foreground"
@@ -87,9 +87,9 @@ export default function Footer() {
             </div>
 
             {/* Follow Us */}
-            <div className="space-y-4 text-center">
+            <div className="space-y-6 text-center">
               <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Follow Us</h3>
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col space-y-4">
                 {/* First row - 3 icons */}
                 <div className="flex justify-center space-x-2">
                   <Button
@@ -207,9 +207,9 @@ export default function Footer() {
             <div className="flex justify-between items-start w-full gap-12">
               {/* Quick Links */}
               <div className="flex-1 text-center">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Quick Links</h3>
-                  <div className="space-y-2 text-sm">
+          <div className="space-y-6">
+            <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Quick Links</h3>
+            <div className="space-y-3 text-sm">
                     <Link 
                       href="/" 
                       className="block hover:text-primary transition-colors text-foreground"
@@ -240,12 +240,12 @@ export default function Footer() {
 
               {/* Newsletter - Desktop */}
               <div className="flex-1 text-center">
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Newsletter</h3>
                   <p className="text-sm text-foreground">
                     Sign up to our newsletter so that you never miss exciting new features and news.
                   </p>
-                  <div className="flex flex-col gap-3 max-w-sm mx-auto">
+                  <div className="flex flex-col gap-4 max-w-sm mx-auto">
                     <div className="relative">
                       <input 
                         type="email" 
@@ -283,9 +283,9 @@ export default function Footer() {
 
               {/* Follow Us */}
               <div className="flex-1 text-center">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Follow Us</h3>
-                  <div className="flex flex-col space-y-2">
+          <div className="space-y-6">
+            <h3 className="text-xl font-black font-title leading-tight text-primary uppercase">Follow Us</h3>
+            <div className="flex flex-col space-y-4">
                     {/* First row - 3 icons */}
                     <div className="flex justify-center space-x-2">
                       <Button
@@ -402,16 +402,16 @@ export default function Footer() {
 
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="my-12" />
 
 
         {/* Newsletter Section - Mobile only */}
-        <div className="md:hidden text-center mb-8">
-          <h3 className="text-xl font-black font-title leading-tight text-primary uppercase mb-4">Newsletter</h3>
-          <p className="text-sm mb-4 text-foreground">
+        <div className="md:hidden text-center mb-12">
+          <h3 className="text-xl font-black font-title leading-tight text-primary uppercase mb-6">Newsletter</h3>
+          <p className="text-sm mb-6 text-foreground">
             Sign up to our newsletter so that you never miss exciting new features and news.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <div className="flex-1 relative">
               <input 
                 type="email" 

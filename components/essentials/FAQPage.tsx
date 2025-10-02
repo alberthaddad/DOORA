@@ -12,7 +12,7 @@ export default function FAQPage() {
         <div className="fixed inset-0 bg-white -z-[9999]"></div>
       <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="px-4 bg-muted/30 h-[300px] flex">
+      <section className="px-4 sm:px-6 lg:px-8 bg-muted/30 h-[300px] flex">
         <div className="max-w-4xl mx-auto text-center w-full">
           <h1 className="text-5xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase pt-20">
             FAQ
@@ -24,7 +24,7 @@ export default function FAQPage() {
       </section>
 
       {/* Navigation Section */}
-      <section className="py-12 px-4">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
@@ -145,12 +145,12 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         {/* FAQ Content */}
         <div className="space-y-12">
           {/* GENERAL Section */}
-          <div id="general" className="bg-card/30 rounded-xl p-6 border border-border/50">
-            <div className="flex items-center gap-3 mb-8">
+          <div id="general" className="bg-card/30 rounded-xl p-6 md:p-8 border border-border/50">
+            <div className="flex items-center gap-4 mb-8">
               <div className="w-1 h-8 bg-primary rounded-full"></div>
               <h2 className="text-2xl font-black font-title leading-tight text-primary uppercase">
                 GENERAL
@@ -248,8 +248,8 @@ export default function FAQPage() {
           </div>
 
           {/* BUYING Section */}
-          <div id="buying" className="bg-card/30 rounded-xl p-6 border border-border/50">
-            <div className="flex items-center gap-3 mb-8">
+          <div id="buying" className="bg-card/30 rounded-xl p-6 md:p-8 border border-border/50">
+            <div className="flex items-center gap-4 mb-8">
               <div className="w-1 h-8 bg-primary rounded-full"></div>
               <h2 className="text-2xl font-black font-title leading-tight text-primary uppercase">
                 BUYING
@@ -344,8 +344,8 @@ export default function FAQPage() {
           </div>
 
           {/* SELLING Section */}
-          <div id="selling" className="bg-card/30 rounded-xl p-6 border border-border/50">
-            <div className="flex items-center gap-3 mb-8">
+          <div id="selling" className="bg-card/30 rounded-xl p-6 md:p-8 border border-border/50">
+            <div className="flex items-center gap-4 mb-8">
               <div className="w-1 h-8 bg-primary rounded-full"></div>
               <h2 className="text-2xl font-black font-title leading-tight text-primary uppercase">
                 SELLING
@@ -434,8 +434,8 @@ export default function FAQPage() {
           </div>
 
           {/* SHIPPING & DELIVERY Section */}
-          <div id="shipping" className="bg-card/30 rounded-xl p-6 border border-border/50">
-            <div className="flex items-center gap-3 mb-8">
+          <div id="shipping" className="bg-card/30 rounded-xl p-6 md:p-8 border border-border/50">
+            <div className="flex items-center gap-4 mb-8">
               <div className="w-1 h-8 bg-primary rounded-full"></div>
               <h2 className="text-2xl font-black font-title leading-tight text-primary uppercase">
                 SHIPPING & DELIVERY
@@ -511,8 +511,8 @@ export default function FAQPage() {
           </div>
 
           {/* PAYMENTS & FEES Section */}
-          <div id="payments" className="bg-card/30 rounded-xl p-6 border border-border/50">
-            <div className="flex items-center gap-3 mb-8">
+          <div id="payments" className="bg-card/30 rounded-xl p-6 md:p-8 border border-border/50">
+            <div className="flex items-center gap-4 mb-8">
               <div className="w-1 h-8 bg-primary rounded-full"></div>
               <h2 className="text-2xl font-black font-title leading-tight text-primary uppercase">
                 PAYMENTS & FEES
@@ -577,8 +577,8 @@ export default function FAQPage() {
           </div>
 
           {/* RETURNS & DISPUTES Section */}
-          <div id="returns" className="bg-card/30 rounded-xl p-6 border border-border/50">
-            <div className="flex items-center gap-3 mb-8">
+          <div id="returns" className="bg-card/30 rounded-xl p-6 md:p-8 border border-border/50">
+            <div className="flex items-center gap-4 mb-8">
               <div className="w-1 h-8 bg-primary rounded-full"></div>
               <h2 className="text-2xl font-black font-title leading-tight text-primary uppercase">
                 RETURNS & DISPUTES
@@ -681,7 +681,7 @@ export default function FAQPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-10 mb-10 py-12 px-4 lg:px-8 from-muted/20 via-background to-muted/30 relative overflow-hidden rounded-2xl">
+        <div className="mt-16 mb-16 py-12 md:py-16 px-4 sm:px-6 lg:px-8 from-muted/20 via-background to-muted/30 relative overflow-hidden rounded-2xl">
           {/* Background decorative elements */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"></div>
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>

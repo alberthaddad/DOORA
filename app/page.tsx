@@ -175,7 +175,7 @@ export default function Home() {
                 WE ARE LAUNCHING SOON
               </h2>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center sm:items-center max-w-md lg:max-w-lg mx-auto mb-3">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center sm:items-center max-w-md lg:max-w-lg mx-auto mb-4">
                 <div className="flex-1 relative">
                   <input 
                     type="email" 
@@ -233,9 +233,9 @@ export default function Home() {
       {/* White Background Section */}
       <div className="bg-background relative">
         {/* Content Section */}
-        <section className="py-20 px-4 lg:px-8">
+        <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full">
-          <div className="pt-8 mb-8">
+          <div className="mb-12">
             <h1 
               ref={headlineRef}
               className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase tracking-normal animate-fade-in-up"
@@ -255,13 +255,13 @@ export default function Home() {
 
             <h2 
             ref={descriptionRef}
-            className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-16 leading-relaxed animate-fade-in-up text-foreground"
+            className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-in-up text-foreground"
           >
             Whether you&apos;re clearing out your closet or browsing for unique finds, our fashion resale platform connects thousands of closets in one simple, secure space.
           </h2>
           
           {/* Responsive iPhone Images */}
-          <div className="flex justify-center mt-8 mb-2">
+          <div className="flex justify-center mt-8">
             {/* Desktop: Two iPhones with dramatic size difference and positioning */}
             <div className="hidden lg:flex items-start justify-center relative">
               <div className="relative z-10 -mr-8 -mt-8">
@@ -307,12 +307,12 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* How It Works */}
-        <section className="py-2 -mt-16">
-          <div className="text-center mb-8">
-             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-3 font-title leading-tight text-primary uppercase">
+        <section className="py-16 md:py-20">
+          <div className="text-center mb-12">
+             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
                Easy Listings
             </h2>
             <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
@@ -355,12 +355,12 @@ export default function Home() {
         </section>
 
         {/* Marquee Section */}
-        <section className="py-12">
-          <div className="text-center mb-16">
+        <section className="py-16 md:py-20">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase">
               Premium Shopping Experience
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-16 leading-relaxed text-foreground">
+            <p className="text-lg md:text-xl lg:text-2xl max-w-2xl lg:max-w-4xl mx-auto mb-12 leading-relaxed text-foreground">
             Let&apos;s face it, secondhand shopping can be overwhelming. Digging through piles of clothes, scrolling through endless reseller pages....We&apos;re changing that. 
             <br />
             Sustainable shopping has never been easier:
@@ -448,7 +448,7 @@ export default function Home() {
           </section>
 
         {/* Added Content for SEOs */}
-        <section className="py-20 px-4 lg:px-8  from-muted/20 via-background to-muted/30 relative overflow-hidden rounded-2xl mb-24 mt-10">
+        <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 from-muted/20 via-background to-muted/30 relative overflow-hidden rounded-2xl mb-16">
           {/* Background decorative elements */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"></div>
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>

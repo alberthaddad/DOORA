@@ -89,7 +89,7 @@ export default function ContactPage() {
       <div className="fixed inset-0 bg-white -z-[9999]"></div>
       <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="px-4 bg-muted/30 h-[300px] flex">
+      <section className="px-4 sm:px-6 lg:px-8 bg-muted/30 h-[300px] flex">
         <div className="max-w-4xl mx-auto text-center w-full">
           <h1 className="text-5xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase pt-20">
             Get in Touch
@@ -100,7 +100,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">
@@ -396,7 +396,7 @@ export default function ContactPage() {
         </div>
 
         {/* Partnership Section */}
-        <Separator className="my-16" />
+        <Separator className="my-16 md:my-20" />
         
         <section className="text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">
