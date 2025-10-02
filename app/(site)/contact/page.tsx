@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: "Contact DOORA - Get in Touch with Us",
   description: "Get in touch with DOORA. We'd love to hear from you about partnerships, support, or general inquiries. Contact us for business partnerships, customer support, or media inquiries.",
   keywords: [
-    "contact DOORA", "DOORA support", "business partnerships", "customer service",
-    "DOORA team contact", "fashion marketplace support", "DOORA inquiries", "partnership opportunities",
-    "DOORA help", "customer support Middle East", "DOORA contact form", "fashion platform support"
+    "contact DOORA", "contact DOORA app", "DOORA support", "DOORA app support", "business partnerships", "customer service",
+    "DOORA team contact", "DOORA app team contact", "fashion marketplace support", "DOORA inquiries", "DOORA app inquiries", "partnership opportunities",
+    "DOORA help", "DOORA app help", "customer support Middle East", "DOORA contact form", "DOORA app contact form", "fashion platform support"
   ],
   openGraph: {
     title: "Contact DOORA - Get in Touch with Our Team",

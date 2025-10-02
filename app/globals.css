@@ -34,6 +34,7 @@ select {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

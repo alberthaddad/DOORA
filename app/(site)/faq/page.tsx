@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions - DOORA Help Center",
   description: "Find answers to common questions about DOORA. Learn how to buy, sell, and navigate our secondhand fashion marketplace. Get help with shipping, payments, and more.",
   keywords: [
-    "DOORA FAQ", "DOORA help", "fashion marketplace FAQ", "secondhand shopping help",
-    "DOORA questions", "buying on DOORA", "selling on DOORA", "DOORA shipping",
-    "DOORA payments", "DOORA support", "fashion marketplace help", "DOORA guide"
+    "DOORA FAQ", "DOORA app FAQ", "DOORA help", "DOORA app help", "fashion marketplace FAQ", "secondhand shopping help",
+    "DOORA questions", "DOORA app questions", "buying on DOORA", "buying on DOORA app", "selling on DOORA", "selling on DOORA app", "DOORA shipping", "DOORA app shipping",
+    "DOORA payments", "DOORA app payments", "DOORA support", "DOORA app support", "fashion marketplace help", "DOORA guide", "DOORA app guide"
   ],
   openGraph: {
     title: "Frequently Asked Questions - DOORA Help Center",

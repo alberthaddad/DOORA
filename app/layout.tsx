@@ -63,7 +63,7 @@ const openSauce = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "DOORA - From Closet to Closet | The Pre-loved Fashion Marketplace",
+    default: "DOORA -Buy and sell secondhand fashion in MENA",
     template: "%s | DOORA - From Closet to Closet"
   },
   description: "The user-friendly pre-loved fashion marketplace of the MENA region. Buy and sell secondhand pieces safely and join a conscious, more sustainable way of shopping.",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     "fashion sustainability", "eco-friendly fashion", "conscious shopping", "ethical fashion",
     
     // Platform features
-    "fashion app", "clothing marketplace", "style platform", "fashion community", "wardrobe sharing",
+    "fashion app", "DOORA app", "clothing marketplace", "style platform", "fashion community", "wardrobe sharing",
     "fashion trading", "closet clearing", "style discovery", "fashion recommendations",
     
     // Seasonal and trending
