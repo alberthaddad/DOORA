@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About DOORA - The MENA Region's Premier Secondhand Fashion Marketplace",
-  description: "Learn about DOORA's mission to drive circular fashion in the Middle East. From closet to closet, making secondhand feel premium and NOT second best. Discover our story, values, and commitment to sustainable fashion.",
+  description: "Learn how DOORA is revolutionizing secondhand fashion in MENA. Making sustainable shopping accessible, premium, and NOT second best.",
   keywords: [
     "about DOORA", "DOORA story", "circular fashion Middle East", "sustainable fashion platform",
     "secondhand fashion mission", "fashion marketplace Lebanon", "DOORA team", "fashion sustainability",

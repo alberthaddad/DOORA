@@ -681,19 +681,28 @@ export default function FAQPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-10 mb-10 text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Can&apos;t find what you&apos;re looking for?
-          </h2>
-          <p className="mb-6 faq-text-color max-w-2xl mx-auto">
-            Get in touch with our support team.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-base font-semibold rounded-lg text-white bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-          >
-            Contact Support
-          </Link>
+        <div className="mt-10 mb-10 py-12 px-4 lg:px-8 from-muted/20 via-background to-muted/30 relative overflow-hidden rounded-2xl">
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+          
+          <div className="text-center relative z-10">
+            <div className="bg-card/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-border/50 shadow-xl max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold text-foreground mb-4">
+                Can&apos;t find what you&apos;re looking for?
+              </h2>
+              <p className="mb-6 faq-text-color max-w-2xl mx-auto">
+                Get in touch with our support team.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-base font-semibold rounded-lg text-white bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                Contact Support
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       

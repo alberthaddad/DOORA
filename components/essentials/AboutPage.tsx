@@ -107,7 +107,7 @@ export default function AboutPage() {
                 <CardContent className="pt-6">
                   {/* Icon and Title Section */}
                   <div className="flex flex-col items-center gap-4">
-                    <div className="w-16 h-16 lg:w-20 lg:h-20 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
+                    <div className="w-16 h-16 lg:w-20 lg:h-20 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
                       <Target className="h-8 w-8 lg:h-10 lg:w-10 text-primary" />
                     </div>
                     <div className="text-center">
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 <CardContent className="pt-6">
                   {/* Icon and Title Section */}
                   <div className="flex flex-col items-center gap-4">
-                    <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center"
+                    <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl flex items-center justify-center"
                          style={{
                            backgroundColor: 'oklch(0.5354 0.0644 135.23 / 0.1)'
                          }}>

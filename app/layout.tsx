@@ -1,8 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import AppContent from "@/components/ui/AppContent";
+import HeaderWrapper from "@/components/essentials/HeaderWrapper";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     default: "DOORA - From Closet to Closet | The Pre-loved Fashion Marketplace",
     template: "%s | DOORA - From Closet to Closet"
   },
-  description: "The user-friendly pre-loved fashion marketplace of the MENA region. Discover, buy and sell secondhand pieces safely and join a conscious, more sustainable way of shopping.",
+  description: "The user-friendly pre-loved fashion marketplace of the MENA region. Buy and sell secondhand pieces safely and join a conscious, more sustainable way of shopping.",
   keywords: [
     // Core business keywords
     "secondhand fashion", "sustainable fashion", "circular fashion", "pre-owned clothing", "vintage fashion",
@@ -345,7 +345,7 @@ export default function RootLayout({
       <body
         className={`${bernoru.variable} ${neueMachina.variable} ${openSauce.variable} font-sans antialiased min-h-screen`}
       >
-        <LoadingScreen />
+        <HeaderWrapper />
         <AppContent>
           {children}
         </AppContent>

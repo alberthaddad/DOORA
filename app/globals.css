@@ -15,10 +15,8 @@ html {
 }
 
 /* Optimize body for scrolling performance */
-body {
-  /* Do NOT use transform here → it breaks fixed elements */
-  /* Keep background and text handled by Tailwind */
-}
+/* Do NOT use transform here → it breaks fixed elements */
+/* Keep background and text handled by Tailwind */
 
 /* Optimized transitions - only essential elements */
 button,

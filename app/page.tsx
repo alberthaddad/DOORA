@@ -448,7 +448,7 @@ export default function Home() {
           </section>
 
         {/* Added Content for SEOs */}
-        <section className="py-20 px-4 lg:px-8  from-muted/20 via-background to-muted/30 relative overflow-hidden rounded-4xl mb-24 mt-10">
+        <section className="py-20 px-4 lg:px-8  from-muted/20 via-background to-muted/30 relative overflow-hidden rounded-2xl mb-24 mt-10">
           {/* Background decorative elements */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"></div>
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
@@ -457,9 +457,9 @@ export default function Home() {
           <div className="max-w-4xl lg:max-w-7xl mx-auto text-center w-full relative z-10">
             {/* Main heading with enhanced styling */}
             <div className="mb-12">
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase tracking-normal">
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 font-title leading-tight text-primary uppercase tracking-normal">
                 Your Circular Fashion Platform
-              </h1>
+              </h2>
               
               {/* Subtitle with accent line */}
               <div className="flex items-center justify-center mb-6">
@@ -472,7 +472,7 @@ export default function Home() {
             </div>
 
             {/* Content with enhanced card styling */}
-            <div className="bg-card/40 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-border/50 shadow-xl">
+            <div className="bg-card/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-border/50 shadow-xl">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-lg md:text-xl lg:text-2xl leading-relaxed text-foreground mb-8">
                   DOORA is set to become the most user-friendly preloved fashion marketplace in the MENA region. We make it easier than ever to buy and sell secondhand clothing at accessible prices, all while supporting a more ethical fashion future. From closet clean-outs to hidden gems, DOORA helps you refresh your closet without the waste.
