@@ -28,7 +28,7 @@ function OurStoryTimeline() {
             So I walked away and created DOORA, a platform that makes conscious fashion easy and accessible to anyone.
           </p>
           <p className="mb-12 text-sm md:text-base leading-relaxed text-foreground">
-            I know sustainability may not be everyone&apos;s first concern, but at DOORA, it is.
+            We know sustainability may not be everyone&apos;s first concern, but at DOORA, it is.
           </p>
         </div>
       ),
@@ -38,7 +38,7 @@ function OurStoryTimeline() {
       content: (
         <div>
           <p className="-mt-4 mb-12 text-sm md:text-base leading-relaxed text-foreground">
-            My mission is simple: give people the possibility to enjoy fashion while still making ethical choices.&quot;
+            Our mission is simple: give people the possibility to enjoy fashion while still making ethical choices.&quot;
           </p>
           <div className="text-right mt-8 pt-6 border-t border-primary/20">
             <p className="text-lg font-semibold text-primary italic">– Andrea Tegho</p>
@@ -82,7 +82,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-xl max-w-2xl mx-auto" style={{color: 'oklch(0.2354 0.0041 84.59)'}}>
             Inspired by the Arabic word for &quot;circle&quot;, DOORA reflects our core mission 
-            to drive circular fashion in the Middle East.
+            to drive circular fashion in the MENA Region.
           </p>
         </div>
       </section>

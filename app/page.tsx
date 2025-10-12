@@ -475,7 +475,7 @@ export default function Home() {
             <div className="bg-card/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-border/50 shadow-xl">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-lg md:text-xl lg:text-2xl leading-relaxed text-foreground mb-8">
-                  DOORA is set to become the most user-friendly preloved fashion marketplace in the MENA region. We make it easier than ever to buy and sell secondhand clothing at accessible prices, all while supporting a more ethical fashion future. From closet clean-outs to hidden gems, DOORA helps you refresh your closet without the waste.
+                  The DOORA app is set to become the most user-friendly preloved fashion marketplace in the MENA region, starting with its launch in Lebanon. We make it easier than ever to buy and sell secondhand clothing at accessible prices, all while supporting a more ethical fashion future. From closet clean-outs to hidden gems, DOORA helps you refresh your closet without the waste.
                 </h2>
                 
                 {/* Integrated CTA Section */}
