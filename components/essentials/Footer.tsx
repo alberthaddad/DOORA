@@ -270,7 +270,7 @@ export default function Footer() {
                             handleEmailSubmit();
                           }
                         }}
-                        className="w-full px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
+                        className="w-full px-4 py-3 border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
                       />
                     </div>
                     <Button 

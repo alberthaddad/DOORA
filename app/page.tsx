@@ -199,13 +199,13 @@ export default function Home() {
                         handleEmailSubmit();
                       }
                     }}
-                    className="w-full px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
+                    className="w-full px-4 py-3 border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground text-sm"
                   />
                   {emailValue === '' && (
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-sm placeholder-text">
                       <TextType 
-                        text={["Enter your email or number", "Get notified", "Join the waitlist"]}
-                        typingSpeed={150}
+                        text={["Enter your email or number", "Enter your email or number"]}
+                        typingSpeed={100}
                         pauseDuration={3000}
                         showCursor={true}
                         cursorCharacter="|"
