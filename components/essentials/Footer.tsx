@@ -17,21 +17,34 @@ export default function Footer() {
     setSubmitMessage('');
     setSubmitError('');
 
-    // Validate email
-    if (!emailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-      setSubmitError('Please enter a valid email address');
+    // Check if value is provided
+    if (!emailValue) {
+      setSubmitError('Please enter an email address or phone number');
+      return;
+    }
+
+    // Determine if it's an email or phone number
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
+    const isPhone = /^[\d\s\-\+\(\)]+$/.test(emailValue);
+
+    if (!isEmail && !isPhone) {
+      setSubmitError('Please enter a valid email address or phone number');
       return;
     }
 
     setIsSubmitting(true);
 
     try {
+      const payload = isEmail 
+        ? { email: emailValue } 
+        : { phone: emailValue };
+
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: emailValue }),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
@@ -248,8 +261,8 @@ export default function Footer() {
                   <div className="flex flex-col gap-4 max-w-sm mx-auto">
                     <div className="relative">
                       <input 
-                        type="email" 
-                        placeholder="Enter your email"
+                        type="text" 
+                        placeholder="Enter your email or number"
                         value={emailValue}
                         onChange={(e) => setEmailValue(e.target.value)}
                         onKeyDown={(e) => {
@@ -414,8 +427,8 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <div className="flex-1 relative">
               <input 
-                type="email" 
-                placeholder="Enter your email"
+                type="text" 
+                placeholder="Enter your email or number"
                 value={emailValue}
                 onChange={(e) => setEmailValue(e.target.value)}
                 onKeyDown={(e) => {

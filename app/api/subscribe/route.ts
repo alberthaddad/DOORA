@@ -12,12 +12,28 @@ mailchimp.setConfig({
 
 export async function POST(request: NextRequest) {
   try {
-    const { email } = await request.json();
+    const { email, phone } = await request.json();
 
-    // Validate email
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Validate that at least one field is provided
+    if (!email && !phone) {
+      return NextResponse.json(
+        { error: 'Please enter either an email address or phone number' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email if provided
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { error: 'Please enter a valid email address' },
+        { status: 400 }
+      );
+    }
+
+    // Validate phone if provided (basic international format validation)
+    if (phone && !/^[\d\s\-\+\(\)]+$/.test(phone)) {
+      return NextResponse.json(
+        { error: 'Please enter a valid phone number' },
         { status: 400 }
       );
     }
@@ -31,14 +47,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Prepare merge fields
+    const mergeFields: any = {
+      SOURCE: 'Website Launch Notification'
+    };
+
+    // Add phone to merge fields if provided
+    if (phone) {
+      mergeFields.PHONE = phone;
+    }
+
+    // Use email if provided, otherwise create a placeholder email from phone
+    // Note: Mailchimp requires an email, so if only phone is provided, we create a temporary one
+    const emailAddress = email || `${phone.replace(/[^\d]/g, '')}@doora-sms.temp`;
+
     // Add subscriber to Mailchimp audience
     const response = await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
-      email_address: email,
+      email_address: emailAddress,
       status: 'subscribed',
-      tags: ['DOORA_LAUNCH_NOTIFY'], // Optional: tag subscribers for better organization
-      merge_fields: {
-        SOURCE: 'Website Launch Notification'
-      }
+      tags: phone && !email ? ['DOORA_LAUNCH_NOTIFY', 'SMS_ONLY'] : ['DOORA_LAUNCH_NOTIFY'],
+      merge_fields: mergeFields
     });
 
     return NextResponse.json(
@@ -55,14 +83,14 @@ export async function POST(request: NextRequest) {
     // Handle specific Mailchimp errors
     if (error.response?.body?.title === 'Member Exists') {
       return NextResponse.json(
-        { error: 'This email is already subscribed to our notifications' },
+        { error: 'This contact is already subscribed to our notifications' },
         { status: 409 }
       );
     }
 
     if (error.response?.body?.title === 'Invalid Resource') {
       return NextResponse.json(
-        { error: 'Please enter a valid email address' },
+        { error: 'Please enter a valid email address or phone number' },
         { status: 400 }
       );
     }

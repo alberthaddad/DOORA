@@ -93,21 +93,34 @@ export default function Home() {
     setSubmitMessage('');
     setSubmitError('');
 
-    // Validate email
-    if (!emailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-      setSubmitError('Please enter a valid email address');
+    // Check if value is provided
+    if (!emailValue) {
+      setSubmitError('Please enter an email address or phone number');
+      return;
+    }
+
+    // Determine if it's an email or phone number
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
+    const isPhone = /^[\d\s\-\+\(\)]+$/.test(emailValue);
+
+    if (!isEmail && !isPhone) {
+      setSubmitError('Please enter a valid email address or phone number');
       return;
     }
 
     setIsSubmitting(true);
 
     try {
+      const payload = isEmail 
+        ? { email: emailValue } 
+        : { phone: emailValue };
+
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: emailValue }),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
@@ -178,7 +191,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center sm:items-center max-w-md lg:max-w-lg mx-auto mb-4">
                 <div className="flex-1 relative">
                   <input 
-                    type="email" 
+                    type="text" 
                     value={emailValue}
                     onChange={(e) => setEmailValue(e.target.value)}
                     onKeyDown={(e) => {
@@ -191,7 +204,7 @@ export default function Home() {
                   {emailValue === '' && (
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-sm placeholder-text">
                       <TextType 
-                        text={["Enter your email", "Get notified", "Join the waitlist"]}
+                        text={["Enter your email or number", "Get notified", "Join the waitlist"]}
                         typingSpeed={150}
                         pauseDuration={3000}
                         showCursor={true}
