@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #888; font-size: 12px;">
             <p>This is an automated response. Please do not reply to this email.</p>
-            <p>If you need immediate assistance, please call us at +961 70 998 701</p>
+            <p>If you need immediate assistance, please contact us via email at contact@doora.app</p>
           </div>
         </div>
       `,

@@ -274,12 +274,9 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <a 
-                      href="tel:+96170998701"
-                      className="text-sm hover:text-primary transition-colors underline-offset-4 hover:underline text-foreground"
-                    >
-                      +961 70 998 701
-                    </a>
+                    <p className="text-sm text-foreground">
+                      Coming Soon
+                    </p>
                   </div>
                 </div>
                 

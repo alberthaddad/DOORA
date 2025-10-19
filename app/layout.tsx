@@ -136,7 +136,7 @@ export const metadata: Metadata = {
     ],
     countryName: "Lebanon",
     emails: ["contact@doora.app"],
-    phoneNumbers: ["+96170998701"],
+    phoneNumbers: ["Coming Soon"],
     alternateLocale: ["ar_LB"],
   },
   twitter: {
@@ -272,7 +272,7 @@ export default function RootLayout({
             },
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+96170998701",
+              "telephone": "Coming Soon",
               "contactType": "customer service",
               "email": "contact@doora.app",
               "availableLanguage": ["English", "Arabic"]
