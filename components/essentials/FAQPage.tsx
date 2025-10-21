@@ -196,7 +196,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p className="faq-content-text">
-                    Anyone living in Lebanon can create an account and start buying or selling except for manufacturers since our goal is to give clothes a second life, not contribute to overproduction.
+                    Anyone living in Lebanon can create an account and start buying or selling (except for manufacturers since our goal is to give clothes a second life, not contribute to overproduction.)
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -207,7 +207,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p className="faq-content-text">
-                    DOORA is available as an iOS and Android app as well as a web version for desktop access.
+                    DOORA will be available as an iOS and Android app as well as a web version.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -229,7 +229,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p className="faq-content-text">
-                    DOORA is currently focused on fashion: clothes, shoes, and accessories for women, men and kids. Soon we&apos;ll expand into new categories.
+                    DOORA is currently focused on fashion: clothes, shoes, and accessories for women, men and kids. Soon we&apos;ll expand into new categories (home decor & more).
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -325,21 +325,11 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p className="faq-text-color leading-relaxed">
-                    It depends on the seller. Some listings are set as non-negotiable, while others allow negotiation. When price offers are possible, buyers and sellers can chat directly in the app to agree on a fair deal.
+                    Buyers and sellers can chat directly in the app to agree on a fair deal.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="buying-7" className="faq-accordion-item">
-                <AccordionTrigger className="faq-accordion-trigger">
-                  Can I return an item?
-                </AccordionTrigger>
-                <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
-                    Yes, depending on the seller&apos;s return settings and Buyer Protection. (See Returns & Disputes below.)
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
             </Accordion>
           </div>
 
@@ -413,7 +403,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p className="faq-text-color leading-relaxed">
-                    After the buyer confirms successful delivery and that everything is okay, your payment is transferred to your DOORA wallet. Payments will reflect in your wallet within minutes.
+                    After the buyer confirms successful delivery and that everything is okay, your payment is transferred to your DOORA wallet within seconds. You can then cash out this amount or use it again within DOORA.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -448,7 +438,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p className="faq-text-color leading-relaxed">
-                    We partner with trusted local couriers (Aramex).
+                    We partner with trusted local couriers.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -503,7 +493,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p className="faq-text-color leading-relaxed">
-                    We&apos;re aware that traditional door-to-door delivery isn&apos;t sustainable enough. That&apos;s why we&apos;re working on greener, cheaper alternatives. In Lebanon, options are still limited, but as DOORA grows, we&apos;ll introduce more sustainable choices, including pickup and drop-off points.
+                    We&apos;re aware that traditional door-to-door delivery isn&apos;t sustainable enough. That&apos;s why we&apos;re working on greener, cheaper alternatives. In Lebanon, options are still limited, but as DOORA grows, we&apos;ll introduce more sustainable choices, including pickup and drop-off points…
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -551,7 +541,7 @@ export default function FAQPage() {
                     <ul className="list-disc list-inside space-y-1 ml-4">
                       <li>Use it to buy items on DOORA</li>
                       <li>Spend it on in-app boosters (promoting your items)</li>
-                      <li>Transfer it to your bank account or e-wallet</li>
+                      <li>Transfer it to your bank account or e-wallet to cash it out</li>
                     </ul>
                   </div>
                 </AccordionContent>
@@ -590,21 +580,9 @@ export default function FAQPage() {
                   Can I return an item on DOORA?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <div className="space-y-3 faq-text-color">
-                    <p>Every seller can choose to accept or refuse returns in their account setting:</p>
-                    <div className="space-y-2">
-                      <p><strong>If the seller accepts returns:</strong></p>
-                      <ul className="list-disc list-inside space-y-1 ml-4">
-                        <li>You can return for any reason (wrong size, not as expected, change of mind).</li>
-                        <li>Seller covers the return fee ($1 flat).</li>
-                        <li>You&apos;ll need to print a label and schedule a pickup.</li>
-                        <li>You&apos;ll then receive a refund (item price + buyer protection fee). Delivery fees are not refunded in this case.</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-2">
-                      <p><strong>If the seller does not accept returns:</strong> The order falls under Buyer Protection conditions. Which means that returns/refunds are only possible if the item is not as described (fake, damaged, wrong item). You may be asked to provide proof (photos, videos, or other details) to support your claim.</p>
-                    </div>
-                  </div>
+                  <p className="faq-text-color leading-relaxed">
+                    Unfortunately, returns are not possible, however, if you receive the wrong item you will be fully refunded.
+                  </p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -630,31 +608,21 @@ export default function FAQPage() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="returns-4" className="faq-accordion-item">
-                <AccordionTrigger className="faq-accordion-trigger">
-                  What can I do if a return is not possible but I want a refund?
-                </AccordionTrigger>
-                <AccordionContent className="faq-accordion-content">
-                  <p className="faq-text-color leading-relaxed">
-                    If both buyer and seller agree, a partial refund can be arranged instead of a return + full refund. The buyer keeps the item and receives part of the money back, while the seller receives a partial payment. Refund amounts are calculated on a case-by-case basis and shown clearly during the dispute process.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
 
-              <AccordionItem value="returns-5" className="faq-accordion-item">
+              <AccordionItem value="returns-4" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   How long do I have to report a problem?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <div className="space-y-2 faq-text-color">
-                    <p>You must report an issue within 2 days of being notified that your order was delivered.</p>
+                    <p>You must report an issue within 3 days of being notified that your order was delivered.</p>
                     <p><strong>Steps:</strong> Open your order conversation → Tap &ldquo;I have an issue&rdquo; → Follow the instructions.</p>
-                    <p>If you don&apos;t report a problem within 2 days (or confirm that &ldquo;Everything is OK&rdquo;), the order is finalized and the seller is paid.</p>
+                    <p>If you don&apos;t report a problem within 3 days (or confirm that &ldquo;Everything is OK&rdquo;), the order is finalized and the seller is paid.</p>
                   </div>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="returns-6" className="faq-accordion-item">
+              <AccordionItem value="returns-5" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   What happens after I report a problem?
                 </AccordionTrigger>
@@ -666,13 +634,13 @@ export default function FAQPage() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="returns-7" className="faq-accordion-item">
+              <AccordionItem value="returns-6" className="faq-accordion-item">
                 <AccordionTrigger className="faq-accordion-trigger">
                   What if a return and refund isn&apos;t possible?
                 </AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p className="faq-text-color leading-relaxed">
-                    If you can&apos;t return a product or get your money back, you can always resell the item on DOORA.
+                    If you can&apos;t get a refund for your purchase, you can always resell the item on DOORA.
                   </p>
                 </AccordionContent>
               </AccordionItem>
